@@ -1,26 +1,51 @@
+# robots.txt — v0 Guide
+# https://yamajid.github.io/v0-site/
+
+# ─── Search engines ───────────────────────────────────────────────
 User-agent: *
 Allow: /
 
-# AI Bots - allowed to crawl
+# ─── AI / Chatbot crawlers (explicitly allowed) ───────────────────
+
+# OpenAI (ChatGPT, Bing Copilot)
 User-agent: GPTBot
 Allow: /
-User-agent: Google-Extended
+
+User-agent: ChatGPT-User
 Allow: /
-User-agent: CCBot
+
+User-agent: OAI-SearchBot
 Allow: /
+
+# Anthropic (Claude)
 User-agent: anthropic-ai
 Allow: /
+
 User-agent: ClaudeBot
 Allow: /
+
+# Google (Gemini, AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
-# Block bad bots
-User-agent: AhrefsBot
-Disallow: /
-User-agent: SemrushBot
-Disallow: /
-User-agent: MJ12bot
-Disallow: /
+# Meta (Llama)
+User-agent: FacebookBot
+Allow: /
 
-Sitemap: https://yamajid.github.io/v0-site/sitemap-index.xml
+# Apple
+User-agent: Applebot-Extended
+Allow: /
+
+# Common
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ─── Sitemap ──────────────────────────────────────────────────────
+Sitemap: https://yamajid.github.io/v0-site/sitemap.xml
