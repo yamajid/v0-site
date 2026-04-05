@@ -46,39 +46,40 @@
   }
   </script>
   <style>
+    :root { --bg: #030303; --sf: #0a0a0a; --sf2: #0f0f0f; --brd: #1a1a1a; --tx: #fafafa; --mt: #888; --mt2: #555; --ac: #10b981; --ac2: #059669; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; line-height: 1.7; }
-    nav { border-bottom: 1px solid #eee; padding: 12px 24px; display: flex; align-items: center; gap: 24px; font-size: 14px; }
-    nav a { text-decoration: none; color: #555; }
-    nav .logo { font-weight: 600; color: #000; }
-    .breadcrumb { max-width: 780px; margin: 16px auto; padding: 0 24px; font-size: 13px; color: #888; }
-    .breadcrumb a { color: #888; text-decoration: none; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--tx); line-height: 1.7; }
+    nav { border-bottom: 1px solid var(--brd); padding: 12px 24px; display: flex; align-items: center; gap: 24px; font-size: 14px; }
+    nav a { text-decoration: none; color: var(--mt); }
+    nav .logo { font-weight: 600; color: var(--tx); }
+    .breadcrumb { max-width: 780px; margin: 16px auto; padding: 0 24px; font-size: 13px; color: var(--mt); }
+    .breadcrumb a { color: var(--mt); text-decoration: none; }
     article { max-width: 780px; margin: 0 auto; padding: 0 24px 64px; }
-    .meta { font-size: 13px; color: #888; margin-bottom: 20px; }
+    .meta { font-size: 13px; color: var(--mt); margin-bottom: 20px; }
     h1 { font-size: 2rem; font-weight: 700; line-height: 1.25; margin-bottom: 12px; }
-    .subtitle { font-size: 1.1rem; color: #555; margin-bottom: 24px; }
+    .subtitle { font-size: 1.1rem; color: var(--mt); margin-bottom: 24px; }
     h2 { font-size: 1.35rem; font-weight: 600; margin: 40px 0 12px; }
     h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; }
     p { margin-bottom: 16px; }
     ul, ol { padding-left: 24px; margin-bottom: 16px; }
     li { margin-bottom: 6px; }
     table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
-    th { background: #f5f5f5; text-align: left; padding: 10px 14px; font-weight: 600; border: 1px solid #e0e0e0; }
-    td { padding: 9px 14px; border: 1px solid #e0e0e0; }
-    tr:nth-child(even) td { background: #fafafa; }
-    .verdict { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; }
-    .warn { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; }
-    .callout { background: #f9f9f9; border: 1px solid #eee; border-radius: 8px; padding: 16px 20px; margin: 24px 0; }
-    .cta-box { background: #000; color: #fff; border-radius: 10px; padding: 24px 28px; margin: 40px 0; text-align: center; }
-    .cta-box p { color: #ccc; margin-bottom: 16px; }
-    .cta-box a { background: #fff; color: #000; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    th { background: var(--sf); text-align: left; padding: 10px 14px; font-weight: 600; border: 1px solid var(--brd); }
+    td { padding: 9px 14px; border: 1px solid var(--brd); }
+    tr:nth-child(even) td { background: var(--sf2); }
+    .verdict { background: rgba(16,185,129,0.1); border-left: 4px solid var(--ac); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+    .warn { background: rgba(245,158,11,0.1); border-left: 4px solid #f59e0b; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+    .callout { background: var(--sf); border: 1px solid var(--brd); border-radius: 8px; padding: 16px 20px; margin: 24px 0; }
+    .cta-box { background: var(--sf); border: 1px solid var(--brd); color: var(--tx); border-radius: 10px; padding: 24px 28px; margin: 40px 0; text-align: center; }
+    .cta-box p { color: var(--mt); margin-bottom: 16px; }
+    .cta-box a { background: var(--bg); color: var(--tx); padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
     .plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin: 24px 0; }
-    .plan-card { border: 1px solid #e0e0e0; border-radius: 10px; padding: 16px; }
-    .plan-card .plan-name { font-size: 13px; font-weight: 600; color: #888; margin-bottom: 4px; }
+    .plan-card { border: 1px solid var(--brd); border-radius: 10px; padding: 16px; }
+    .plan-card .plan-name { font-size: 13px; font-weight: 600; color: var(--mt); margin-bottom: 4px; }
     .plan-card .plan-price { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
-    .plan-card .plan-credits { font-size: 13px; color: #555; }
-    .plan-card.featured { border-color: #000; border-width: 2px; }
-    footer { border-top: 1px solid #eee; text-align: center; padding: 24px; font-size: 13px; color: #888; }
+    .plan-card .plan-credits { font-size: 13px; color: var(--mt); }
+    .plan-card.featured { border-color: var(--tx); border-width: 2px; }
+    footer { border-top: 1px solid var(--brd); text-align: center; padding: 24px; font-size: 13px; color: var(--mt); }
   </style>
 </head>
 <body>
@@ -87,7 +88,7 @@
   <a href="/v0-site/" class="logo">▲ v0 Guide</a>
   <a href="/v0-site/categories/getting-started/">Guides</a>
   <a href="/v0-site/categories/pricing/">Pricing</a>
-  <a href="https://vercel.com/affiliates" style="margin-left:auto;background:#000;color:#fff;padding:6px 14px;border-radius:6px;font-size:13px;">Try v0 Free →</a>
+  <a href="https://vercel.com/affiliates" style="margin-left:auto;background:var(--ac);color:#000;padding:6px 14px;border-radius:6px;font-size:13px;">Try v0 Free →</a>
 </nav>
 
 <div class="breadcrumb">
