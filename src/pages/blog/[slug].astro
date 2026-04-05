@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import { posts, SITE } from '../../data/content.ts';
+
+export function getStaticPaths() {
+  return posts.map(p => ({ params: { slug: p.slug }, props: { post: p } }));
+}
+
+const post = Astro.props.post;
+const slug = post.slug;
+
+if (!post) {
+  return Astro.redirect('/blog/');
+}
+
+const url = SITE + '/blog/' + slug + '/';
+const jsonLd = JSON.stringify({
+  "@context":"https://schema.org","@type":"Article",
+  "headline":post.title,"description":post.description,
+  "url":url,"datePublished":post.date,"author":{"@type":"Organization","name":"v0 Guide"},
+  "mainEntityOfPage":{"@type":"WebPage","@id":url}
+});
+---
+
+<Base title={post.title + ' — v0 Guide (2026)'} description={post.description} canonical={url} jsonLd={jsonLd}>
+  <nav style="border-bottom:1px solid var(--brd);padding:1rem 0">
+    <div class="wrap">
+      <ol style="list-style:none;display:flex;gap:.5rem;font-size:.8rem;color:var(--mt2)">
+        <li><a href="/" style="color:var(--mt)">Home</a></li><li>›</li><li><a href="/blog/" style="color:var(--mt)">Blog</a></li><li>›</li><li style="color:var(--tx)">${post.title}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <article class="content" style="max-width:720px;margin:2rem auto;padding:0 1.5rem 4rem">
+    <div style="display:flex;gap:.5rem;align-items:center;margin-bottom:1rem;flex-wrap:wrap">
+      <span class="badge b-ac">${post.category}</span>
+      {post.tags.map(t => <span class="badge b-pur">${t}</span>)}
+      <span style="font-size:.7rem;color:var(--mt2);margin-left:auto">${post.readTime} min read</span>
+    </div>
+    <h1 style="font-size:clamp(1.5rem,3.5vw,2.25rem);margin-bottom:.5rem">${post.title}</h1>
+    <p style="color:var(--mt);font-size:1.05rem;margin-bottom:.5rem">${post.description}</p>
+    <time style="font-size:.75rem;color:var(--mt2);display:block;margin-bottom:2rem">${new Date(post.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</time>
+
+    <div style="border-top:1px solid var(--brd);margin:2rem 0"></div>
+
+    <!-- Markdown rendering -->
+    {post.content.split('\n').map(line => {
+      if (line.startsWith('## ')) return <h2 style="font-size:1.5rem;margin:2.5rem 0 .75rem;padding-bottom:.35rem;border-bottom:1px solid var(--brd)">{line.slice(3)}</h2>;
+      if (line.startsWith('### ')) return <h3 style="font-size:1.2rem;margin:2rem 0 .5rem">{line.slice(4)}</h3>;
+      if (line.startsWith('- **')) {
+        const m = line.match(/- \*\*(.*?)\*\*: (.*)/);
+        return m ? <li style="color:var(--mt);margin:.35rem 0;line-height:1.8;padding-left:1px"><strong style="color:var(--tx)">${m[1]}</strong>: ${m[2]}</li> : <li style="color:var(--mt);margin:.35rem 0;line-height:1.8">{line}</li>;
+      }
+      if (line.startsWith('**') && line.match(/\*\*: /)) {
+        const m = line.match(/\*\*(.*?)\*\*: (.*)/);
+        return m ? <p style="color:var(--mt);line-height:1.8;margin:.5rem 0"><strong style="color:var(--tx)">${m[1]}</strong>: ${m[2]}</p> : <p style="color:var(--mt);line-height:1.8;margin:.5rem 0">{line}</p>;
+      }
+      if (line.match(/^\d+\. \*\*/)) {
+        const m = line.match(/\d+\. \*\*(.*?)\*\*: (.*)/);
+        return m ? <p style="color:var(--mt);line-height:1.8;margin:.5rem 0"><strong style="color:var(--tx)">${m[1]}</strong>: ${m[2]}</p> : <p style="color:var(--mt);line-height:1.8;margin:.5rem 0">{line}</p>;
+      }
+      if (line.startsWith('**') && line.endsWith('**')) return <li style="color:var(--mt);margin:.35rem 0;line-height:1.8"><strong style="color:var(--tx)">${line.slice(2,-2)}</strong></li>;
+      if (line.startsWith('- ') && !line.startsWith('- **')) return <li style="color:var(--mt);margin:.35rem 0;line-height:1.8;padding-left:.5rem">${line.slice(2)}</li>;
+      if (line.startsWith('> ')) return <blockquote style="border-left:3px solid var(--ac);padding-left:1.25rem;margin:1.5rem 0;color:var(--mt);font-style:italic;line-height:1.8">${line.slice(2)}</blockquote>;
+      if (line.startsWith('`') && line.endsWith('`')) return <pre><code>{line.slice(1,-1)}</code></pre>;
+      if (line.includes('**') && !line.startsWith('-') && line.trim() !== '') return <p style="color:var(--mt);line-height:1.8;font-size:.95rem;margin:.5rem 0">${line.replace(/\*\*(.*?)\*\*/g, '<strong style="color:var(--tx)">$1</strong>')}</p>;
+      if (line.trim() === '') return <div style="height:.5rem"></div>;
+      return <p style="color:var(--mt);line-height:1.8;font-size:.95rem;margin:.5rem 0">${line}</p>;
+    })}
+
+    <div style="text-align:center;padding:2.5rem;background:var(--sf);border-radius:var(--rad);border:1px solid var(--brd);margin:3rem 0">
+      <h3 style="margin-bottom:.75rem">Ready to try v0?</h3>
+      <p style="color:var(--mt);margin-bottom:1.5rem;font-size:.95rem">It's free — no credit card required. Start building in 30 seconds.</p>
+      <a href="https://vercel.com/affiliates" target="_blank" rel="noopener sponsored" class="btn btn-lg">Try v0 for Free →</a>
+    </div>
+  </article>
+</Base>

@@ -1,0 +1,49 @@
+<!-- Blog Index -->
+---
+import Base from '../../layouts/Base.astro';
+import { posts } from '../../data/content.ts';
+
+const sorted = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const SITE = 'https://yamajid.github.io/v0-site';
+---
+
+<Base title="v0 Blog — Tutorials, Reviews & AI Code Generation (2026)" description="Expert guides on Vercel v0, AI code generation tutorials, comparisons, and honest reviews for developers in 2026." canonical={SITE + '/blog/'}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context":"https://schema.org","@type":"CollectionPage","name":"v0 Guide Blog",
+    "description":"Tutorials, reviews, and guides for Vercel v0 and AI code generation.","url":SITE+'/blog/'
+  })} />
+
+  <nav style="border-bottom:1px solid var(--brd);padding:1rem 0;background:var(--sf)">
+    <div class="wrap">
+      <ol style="list-style:none;display:flex;gap:.5rem;font-size:.8rem;color:var(--mt2)">
+        <li><a href="/" style="color:var(--mt)">Home</a></li><li>›</li><li style="color:var(--tx)">Blog</li>
+      </ol>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <header style="text-align:center;padding:3rem 0 2rem">
+      <span class="badge b-ac" style="margin-bottom:1rem;display:inline-block">✦ Blog</span>
+      <h1 style="font-size:clamp(1.75rem,4vw,2.75rem)">Latest Articles & Guides</h1>
+      <p style="color:var(--mt);max-width:560px;margin:.5rem auto 0;font-size:1.05rem">Expert tutorials, honest reviews, and in-depth guides for building with AI code generation.</p>
+    </header>
+
+    <div style="display:grid;gap:1.5rem;max-width:850px;margin:0 auto 4rem">
+      {sorted.map((p) => (
+        <a href={`/blog/${p.slug}/`} class="card" style="padding:1.5rem;display:block;color:var(--tx)!important;transition:transform .15s,border-color .15s">
+          <div style="display:flex;gap:.5rem;align-items:center;margin-bottom:.5rem;flex-wrap:wrap">
+            <span class="badge b-ac">${p.category}</span>
+            {p.tags.map(t => <span class="badge b-pur">${t}</span>)}
+            <span style="margin-left:auto;font-size:.75rem;color:var(--mt2)">${p.readTime} min read</span>
+          </div>
+          <h2 style="font-size:1.15rem;margin-bottom:.35rem">${p.title}</h2>
+          <p style="color:var(--mt);font-size:.85rem;margin-bottom:.5rem">${p.description}</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:var(--mt2)">
+            <time>${new Date(p.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</time>
+            <span style="color:var(--ac);font-weight:600">Read More →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

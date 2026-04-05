@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../data/content.ts';
+---
+
+<Base title="About — v0 Guide | Independent AI Code Reviews (2026)" description="About v0 Guide — our mission, team, and commitment to honest AI code generation reviews." canonical={SITE+'/about/'}>
+  <nav style="border-bottom:1px solid var(--brd);padding:1rem 0;background:var(--sf)">
+    <div class="wrap">
+      <ol style="list-style:none;display:flex;gap:.5rem;font-size:.8rem;color:var(--mt2)"><li><a href="/" style="color:var(--mt)">Home</a></li><li>›</li><li style="color:var(--tx)">About</li></ol>
+    </div>
+  </nav>
+  <div class="wrap" style="max-width:680px;margin:0 auto;padding:3rem 0">
+    <h1 style="margin-bottom:1.5rem">About v0 Guide</h1>
+    <div style="display:flex;flex-direction:column;gap:1.5rem;color:var(--mt);font-size:.95rem;line-height:1.8">
+      <p><strong style="color:var(--tx)">V0 Guide</strong> is an independent resource for developers looking to build faster with AI code generation. We research, test, and review every major AI coding tool so you don't have to.</p>
+      <p>As of March 2026, the AI code generation space is exploding. New tools launch every week, each claiming to be "the future of development." Our job is to cut through the noise and give you honest, data-driven comparisons based on real-world testing — not press releases.</p>
+      <h2 style="color:var(--tx);margin-top:1rem">What We Cover</h2>
+      <div style="display:flex;flex-direction:column;gap:.5rem">
+        <span>✓ In-depth reviews of Vercel v0 and competitors</span>
+        <span>✓ Step-by-step tutorials for real projects</span>
+        <span>✓ Side-by-side comparisons with honest ratings</span>
+        <span>✓ Pricing breakdowns and cost optimization</span>
+        <span>✓ Free resources: prompt libraries, checklists</span>
+      </div>
+      <h2 style="color:var(--tx);margin-top:1rem">Affiliate Disclosure</h2>
+      <p>We participate in the Vercel affiliate program, earning a commission when you sign up through our links — <strong style="color:var(--tx)">at no extra cost to you</strong>. This doesn't affect our reviews. If a tool isn't worth using, we'll say so. If a competitor is better for your use case, we'll recommend them too.</p>
+      <h2 id="contact" style="color:var(--tx);margin-top:1rem">Contact</h2>
+      <p>Questions, suggestions, partnerships? Reach us at <a href="mailto:hello@v0guide.com">hello@v0guide.com</a>.</p>
+    </div>
+  </div>
+</Base>

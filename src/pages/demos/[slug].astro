@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import { demos, demoCategories, getDemoBySlug, getDemosByCategory } from '../../data/demos.ts';
+
+export function getStaticPaths() {
+  return demos.map(d => ({ params: { slug: d.slug }, props: { demo: d } }));
+}
+
+const { demo } = Astro.props;
+const cat = demoCategories.find(c => c.slug === demo.cat);
+const catName = cat ? cat.name : 'Demo';
+const catIcon = cat ? cat.icon : '📄';
+
+const BASE = '';
+const SITE = 'https://yamajid.github.io';
+const url = `${SITE}/demos/${demo.slug}/`;
+
+// Related demos from same category
+const relatedDemos = getDemosByCategory(demo.cat).filter(d => d.slug !== demo.slug).slice(0, 3);
+
+// FAQPage structured data
+const faqEntity = demo.faqs && demo.faqs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: demo.faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+} : null;
+
+// Breadcrumb structured data
+const breadcrumbJSON = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Demos', item: SITE + BASE + '/demos/' },
+    { '@type': 'ListItem', position: 3, name: catName, item: `${SITE}${BASE}/demos/${demo.cat}/` },
+    { '@type': 'ListItem', position: 4, name: demo.title, item: url }
+  ]
+};
+
+// Article structured data
+const articleJSON = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: demo.title,
+  description: demo.desc,
+  url: url,
+  datePublished: '2026-04-05',
+  dateModified: '2026-04-05',
+  author: { '@type': 'Organization', name: 'V0 Guide' },
+  articleSection: catName,
+  keywords: `Vercel v0, ${catName.toLowerCase()}, ${demo.title.toLowerCase().replace(/ with v0/i, '').replace(/ using v0/i, '')}`
+};
+---
+
+<BaseLayout
+  title={`${demo.title} — Vercel v0 Demonstration`}
+  description={demo.desc}
+  canonical={url}
+  jsonLd={JSON.stringify(faqEntity ? { '@graph': [articleJSON, faqEntity, breadcrumbJSON] } : { '@graph': [articleJSON, breadcrumbJSON] })}
+>
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" style="background:var(--sf);padding:.75rem 0;border-bottom:1px solid var(--brd)">
+    <div class="wrap">
+      <ol style="list-style:none;display:flex;gap:.5rem;font-size:.8rem;color:var(--mt2);flex-wrap:wrap;align-items:center;margin:0">
+        <li><a href={`${BASE}/`}>Home</a></li><li>›</li>
+        <li><a href={`${BASE}/demos/`}>Demos</a></li><li>›</li>
+        <li><a href={`${BASE}/demos/${demo.cat}/`}>{catIcon} {catName}</a></li><li>›</li>
+        <li style="color:var(--tx)">{demo.title}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <article style="max-width:760px;margin:0 auto;padding:2.5rem 1.5rem 4rem">
+    <!-- Header -->
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;align-items:center">
+      <span class="badge b-ac">{catIcon} {catName}</span>
+      <span style="font-size:.75rem;color:var(--mt2)">Updated Apr 5, 2026 · 8 min read</span>
+    </div>
+
+    <h1 style="font-size:clamp(1.5rem,4vw,2.5rem);line-height:1.2;margin-bottom:.5rem">{demo.title}</h1>
+    <p style="font-size:1.05rem;color:var(--mt);margin-bottom:1.5rem">{demo.desc}</p>
+
+    <hr style="border:none;border-top:1px solid var(--brd);margin:1.5rem 0">
+
+    <!-- Table of Contents -->
+    <nav style="background:var(--sf);border:1px solid var(--brd);border-radius:var(--rad);padding:1.25rem;margin-bottom:2rem" aria-label="Table of contents">
+      <h2 style="font-size:.75rem;text-transform:uppercase;color:var(--mt);letter-spacing:.06em;margin:0 0 .75rem;font-weight:700">On This Page</h2>
+      <ol style="margin:0;padding-left:1.25rem;color:var(--mt)">
+        <li><a href="#prompt" style="color:var(--mt)">The Prompt</a></li>
+        <li><a href="#steps" style="color:var(--mt)">Step-by-Step Guide</a></li>
+        <li><a href="#mistakes" style="color:var(--mt)">Common Mistakes</a></li>
+        {demo.faqs && demo.faqs.length > 0 && <li><a href="#faq" style="color:var(--mt)">FAQ</a></li>}
+      </ol>
+    </nav>
+
+    <!-- The Prompt -->
+    <h2 id="prompt">The Prompt</h2>
+    <div style="background:var(--sf);border:1px solid var(--ac);border-left:3px solid var(--ac);border-radius:0 var(--rad) var(--rad) 0;padding:1.25rem;margin:1rem 0">
+      <p style="color:var(--tx);font-size:.7rem;text-transform:uppercase;color:var(--ac);letter-spacing:.06em;margin:0 0 .5rem;font-weight:700">Copy & Paste into Vercel v0</p>
+      <pre style="margin:0;padding:0;background:none;border:none"><code style="color:var(--mt);font-size:.9rem;line-height:1.7">{demo.prompt}</code></pre>
+    </div>
+    <p style="color:var(--mt);font-size:.9rem">Paste this prompt directly into <a href="https://vercel.com/affiliates" target="_blank" rel="noopener sponsored" style="color:var(--ac)">Vercel v0</a> to generate this component. Refine with follow-up prompts as needed.</p>
+
+    <!-- Steps -->
+    <h2 id="steps">Step-by-Step Guide</h2>
+    <ol style="color:var(--mt);padding-left:1.25rem">
+      {demo.steps.map((s, i) => (
+        <li style="margin-bottom:.75rem;line-height:1.7">
+          <strong style="color:var(--tx)">Step {i + 1}:</strong> {s}
+        </li>
+      ))}
+    </ol>
+
+    <!-- Mistakes -->
+    <h2 id="mistakes">Common Mistakes to Avoid</h2>
+    <div style="background:var(--sf);border:1px solid var(--brd);border-left:3px solid var(--org);border-radius:0 var(--rad) var(--rad) 0;padding:1.25rem;margin:1rem 0">
+      <ul style="margin:0;padding-left:1.25rem;color:var(--mt)">
+        {demo.mistakes.map(m => <li style="margin-bottom:.5rem;line-height:1.7">{m}</li>)}
+      </ul>
+    </div>
+
+    <!-- FAQ -->
+    {demo.faqs && demo.faqs.length > 0 && (
+      <section id="faq" style="margin-top:2rem">
+        <h2>Frequently Asked Questions</h2>
+        {demo.faqs.map(faq => (
+          <details style="border-bottom:1px solid var(--brd);padding:1rem 0">
+            <summary style="cursor:pointer;font-weight:600;color:var(--tx);font-size:1rem">{faq.q}</summary>
+            <p style="color:var(--mt);margin:.5rem 0 0;line-height:1.7">{faq.a}</p>
+          </details>
+        ))}
+      </section>
+    )}
+
+    <!-- CTA -->
+    <div style="text-align:center;padding:2.5rem 1.5rem;background:var(--sf);border:1px solid var(--brd);border-radius:var(--rad);margin-top:2.5rem">
+      <h3 style="color:var(--tx);margin-bottom:.5rem">Try This Demo in V0 Now</h3>
+      <p style="color:var(--mt);margin-bottom:1.5rem">Create a free account and paste the prompt above to generate this component instantly.</p>
+      <a href="https://vercel.com/affiliates" target="_blank" rel="noopener sponsored" class="btn btn-lg" style="font-size:1.05rem">Open Vercel v0 →</a>
+    </div>
+
+    <!-- Related -->
+    {relatedDemos.length > 0 && (
+      <section style="margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--brd)">
+        <h2 style="font-size:1.3rem">Related Demos</h2>
+        <div style="display:grid;gap:.75rem;margin-top:1rem">
+          {relatedDemos.map(r => (
+            <a href={`${BASE}/demos/${r.slug}/`} style="display:block;padding:1rem;background:var(--sf);border:1px solid var(--brd);border-radius:var(--rad-sm);border-left:3px solid var(--ac)">
+              <p style="color:var(--tx);font-size:.95rem;margin:0;font-weight:500">{r.title}</p>
+              <p style="color:var(--mt);font-size:.8rem;margin:.25rem 0 0">{r.desc}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </article>
+</BaseLayout>

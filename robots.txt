@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+
+# AI & LLM Bots - Full Access
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Omgilibot
+Allow: /
+User-agent: ImagesiftBot
+Allow: /
+User-agent: Diffbot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: YouBot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Block aggressive SEO bots
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+
+Sitemap: https://yamajid.github.io/v0-site/sitemap-index.xml

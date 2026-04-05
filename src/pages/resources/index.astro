@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../data/content.ts';
+---
+
+<Base title="v0 Resources — Free Tools, Prompts, Cheatsheets (2026)" description="Free Vercel v0 resources: prompt libraries, deployment checklists, design system guides, accessibility tips." canonical={SITE+'/resources/'}>
+  <nav style="border-bottom:1px solid var(--brd);padding:1rem 0">
+    <div class="wrap">
+      <ol style="list-style:none;display:flex;gap:.5rem;font-size:.8rem;color:var(--mt2)"><li><a href="/" style="color:var(--mt)">Home</a></li><li>›</li><li style="color:var(--tx)">Resources</li></ol>
+    </div>
+  </nav>
+  <div class="wrap">
+    <header style="text-align:center;padding:3rem 0 2rem">
+      <span class="badge b-blu" style="margin-bottom:1rem;display:inline-block">✦ Resources</span>
+      <h1 style="font-size:clamp(1.75rem,4vw,2.75rem)">Free v0 Resources</h1>
+      <p style="color:var(--mt);max-width:560px;margin:.5rem auto 0;font-size:1.05rem">Cheat sheets, checklists, and guides to accelerate your v0 workflow.</p>
+    </header>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;margin-bottom:4rem">
+      {[
+        {i:'📋',t:'Prompt Cheat Sheet',d:'50+ tested prompts for landing pages, dashboards, and forms.',tag:'Essential'},
+        {i:'🎨',t:'Design Systems Guide',d:'How to make v0 output match your brand identity.',tag:'Design'},
+        {i:'🔌',t:'API Integration Guide',d:'Connect v0-generated apps to external APIs and databases.',tag:'Developer'},
+        {i:'🚀',t:'Deployment Checklist',d:'Domains, env vars, HTTPS, monitoring — everything before going live.',tag:'DevOps'},
+        {i:'📐',t:'Responsive Design Tips',d:'Make v0 output look great on every screen size.',tag:'Design'},
+        {i:'♿',t:'Accessibility Checklist',d:'ARIA, keyboard nav, contrast, screen readers.',tag:'Essential'},
+      ].map(r => (
+        <div class="card" style="padding:1.5rem;cursor:default">
+          <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:.75rem">
+            <span style="font-size:1.75rem">${r.i}</span>
+            <span class="badge b-ac">${r.tag}</span>
+          </div>
+          <h3 style="margin-bottom:.4rem;font-size:1rem">${r.t}</h3>
+          <p style="color:var(--mt);font-size:.825rem;margin:0">${r.d}</p>
+        </div>
+      ))}
+    </div>
+    <div style="text-align:center;padding:3rem;background:var(--sf);border:1px solid var(--brd);border-radius:var(--rad);margin-bottom:4rem">
+      <h2 style="margin-bottom:.75rem">Start Building with v0 Today</h2>
+      <p style="color:var(--mt);margin-bottom:1.5rem;font-size:1rem">Free tier. No credit card. Production-ready code in minutes.</p>
+      <a href="https://vercel.com/affiliates" target="_blank" rel="noopener sponsored" class="btn btn-lg">Try v0 for Free →</a>
+    </div>
+  </div>
+</Base>
