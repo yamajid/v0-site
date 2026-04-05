@@ -117,16 +117,21 @@
   <url><loc>https://yamajid.github.io/v0-site/articles/testing/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/text-to-component/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/typescript/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-accessibility/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-affiliate/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-agencies/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-agency-workflow/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-agent-mode/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-ai-app/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-alpha/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-alternatives/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-analytics/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-animations/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-api-integration/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-api-routes/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-api/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-architecture/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-authentication-setup/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-authentication/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-awards/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-backup/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -134,6 +139,7 @@
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-best-practices/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-best-prompts/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-beta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-blog-tutorial/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-blog/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-blogs/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-books/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -144,32 +150,49 @@
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-ccpa/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-cdn/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-changelog/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-charts-guide/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-ci-cd-pipeline/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-cms-integration/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-cms/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-code-quality/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-code-review/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-community/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-comparisons-deep/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-complete-guide-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-component-library/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-components/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-contact/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-cost-saving/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-coupons/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-courses/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-custom-domain-setup/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-custom-domain/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-dark-mode/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-dashboard-tutorial/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-dashboard/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-database-setup/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-database/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-debug/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-debugging-tips/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-debugging/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-deploy-vercel/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-deployment-guide/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-deprecated/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-design-system/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-discord/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-discounts/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-docs/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-downgrade/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-dpa/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-ecommerce-tutorial/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-ecommerce/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-edge/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-education-guide/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-education/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-email-setup/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-email/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-env-variables/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-environment-variables/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-errors/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-events/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-examples/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -177,8 +200,11 @@
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-export-import/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-export/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-faq/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-file-upload/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-fix/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-forms-guide/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-free-credits/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-freelance-income/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-freelancers/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-future/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-game/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -190,34 +216,46 @@
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-integration/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-interface/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-known-issues/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-landing-page-tutorial/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-landing/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-layout-patterns/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-learning-path/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-license/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-limitations/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-logs/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-meetups/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-middleware-setup/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-middleware/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-migration-errors/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-migration-guide/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-migrations/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-mobile-responsive/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-mobile/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-monitor/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-navigation-patterns/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-newsletter/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-nextjs/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-no-code/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-outages/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-payment-integration/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-payments/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-performance-tips/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-performance/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-podcasts/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-portfolio-tutorial/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-portfolio/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-preview/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-pricing-analysis/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-pricing-comparison/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-pricing-worth-it/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-pricing/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-privacy/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-prompts-advanced/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-prompts-beginner/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-prompts-cheat-sheet/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-pwa-setup/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-pwa/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-real-time-features/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-real-time/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-reddit/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-redirects/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -231,9 +269,12 @@
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-robots/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-roi/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-rollback/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-saas-mvp/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-saas/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-security-guide/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-security-whitepaper/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-security/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-seo-tips/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-seo/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-server-actions/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-setup/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -246,23 +287,29 @@
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-ssg/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-ssl/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-ssr/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-startup-guide/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-startups/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-status/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-storage/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-support/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-tables-guide/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-tailwind/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-team/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-templates/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-terms/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-testimonials/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-testing-guide/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-testing/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-tips/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-tricks/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-troubleshoot/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-troubleshooting/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-tutorial-beginners/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-twitter/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-typescript/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-upgrade/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-use-cases/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yamajid.github.io/v0-site/articles/v0-vs-ai-coders-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-vs-bolt/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-vs-chatgpt/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yamajid.github.io/v0-site/articles/v0-vs-claude/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
