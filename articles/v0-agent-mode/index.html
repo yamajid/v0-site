@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v0 Agent Mode — Complete Tutorial</title>
+    <meta name="description" content="Master v0 Agent Mode with this complete guide. Learn how to use autonomous AI to build complex applications, debug issues, and handle multi-step tasks.">
+    <link rel="canonical" href="https://yamajid.github.io/v0-site/articles/v0-agent-mode/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="v0 Agent Mode — Complete Tutorial">
+    <meta property="og:description" content="Master v0 Agent Mode with this complete guide.">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"v0 Agent Mode","url":"https://yamajid.github.io/v0-site/articles/v0-agent-mode/","author":{"@type":"Organization","name":"v0 Guide"}}</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #888; --ac: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.7; }
+        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+        .nav { position: sticky; top: 0; z-index: 100; background: rgba(3,3,3,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--brd); }
+        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.5rem; }
+        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); text-decoration: none; }
+        h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 800; margin: 2rem 0 1rem; }
+        h2 { font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; border-top: 1px solid var(--brd); padding-top: 2rem; }
+        p { color: var(--mt); margin-bottom: 1rem; }
+        .prompt-box { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .prompt-box code { display: block; background: #000; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; color: #e5e5e5; white-space: pre-wrap; }
+        .feature { display: flex; gap: 1rem; margin: 1.5rem 0; align-items: flex-start; }
+        .feature-icon { width: 2.5rem; height: 2.5rem; background: var(--ac); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; }
+        .cta { display: inline-flex; padding: 0.75rem 1.5rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; text-decoration: none; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: var(--ac); color: #000; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+        .meta { font-size: 0.85rem; color: var(--mt); margin-bottom: 1rem; }
+        .breadcrumbs { padding: 0.75rem 0; border-bottom: 1px solid var(--brd); margin-bottom: 2rem; }
+        .breadcrumbs a { color: var(--mt); font-size: 0.85rem; text-decoration: none; }
+        .breadcrumbs span { color: var(--mt); margin: 0 0.5rem; }
+        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <nav class="nav"><div class="nav-wrap"><a href="/v0-site/">▲ v0 Guide</a><a href="https://vercel.com/affiliates" target="_blank" rel="noopener sponsored" class="cta">Try v0 Free →</a></div></nav>
+    <main class="wrap">
+        <div class="breadcrumbs"><a href="/v0-site/">Home</a><span>›</span><a href="/v0-site/categories/features/">Features</a><span>›</span>Agent Mode</div>
+        <span class="badge">Advanced</span>
+        <p class="meta">Updated April 5, 2026 · 15 min read</p>
+        <h1>v0 Agent Mode — Complete Tutorial</h1>
+        <p>Agent Mode is v0's most powerful feature. It autonomously plans, researches, and executes complex tasks. Here's how to use it effectively.</p>
+
+        <h2>What is Agent Mode?</h2>
+        <p>Agent Mode goes beyond simple code generation. Given a goal, v0 will:</p>
+        <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--mt);">
+            <li>Plan the implementation approach</li>
+            <li>Research best practices</li>
+            <li>Write and test code iteratively</li>
+            <li>Debug and fix issues automatically</li>
+            <li>Execute multi-step workflows</li>
+        </ul>
+
+        <h2>How to Activate Agent Mode</h2>
+        <p>Simply prefix your prompt with "Agent" or select Agent Mode in the interface:</p>
+        <div class="prompt-box">
+            <code>Agent: Build a complete authentication system with login, signup, password reset, and email verification using NextAuth and Prisma.</code>
+        </div>
+
+        <h2>Agent Mode Examples</h2>
+
+        <h3>1. Build Complete Features</h3>
+        <div class="prompt-box">
+            <code>Agent: Create a complete blog system with markdown support, categories, tags, reading time, and SEO meta tags. Include a dark/light theme toggle.</code>
+        </div>
+
+        <h3>2. Debug Complex Issues</h3>
+        <div class="prompt-box">
+            <code>Agent: My dashboard shows a white screen in production but works in dev. The error is in my API routes. Find and fix all issues.</code>
+        </div>
+
+        <h3>3. Refactor & Optimize</h3>
+        <div class="prompt-box">
+            <code>Agent: Refactor my authentication to use server actions instead of API routes. Optimize all database queries for performance.</code>
+        </div>
+
+        <h2>Best Practices</h2>
+        <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--mt);">
+            <li><strong>Be Specific:</strong> Clearly state the end goal</li>
+            <li><strong>Set Constraints:</strong> Mention tech stack preferences</li>
+            <li><strong>Iterate:</strong> Let Agent work, then provide feedback</li>
+            <li><strong>Review:</strong> Always check generated code</li>
+        </ul>
+
+        <div style="margin: 3rem 0; padding: 2rem; background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; text-align: center;">
+            <h3 style="margin-bottom: 1rem;">Try Agent Mode Today</h3>
+            <p style="margin-bottom: 1.5rem;">Start building with AI that thinks for you.</p>
+            <a href="https://vercel.com/affiliates" target="_blank" rel="noopener sponsored" class="cta">Try v0 Free →</a>
+        </div>
+    </main>
+    <footer><div class="wrap"><p><strong>▲ v0 Guide</strong> — The definitive resource for Vercel v0</p></div></footer>
+</body>
+</html>

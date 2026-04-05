@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Build a SaaS Landing Page with v0 — Complete Tutorial</title>
+    <meta name="description" content="Learn how to build a professional SaaS landing page using Vercel v0. Step-by-step guide with prompt examples, code snippets, and deployment instructions.">
+    <link rel="canonical" href="https://yamajid.github.io/v0-site/articles/build-saas-landing/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to Build a SaaS Landing Page with v0 — Complete Tutorial">
+    <meta property="og:description" content="Learn how to build a professional SaaS landing page using Vercel v0. Step-by-step guide with prompt examples, code snippets, and deployment instructions.">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Build a SaaS Landing Page with v0",
+        "description": "Learn how to build a professional SaaS landing page using Vercel v0. Step-by-step guide with prompt examples, code snippets, and deployment instructions.",
+        "url": "https://yamajid.github.io/v0-site/articles/build-saas-landing/",
+        "datePublished": "2026-04-05",
+        "dateModified": "2026-04-05",
+        "author": {"@type": "Organization", "name": "v0 Guide"},
+        "articleSection": "Tutorials",
+        "keywords": "v0, SaaS, landing page, tutorial, Vercel"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #888; --ac: #10b981; --ac2: #059669; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.7; }
+        a { color: var(--ac); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--ac2); }
+        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+        .nav { position: sticky; top: 0; z-index: 100; background: rgba(3,3,3,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--brd); }
+        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.5rem; }
+        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); display: flex; align-items: center; gap: 0.5rem; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; background: var(--ac); color: #000; }
+        h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+        h2 { font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; }
+        h3 { font-size: 1.2rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+        p { margin-bottom: 1rem; color: var(--mt); }
+        .prompt-box { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .prompt-box code { display: block; background: #000; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; line-height: 1.6; color: #e5e5e5; white-space: pre-wrap; }
+        .code-block { background: #000; border-radius: 8px; padding: 1rem; overflow-x: auto; font-size: 0.9rem; line-height: 1.6; color: #e5e5e5; margin: 1rem 0; }
+        .steps { counter-reset: step; }
+        .step { position: relative; padding-left: 3rem; margin-bottom: 1.5rem; }
+        .step::before { counter-increment: step; content: counter(step); position: absolute; left: 0; width: 2rem; height: 2rem; background: var(--ac); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+        .cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; transition: all 0.2s; }
+        .cta:hover { background: var(--ac2); transform: translateY(-2px); }
+        .meta { font-size: 0.85rem; color: var(--mt); margin-bottom: 1rem; }
+        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer p { font-size: 0.85rem; }
+        .breadcrumbs { padding: 0.75rem 0; border-bottom: 1px solid var(--brd); margin-bottom: 2rem; }
+        .breadcrumbs a { color: var(--mt); font-size: 0.85rem; }
+        .breadcrumbs span { color: var(--mt); margin: 0 0.5rem; }
+        @media (max-width: 768px) { .nav-wrap { flex-direction: column; gap: 1rem; } }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-wrap">
+            <a href="/v0-site/">▲ v0 Guide</a>
+            <a href="https://vercel.com/affiliates" target="_blank" rel="noopener sponsored" class="cta">Try v0 Free →</a>
+        </div>
+    </nav>
+    <main class="wrap">
+        <div class="breadcrumbs">
+            <a href="/v0-site/">Home</a><span>›</span><a href="/v0-site/categories/tutorials/">Tutorials</a><span>›</span>Build SaaS Landing Page
+        </div>
+        
+        <span class="badge">Tutorial</span>
+        <p class="meta">Updated April 5, 2026 · 15 min read</p>
+        
+        <h1>How to Build a SaaS Landing Page with v0</h1>
+        
+        <p>Learn how to create a professional SaaS landing page using Vercel v0. This step-by-step guide covers everything from crafting effective prompts to deploying your finished page.</p>
+
+        <h2>What You'll Build</h2>
+        <p>By the end of this tutorial, you'll have a complete SaaS landing page featuring:</p>
+        <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--mt);">
+            <li>Hero section with headline, subtext, and CTA</li>
+            <li>Features grid showcasing your product benefits</li>
+            <li>Pricing table with tier options</li>
+            <li>Testimonials section</li>
+            <li>FAQ accordion</li>
+            <li>Footer with links and social icons</li>
+        </ul>
+
+        <h2>Step 1: Create the Hero Section</h2>
+        <p>The hero section is the first thing visitors see. Use this prompt to generate a compelling hero:</p>
+
+        <div class="prompt-box">
+            <h3>Prompt</h3>
+            <code>Create a modern SaaS hero section with:
+- Bold headline text promoting an AI coding assistant
+- Subheadline explaining the value proposition
+- Two CTA buttons: "Start Free" (primary emerald) and "View Demo" (outline)
+- Animated gradient background effect
+- Floating UI mockup illustration on the right side
+- Use Inter font, dark theme with emerald accent colors
+- Include trust badges showing "10,000+ developers" and "4.9 rating"
+- Make it fully responsive with mobile optimization</code>
+        </div>
+
+        <h3>What v0 Will Generate</h3>
+        <p>v0 will create a hero section with:</p>
+        <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--mt);">
+            <li>Responsive layout (stacks on mobile)</li>
+            <li>Gradient animation effects</li>
+            <li>Proper button styling with hover states</li>
+            <li>Trust indicators with icons</li>
+        </ul>
+
+        <h2>Step 2: Add Features Section</h2>
+        <p>Now let's create a features grid to showcase your product's benefits:</p>
+
+        <div class="prompt-box">
+            <h3>Prompt</h3>
+            <code>Create a SaaS features section with:
+- 3x2 grid of feature cards
+- Each card has an icon, title, and description
+- Dark card background (#0a0a0a) with subtle border
+- Hover effect: slight lift and border color change to emerald
+- Icons should be Lucide React icons
+- Features: "AI-Powered", "Lightning Fast", "Secure", "Team Collaboration", "Analytics", "24/7 Support"
+- Section headline: "Everything you need to build better software"</code>
+        </div>
+
+        <h2>Step 3: Build Pricing Table</h2>
+        <p>A well-designed pricing table can significantly boost conversions:</p>
+
+        <div class="prompt-box">
+            <h3>Prompt</h3>
+            <code>Create a pricing section with:
+- 3 pricing tiers: Starter ($0), Pro ($29), Enterprise ($99)
+- Pro tier highlighted with "Most Popular" badge and emerald border
+- Each tier shows: name, price, list of features, CTA button
+- Monthly/yearly toggle at the top (yearly shows 20% discount)
+- Checkmark icons for features
+- Dark theme, rounded cards, smooth hover animations
+- Responsive: stacks on mobile, 3-column on desktop</code>
+        </div>
+
+        <h2>Step 4: Add Testimonials</h2>
+        <p>Social proof builds trust. Create a testimonials section:</p>
+
+        <div class="prompt-box">
+            <h3>Prompt</h3>
+            <code>Create a testimonials section with:
+- 3 testimonial cards in a row
+- Each card shows: quote text, user avatar, name, role, company
+- Star rating (5 stars) above each quote
+- Subtle card background with border
+- Quote icon decoration
+- Real-sounding testimonials about improving developer productivity
+- Avatar placeholder images using ui-avatars.com</code>
+        </div>
+
+        <h2>Step 5: FAQ Accordion</h2>
+        <p>Address common questions with an interactive accordion:</p>
+
+        <div class="prompt-box">
+            <h3>Prompt</h3>
+            <code>Create an FAQ accordion section with:
+- 5 common SaaS questions with answers
+- Click to expand/collapse functionality
+- Plus/minus icon animation on expand
+- Smooth height transition
+- Questions: "Is it free?", "How does billing work?", "Can I cancel anytime?", "What support is included?", "Is my data secure?"
+- Clean dark theme styling</code>
+        </div>
+
+        <h2>Step 6: Professional Footer</h2>
+        <p>Complete your landing page with a comprehensive footer:</p>
+
+        <div class="prompt-box">
+            <h3>Prompt</h3>
+            <code>Create a SaaS footer with:
+- 4 columns: Product, Resources, Company, Legal
+- Company logo and tagline in first column
+- Social media icons (Twitter, GitHub, LinkedIn)
+- Copyright text
+- Dark background matching theme
+- Newsletter signup input field
+- All links styled consistently</code>
+        </div>
+
+        <h2>Full Page Assembly Prompt</h2>
+        <p>Once you've tested individual sections, combine them all at once:</p>
+
+        <div class="prompt-box">
+            <h3>Complete Landing Page Prompt</h3>
+            <code>Create a complete SaaS landing page with all these sections in order:
+1. Navbar: Logo, nav links (Features, Pricing, About, Blog), "Get Started" button
+2. Hero: Headline "Build Faster with AI", subtitle, 2 CTAs, animated gradient bg
+3. Logos: "Trusted by" section with company logos (placeholder)
+4. Features: 3x2 grid with icons, titles, descriptions
+5. Pricing: 3-tier table with toggle, highlighted middle tier
+6. Testimonials: 3 cards with quotes, avatars, names
+7. CTA: Final call-to-action with email input
+8. Footer: 4-column links, social icons, copyright
+
+Use:
+- Dark theme (#030303 bg)
+- Emerald accent (#10b981)
+- Inter font
+- Tailwind CSS with shadcn/ui components
+- Fully responsive design
+- Smooth animations and hover effects</code>
+        </div>
+
+        <h2>Deployment</h2>
+        <p>Once your landing page is ready in v0:</p>
+
+        <div class="steps">
+            <div class="step">
+                <h3>Step 1: Connect GitHub</h3>
+                <p>Click the GitHub icon in the v0 editor to connect your repository. v0 will create a new repo or push to an existing one.</p>
+            </div>
+            <div class="step">
+                <h3>Step 2: Deploy to Vercel</h3>
+                <p>v0 automatically deploys to Vercel. You'll get a live URL like <code>your-project.vercel.app</code> within seconds.</p>
+            </div>
+            <div class="step">
+                <h3>Step 3: Custom Domain (Optional)</h3>
+                <p>In Vercel dashboard, go to Settings → Domains to add your custom domain. DNS propagation takes 24-48 hours.</p>
+            </div>
+        </div>
+
+        <h2>Pro Tips</h2>
+        <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--mt);">
+            <li><strong>Iterate gradually:</strong> Build section by section rather than all at once for better results</li>
+            <li><strong>Be specific:</strong> The more detail you provide about colors, fonts, and behavior, the better the output</li>
+            <li><strong>Use reference sites:</strong> Mention specific websites as style references</li>
+            <li><strong>Test on mobile:</strong> Always check how sections look on mobile before moving on</li>
+        </ul>
+
+        <h2>Next Steps</h2>
+        <p>Now that you have your SaaS landing page, explore these related tutorials:</p>
+        <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--mt);">
+            <li><a href="/v0-site/articles/v0-prompts-advanced/">Advanced v0 Prompting Techniques</a></li>
+            <li><a href="/v0-site/articles/deploy-vercel/">Deploying to Vercel</a></li>
+            <li><a href="/v0-site/articles/custom-domains/">Custom Domains Setup</a></li>
+        </ul>
+
+        <div style="margin: 3rem 0; padding: 2rem; background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; text-align: center;">
+            <h3 style="margin-bottom: 1rem;">Ready to Build Your SaaS?</h3>
+            <p style="margin-bottom: 1.5rem;">Start building with v0 today — it's free to get started.</p>
+            <a href="https://vercel.com/affiliates" target="_blank" rel="noopener sponsored" class="cta">Try v0 Free →</a>
+        </div>
+
+    </main>
+    <footer>
+        <div class="wrap">
+            <p><strong>▲ v0 Guide</strong> — The definitive resource for Vercel v0</p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem;">© 2026 v0 Guide — Independent reviews and tutorials.</p>
+        </div>
+    </footer>
+</body>
+</html>

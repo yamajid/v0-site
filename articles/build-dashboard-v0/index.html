@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Dashboard with v0 — Step by Step Tutorial</title>
+    <meta name="description" content="Learn how to build a complete analytics dashboard with v0. Includes stat cards, charts, data tables, sidebar navigation, and step-by-step prompts.">
+    <link rel="canonical" href="https://yamajid.github.io/v0-site/articles/build-dashboard-v0/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Building a Dashboard with v0 — Step by Step">
+    <meta property="og:description" content="Learn how to build a complete analytics dashboard with v0. Step-by-step guide with prompts.">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Building a Dashboard with v0",
+        "description": "Learn how to build a complete analytics dashboard with v0. Step-by-step guide with prompts.",
+        "url": "https://yamajid.github.io/v0-site/articles/build-dashboard-v0/",
+        "datePublished": "2026-04-05",
+        "dateModified": "2026-04-05",
+        "author": {"@type": "Organization", "name": "v0 Guide"},
+        "articleSection": "Tutorials",
+        "keywords": "v0, dashboard, tutorial, analytics"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #888; --ac: #10b981; --ac2: #059669; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.7; }
+        a { color: var(--ac); text-decoration: none; }
+        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+        .nav { position: sticky; top: 0; z-index: 100; background: rgba(3,3,3,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--brd); }
+        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.5rem; }
+        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); }
+        h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 800; margin: 2rem 0 1rem; }
+        h2 { font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; }
+        h3 { font-size: 1.2rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+        p { color: var(--mt); margin-bottom: 1rem; }
+        .prompt-box { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .prompt-box code { display: block; background: #000; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; color: #e5e5e5; white-space: pre-wrap; }
+        .step { display: flex; gap: 1rem; margin: 1.5rem 0; }
+        .step-num { width: 2rem; height: 2rem; background: var(--ac); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+        .step-content { flex: 1; }
+        .step-content h3 { margin-top: 0; }
+        .cta { display: inline-flex; padding: 0.75rem 1.5rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: var(--ac); color: #000; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+        .meta { font-size: 0.85rem; color: var(--mt); margin-bottom: 1rem; }
+        .breadcrumbs { padding: 0.75rem 0; border-bottom: 1px solid var(--brd); margin-bottom: 2rem; }
+        .breadcrumbs a { color: var(--mt); font-size: 0.85rem; }
+        .breadcrumbs span { color: var(--mt); margin: 0 0.5rem; }
+        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-wrap">
+            <a href="/v0-site/">▲ v0 Guide</a>
+            <a href="https://vercel.com/affiliates" target="_blank" rel="noopener sponsored" class="cta">Try v0 Free →</a>
+        </div>
+    </nav>
+    <main class="wrap">
+        <div class="breadcrumbs">
+            <a href="/v0-site/">Home</a><span>›</span><a href="/v0-site/categories/tutorials/">Tutorials</a><span>›</span>Build Dashboard
+        </div>
+        <span class="badge">Tutorial</span>
+        <p class="meta">Updated April 5, 2026 · 18 min read</p>
+        <h1>Building a Dashboard with v0 — Step by Step</h1>
+        <p>Learn how to create a complete analytics dashboard using v0. This tutorial covers stat cards, charts, data tables, and sidebar navigation.</p>
+
+        <h2>What You'll Build</h2>
+        <p>A fully functional analytics dashboard with:</p>
+        <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--mt);">
+            <li>Sidebar navigation with icons</li>
+            <li>Top header with user profile</li>
+            <li>4 stat cards (users, revenue, orders, growth)</li>
+            <li>Line chart for trends</li>
+            <li>Data table with sorting</li>
+            <li>Recent activity feed</li>
+        </ul>
+
+        <h2>Step 1: Sidebar Navigation</h2>
+        <p>Start by creating the sidebar:</p>
+
+        <div class="prompt-box">
+            <h3>Prompt</h3>
+            <code>Create a dashboard sidebar with:
+- Fixed width 250px, dark background (#0a0a0a)
+- Logo at top
+- Navigation items: Dashboard, Analytics, Customers, Products, Settings
+- Each item has an icon (Lucide)
+- Active state with emerald highlight
+- Hover effect on items
+- User profile section at bottom
+- Collapsible on mobile with hamburger menu</code>
+        </div>
+
+        <h2>Step 2: Stat Cards</h2>
+        <p>Create the KPI stat cards:</p>
+
+        <div class="prompt-box">
+            <h3>Prompt</h3>
+            <code>Create a row of 4 stat cards:
+- "Total Users" with count and +12% change
+- "Revenue" with dollar amount and +8% change
+- "Orders" with count and +23% change
+- "Growth" with percentage and +5% change
+- Each card: icon, label, value, change indicator (green up arrow)
+- Dark card background, subtle border
+- Hover lift effect</code>
+        </div>
+
+        <h2>Step 3: Charts Section</h2>
+        <p>Add analytics charts:</p>
+
+        <div class="prompt-box">
+            <h3>Prompt</h3>
+            <code>Create a charts section with:
+- Two charts side by side on desktop, stacked on mobile
+- Chart 1: Line chart showing "Revenue Over Time" - 12 months data
+- Chart 2: Bar chart showing "Users by Source" - Organic, Paid, Referral, Direct
+- Dark theme with emerald accent colors
+- Titles and legends
+- Tooltips on hover</code>
+        </div>
+
+        <h2>Step 4: Data Table</h2>
+        <p>Build the data table:</p>
+
+        <div class="prompt-box">
+            <h3>Prompt</h3>
+            <code>Create a data table with:
+- Columns: Customer, Email, Plan, Status, Amount, Date
+- 10 sample rows of data
+- Sortable headers (click to sort)
+- Row hover effect
+- Status badges (Active=green, Pending=yellow, Cancelled=red)
+- Pagination at bottom
+- Search input above table
+- Dark theme styling</code>
+        </div>
+
+        <h2>Step 5: Activity Feed</h2>
+        <p>Add a recent activity section:</p>
+
+        <div class="prompt-box">
+            <h3>Prompt</h3>
+            <code>Create an activity feed with:
+- Title "Recent Activity"
+- List of 8 recent activities
+- Each item: icon, description, relative time ("2 hours ago")
+- Timestamps in lighter color
+- Scroll if content overflows
+- Dark theme</code>
+        </div>
+
+        <h2>Full Dashboard Prompt</h2>
+        <p>Once comfortable, combine everything:</p>
+
+        <div class="prompt-box">
+            <h3>Complete Dashboard Prompt</h3>
+            <code>Build a complete admin dashboard with:
+1. Sidebar: Logo, nav items (Dashboard, Analytics, Customers, Products, Settings) with icons, user profile at bottom
+2. Main content area with header showing "Welcome back" and user avatar
+3. 4 stat cards in a row: Users, Revenue, Orders, Growth with icons and % change
+4. Two charts: Line chart (revenue) and Bar chart (users by source)
+5. Recent orders table with columns (Customer, Product, Amount, Status, Date)
+6. Activity feed sidebar on right
+
+Use:
+- Dark theme (#030303 bg)
+- Emerald accent (#10b981)
+- Inter font
+- Tailwind CSS
+- Fully responsive
+- Smooth hover animations</code>
+        </div>
+
+        <h2>Deployment</h2>
+        <p>Deploy your dashboard in one click:</p>
+        <ol style="margin: 1rem 0 1rem 1.5rem; color: var(--mt);">
+            <li>Click "Deploy" in v0</li>
+            <li>Connect your GitHub (optional)</li>
+            <li>Your dashboard is live!</li>
+        </ol>
+
+        <div style="margin: 3rem 0; padding: 2rem; background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; text-align: center;">
+            <h3 style="margin-bottom: 1rem;">Ready to Build Your Dashboard?</h3>
+            <p style="margin-bottom: 1.5rem;">Start building in v0 — free to get started.</p>
+            <a href="https://vercel.com/affiliates" target="_blank" rel="noopener sponsored" class="cta">Try v0 Free →</a>
+        </div>
+
+    </main>
+    <footer>
+        <div class="wrap">
+            <p><strong>▲ v0 Guide</strong> — The definitive resource for Vercel v0</p>
+            <p style="font-size: 0.75rem;">© 2026 v0 Guide — Independent reviews and tutorials.</p>
+        </div>
+    </footer>
+</body>
+</html>
