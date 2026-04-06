@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="codebg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1e2e"/>
+      <stop offset="100%" style="stop-color:#11111b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#codebg)" rx="12"/>
+  
+  <!-- Window controls -->
+  <circle cx="25" cy="20" r="6" fill="#f38ba8"/>
+  <circle cx="45" cy="20" r="6" fill="#f9e2af"/>
+  <circle cx="65" cy="20" r="6" fill="#a6e3a1"/>
+  <text x="400" y="24" font-family="system-ui" font-size="13" fill="#6c7086" text-anchor="middle">page.tsx</text>
+  
+  <!-- Code content -->
+  <text x="20" y="60" font-family="monospace" font-size="13" fill="#6c7086">1</text>
+  <text x="50" y="60" font-family="monospace" font-size="13" fill="#cba6f7">import</text>
+  <text x="105" y="60" font-family="monospace" font-size="13" fill="#cdd6f4">{ Card } </text>
+  <text x="175" y="60" font-family="monospace" font-size="13" fill="#cba6f7">from</text>
+  <text x="215" y="60" font-family="monospace" font-size="13" fill="#a6e3a1">"@/components/ui/card"</text>
+  
+  <text x="20" y="85" font-family="monospace" font-size="13" fill="#6c7086">2</text>
+  <text x="50" y="85" font-family="monospace" font-size="13" fill="#cba6f7">import</text>
+  <text x="105" y="85" font-family="monospace" font-size="13" fill="#cdd6f4">{ Button } </text>
+  <text x="190" y="85" font-family="monospace" font-size="13" fill="#cba6f7">from</text>
+  <text x="230" y="85" font-family="monospace" font-size="13" fill="#a6e3a1">"@/components/ui/button"</text>
+  
+  <text x="20" y="110" font-family="monospace" font-size="13" fill="#6c7086">3</text>
+  
+  <text x="20" y="135" font-family="monospace" font-size="13" fill="#6c7086">4</text>
+  <text x="50" y="135" font-family="monospace" font-size="13" fill="#cba6f7">export default</text>
+  <text x="160" y="135" font-family="monospace" font-size="13" fill="#89b4fa">function</text>
+  <text x="230" y="135" font-family="monospace" font-size="13" fill="#f9e2af">Dashboard</text>
+  <text x="320" y="135" font-family="monospace" font-size="13" fill="#cdd6f4">() {</text>
+  
+  <text x="20" y="160" font-family="monospace" font-size="13" fill="#6c7086">5</text>
+  <text x="70" y="160" font-family="monospace" font-size="13" fill="#cba6f7">return</text>
+  <text x="120" y="160" font-family="monospace" font-size="13" fill="#cdd6f4">(</text>
+  
+  <text x="20" y="185" font-family="monospace" font-size="13" fill="#6c7086">6</text>
+  <text x="90" y="185" font-family="monospace" font-size="13" fill="#89b4fa">&lt;div</text>
+  <text x="130" y="185" font-family="monospace" font-size="13" fill="#f9e2af">className</text>
+  <text x="210" y="185" font-family="monospace" font-size="13" fill="#cdd6f4">=</text>
+  <text x="220" y="185" font-family="monospace" font-size="13" fill="#a6e3a1">"min-h-screen bg-gray-50 p-8"</text>
+  <text x="490" y="185" font-family="monospace" font-size="13" fill="#89b4fa">&gt;</text>
+  
+  <text x="20" y="210" font-family="monospace" font-size="13" fill="#6c7086">7</text>
+  <text x="110" y="210" font-family="monospace" font-size="13" fill="#89b4fa">&lt;h1</text>
+  <text x="140" y="210" font-family="monospace" font-size="13" fill="#f9e2af">className</text>
+  <text x="220" y="210" font-family="monospace" font-size="13" fill="#cdd6f4">=</text>
+  <text x="230" y="210" font-family="monospace" font-size="13" fill="#a6e3a1">"text-3xl font-bold"</text>
+  <text x="405" y="210" font-family="monospace" font-size="13" fill="#89b4fa">&gt;</text>
+  
+  <text x="20" y="235" font-family="monospace" font-size="13" fill="#6c7086">8</text>
+  <text x="130" y="235" font-family="monospace" font-size="13" fill="#cdd6f4">Dashboard</text>
+  
+  <text x="20" y="260" font-family="monospace" font-size="13" fill="#6c7086">9</text>
+  <text x="110" y="260" font-family="monospace" font-size="13" fill="#89b4fa">&lt;/h1&gt;</text>
+  
+  <text x="20" y="285" font-family="monospace" font-size="13" fill="#6c7086">10</text>
+  <text x="110" y="285" font-family="monospace" font-size="13" fill="#89b4fa">&lt;div</text>
+  <text x="150" y="285" font-family="monospace" font-size="13" fill="#f9e2af">className</text>
+  <text x="230" y="285" font-family="monospace" font-size="13" fill="#cdd6f4">=</text>
+  <text x="240" y="285" font-family="monospace" font-size="13" fill="#a6e3a1">"grid grid-cols-3 gap-6 mt-8"</text>
+  <text x="540" y="285" font-family="monospace" font-size="13" fill="#89b4fa">&gt;</text>
+  
+  <!-- Typing cursor animation hint -->
+  <rect x="550" y="275" width="2" height="18" fill="#cdd6f4">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Bottom status bar -->
+  <rect x="0" y="470" width="800" height="30" fill="#181825"/>
+  <text x="20" y="490" font-family="system-ui" font-size="12" fill="#a6e3a1">TypeScript React</text>
+  <text x="700" y="490" font-family="system-ui" font-size="12" fill="#6c7086">UTF-8</text>
+</svg>

@@ -1,7 +1,29 @@
+# robots.txt for v0-guide.com
+# Last updated: April 6, 2026
+
+# Default: Allow all crawlers
 User-agent: *
 Allow: /
+Disallow: /node_modules/
+Disallow: /_astro/
+Disallow: /dist/
+Disallow: /src/
 
-# AI & LLM Bots - Full Access
+# Googlebot - Full access for indexing
+User-agent: Googlebot
+Allow: /
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /favicon.svg
+Allow: /og-image.png
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+
+# AI & LLM Bots - Full Access (for AI-powered search)
 User-agent: GPTBot
 Allow: /
 User-agent: ChatGPT-User
@@ -14,12 +36,6 @@ User-agent: anthropic-ai
 Allow: /
 User-agent: ClaudeBot
 Allow: /
-User-agent: Omgilibot
-Allow: /
-User-agent: ImagesiftBot
-Allow: /
-User-agent: Diffbot
-Allow: /
 User-agent: PerplexityBot
 Allow: /
 User-agent: YouBot
@@ -27,12 +43,17 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Block aggressive SEO bots
+# Block aggressive SEO crawlers (they waste bandwidth)
 User-agent: AhrefsBot
 Disallow: /
 User-agent: SemrushBot
 Disallow: /
 User-agent: MJ12bot
 Disallow: /
+User-agent: DotBot
+Disallow: /
+User-agent: BLEXBot
+Disallow: /
 
+# Sitemap location
 Sitemap: https://v0-guide.com/sitemap.xml

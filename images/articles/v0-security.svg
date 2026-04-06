@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="40" y="40" width="6" height="550" fill="url(#accent)"/>
+  <text x="80" y="120" font-family="system-ui, sans-serif" font-size="24" fill="#10B981" font-weight="600">SECURITY</text>
+  <text x="80" y="220" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="white">Security Best Practices</text>
+  <text x="80" y="300" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="white">for Production</text>
+  <text x="80" y="380" font-family="system-ui, sans-serif" font-size="28" fill="#a1a1aa">Authentication and data protection</text>
+  <polygon points="1050,315 1150,400 1050,485 950,400" fill="url(#accent)" opacity="0.3"/>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="20" fill="#52525b">v0-guide.com</text>
+</svg>
