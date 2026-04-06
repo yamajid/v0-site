@@ -1,12 +1,11 @@
 # robots.txt — v0 Guide
-# https://yamajid.github.io/
+# https://v0-guide.com/
 
 # ─── Search engines ───────────────────────────────────────────────
 User-agent: *
 Allow: /
 
 # ─── AI / Chatbot crawlers (explicitly allowed) ───────────────────
-
 # OpenAI (ChatGPT, Bing Copilot)
 User-agent: GPTBot
 Allow: /
@@ -48,4 +47,4 @@ User-agent: YouBot
 Allow: /
 
 # ─── Sitemap ──────────────────────────────────────────────────────
-Sitemap: https://yamajid.github.io/sitemap.xml
+Sitemap: https://v0-guide.com/sitemap.xml
