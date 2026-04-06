@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v0 Text Prompting Tips: Get Better Results (2026) | v0 Guide</title>
+    <meta name="description" content="Master the art of prompting v0 for better code generation. Learn prompt patterns, structure, specificity, and iteration techniques for optimal results.">
+    <meta name="keywords" content="v0 prompts, v0 prompting tips, v0 text prompts, v0 prompt engineering, better v0 results">
+    <link rel="canonical" href="https://v0-guide.com/blog/v0-text-prompting-tips/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="v0 Text Prompting Tips: Get Better Results">
+    <meta property="og:description" content="Master the art of prompting v0 for better code generation.">
+    <meta property="og:url" content="https://v0-guide.com/blog/v0-text-prompting-tips/">
+    <meta property="og:site_name" content="v0 Guide">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="v0 Text Prompting Tips: Get Better Results">
+    <meta name="twitter:description" content="Master the art of prompting v0 for better code generation.">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "v0 Text Prompting Tips: Get Better Results (2026)",
+        "description": "Master the art of prompting v0 for better code generation.",
+        "datePublished": "2026-04-06",
+        "dateModified": "2026-04-06",
+        "author": {"@type": "Organization", "name": "v0 Guide"},
+        "publisher": {"@type": "Organization", "name": "v0 Guide"},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://v0-guide.com/blog/v0-text-prompting-tips/"}
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #a1a1aa; --ac: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.8; }
+        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+        .nav { position: sticky; top: 0; z-index: 50; background: rgba(3,3,3,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--brd); }
+        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.5rem; }
+        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); text-decoration: none; }
+        .cta { display: inline-flex; padding: 0.6rem 1.2rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.875rem; }
+        .breadcrumb { padding: 1rem 0; font-size: 0.875rem; color: var(--mt); }
+        .breadcrumb a { color: var(--mt); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--tx); }
+        article { padding: 2rem 0 4rem; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(16,185,129,0.1); color: var(--ac); border: 1px solid rgba(16,185,129,0.2); border-radius: 9999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+        .meta { color: var(--mt); font-size: 0.875rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--brd); }
+        h2 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-top: 1rem; }
+        h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+        p { color: var(--mt); margin-bottom: 1.25rem; font-size: 1.0625rem; }
+        ul, ol { color: var(--mt); margin: 1rem 0 1.5rem 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+        strong { color: var(--tx); font-weight: 600; }
+        a { color: var(--ac); }
+        .highlight { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .highlight h4 { color: var(--tx); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .cta-box { text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(6,182,212,0.1)); border: 1px solid var(--brd); border-radius: 16px; margin: 3rem 0; }
+        .cta-box h3 { margin-bottom: 0.75rem; }
+        .cta-box p { margin-bottom: 1.5rem; }
+        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer p { font-size: 0.875rem; }
+        .toc { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .toc h4 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; color: var(--mt); }
+        .toc ul { margin: 0; list-style: none; }
+        .toc li { margin-bottom: 0.5rem; }
+        .toc a { color: var(--mt); text-decoration: none; font-size: 0.9375rem; }
+        .toc a:hover { color: var(--ac); }
+        pre { background: var(--sf); border: 1px solid var(--brd); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1rem 0; }
+        code { font-family: 'Monaco', 'Consolas', monospace; font-size: 0.875rem; color: var(--ac); }
+        .good { border-left: 3px solid var(--ac); padding-left: 1rem; margin: 1rem 0; }
+        .bad { border-left: 3px solid #ef4444; padding-left: 1rem; margin: 1rem 0; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-wrap">
+            <a href="/">&#9650; v0 Guide</a>
+            <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a>
+        </div>
+    </nav>
+    
+    <main class="wrap">
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Text Prompting Tips
+        </div>
+        
+        <article>
+            <span class="badge">Prompting</span>
+            <h1>v0 Text Prompting Tips: Get Better Results</h1>
+            <p class="meta">Updated April 6, 2026 &bull; 14 min read</p>
+            
+            <div class="toc">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#fundamentals">Prompting Fundamentals</a></li>
+                    <li><a href="#structure">Prompt Structure</a></li>
+                    <li><a href="#specificity">Being Specific</a></li>
+                    <li><a href="#iteration">Iterative Refinement</a></li>
+                    <li><a href="#patterns">Common Patterns</a></li>
+                    <li><a href="#mistakes">Mistakes to Avoid</a></li>
+                    <li><a href="#library">Prompt Library</a></li>
+                </ul>
+            </div>
+            
+            <h2 id="fundamentals">Prompting Fundamentals</h2>
+            <p>Effective prompting is the key to getting great results from v0. The AI responds best to <strong>clear, structured, and specific</strong> instructions.</p>
+            
+            <p>Core principles:</p>
+            <ul>
+                <li><strong>Be explicit:</strong> Don't assume v0 knows your preferences</li>
+                <li><strong>Use lists:</strong> Break down complex requirements</li>
+                <li><strong>Provide context:</strong> Explain the use case when helpful</li>
+                <li><strong>Reference examples:</strong> Mention similar products or patterns</li>
+                <li><strong>Iterate:</strong> Refine with follow-up prompts</li>
+            </ul>
+            
+            <div class="highlight">
+                <h4>The Golden Rule</h4>
+                <p>Write prompts like you're briefing a talented developer who doesn't know your project. Give enough detail to build it right the first time.</p>
+            </div>
+            
+            <h2 id="structure">Prompt Structure</h2>
+            <p>A well-structured prompt has distinct parts:</p>
+            
+            <h3>1. Component Type</h3>
+            <p>Start with what you're building:</p>
+            <pre><code>"Create a [component type]..."
+"Build a [page/section]..."
+"Design a [feature]..."</code></pre>
+            
+            <h3>2. Core Requirements</h3>
+            <p>List the essential elements:</p>
+            <pre><code>"...with:
+- Element 1
+- Element 2
+- Element 3"</code></pre>
+            
+            <h3>3. Behavior/Interactions</h3>
+            <p>Describe how it should work:</p>
+            <pre><code>"When the user clicks X, Y should happen"
+"On hover, show Z"
+"Support keyboard navigation"</code></pre>
+            
+            <h3>4. Style Direction (Optional)</h3>
+            <p>Guide the visual approach:</p>
+            <pre><code>"Use a minimalist design"
+"Match Apple's aesthetic"
+"Dark theme with purple accents"</code></pre>
+            
+            <h3>Complete Example</h3>
+            <pre><code>"Create a testimonial carousel with:
+- 3 testimonial cards showing quote, author name, 
+  title, and company
+- Auto-play that pauses on hover
+- Dot indicators for current slide
+- Previous/next arrow buttons
+- Smooth sliding animation
+- Responsive: 1 card on mobile, 3 on desktop
+
+Use a clean, modern design with subtle shadows 
+and rounded corners."</code></pre>
+            
+            <h2 id="specificity">Being Specific</h2>
+            
+            <h3>Vague vs. Specific</h3>
+            
+            <div class="bad">
+                <p><strong>Bad:</strong> "Make a card component"</p>
+            </div>
+            
+            <div class="good">
+                <p><strong>Good:</strong> "Create a product card with image (16:9), title, price, rating stars, and 'Add to Cart' button. Include hover effect that lifts the card. Price should show original price struck through if on sale."</p>
+            </div>
+            
+            <h3>Specify Numbers</h3>
+            <ul>
+                <li>Instead of "some items" &rarr; "5 items"</li>
+                <li>Instead of "padding" &rarr; "24px padding"</li>
+                <li>Instead of "columns" &rarr; "3 columns on desktop, 1 on mobile"</li>
+            </ul>
+            
+            <h3>Name Interactions</h3>
+            <pre><code>// Be explicit about states
+"Button states: 
+- Default: filled blue
+- Hover: darker blue with slight scale
+- Active: even darker
+- Disabled: gray, reduced opacity, no hover effect
+- Loading: show spinner, disable clicks"</code></pre>
+            
+            <h3>Describe Layout Precisely</h3>
+            <pre><code>"Layout: 
+- Sidebar fixed at 280px width on left
+- Main content fills remaining space
+- Header 64px height, sticky
+- Content area has 32px padding
+- Footer at bottom, not fixed"</code></pre>
+            
+            <h2 id="iteration">Iterative Refinement</h2>
+            <p>Complex components are built through conversation, not single prompts.</p>
+            
+            <h3>Start Broad, Then Refine</h3>
+            <ol>
+                <li><strong>Initial prompt:</strong> "Create a dashboard layout with sidebar, header, and main content"</li>
+                <li><strong>Add navigation:</strong> "Add navigation items to the sidebar: Dashboard, Projects, Team, Settings"</li>
+                <li><strong>Add header content:</strong> "Put a search bar and user avatar dropdown in the header"</li>
+                <li><strong>Style adjustments:</strong> "Make the sidebar darker and add icons to each nav item"</li>
+            </ol>
+            
+            <h3>Refinement Prompt Patterns</h3>
+            <pre><code>// Adding features
+"Add a [feature] to the [component]"
+
+// Modifying style
+"Make the [element] [style change]"
+
+// Changing behavior
+"When [trigger], [new behavior]"
+
+// Fixing issues
+"The [element] should [correct behavior] instead"
+
+// Requesting variations
+"Show me 3 variations of the [element]"</code></pre>
+            
+            <h3>Don't Start Over</h3>
+            <p>If v0 generated something close but not perfect, refine rather than restart:</p>
+            
+            <div class="bad">
+                <p><strong>Bad:</strong> Rewriting entire prompt from scratch</p>
+            </div>
+            
+            <div class="good">
+                <p><strong>Good:</strong> "Keep the layout but change the color scheme to dark mode"</p>
+            </div>
+            
+            <h2 id="patterns">Common Prompt Patterns</h2>
+            
+            <h3>Pattern: Reference Comparison</h3>
+            <pre><code>"Create a notification dropdown similar to 
+GitHub's, with:
+- Unread indicator badge
+- List of notifications grouped by repo
+- Mark all as read button
+- Link to notification settings"</code></pre>
+            
+            <h3>Pattern: User Story Format</h3>
+            <pre><code>"As a user, I want to filter products so I can 
+find what I'm looking for quickly.
+
+Create a filter sidebar with:
+- Price range slider
+- Category checkboxes
+- Brand multi-select
+- Rating minimum selector
+- 'Clear all' and 'Apply' buttons"</code></pre>
+            
+            <h3>Pattern: State Enumeration</h3>
+            <pre><code>"Create a file upload component with states:
+- Empty: dashed border, 'Drag files here' text
+- Drag over: highlighted border, 'Drop to upload'
+- Uploading: progress bar with percentage
+- Success: green check, file name, remove button
+- Error: red border, error message, retry button"</code></pre>
+            
+            <h3>Pattern: Responsive Specification</h3>
+            <pre><code>"Create a pricing section:
+- Desktop (1024px+): 3 cards side by side
+- Tablet (768-1023px): 3 cards, tighter spacing
+- Mobile (<768px): cards stacked vertically
+
+Middle card should be highlighted as 'Popular' 
+with a badge and slight elevation."</code></pre>
+            
+            <h3>Pattern: Technology Request</h3>
+            <pre><code>"Build a data table using @tanstack/react-table with:
+- Column sorting
+- Global search filter
+- Pagination (10/25/50 per page)
+- Row selection with checkbox column
+- Bulk action toolbar when rows selected"</code></pre>
+            
+            <h2 id="mistakes">Mistakes to Avoid</h2>
+            
+            <h3>1. Being Too Vague</h3>
+            <div class="bad">
+                <p>"Make it look nice"</p>
+                <p>"Add some animations"</p>
+                <p>"Make it responsive"</p>
+            </div>
+            <p>These leave too much to interpretation. Be specific about what "nice," "animations," or "responsive" mean to you.</p>
+            
+            <h3>2. Overloading Single Prompts</h3>
+            <div class="bad">
+                <p>500-word prompt describing an entire application</p>
+            </div>
+            <p>Break complex requirements into multiple focused prompts.</p>
+            
+            <h3>3. Assuming Context</h3>
+            <div class="bad">
+                <p>"Add the usual buttons"</p>
+                <p>"Use our standard colors"</p>
+            </div>
+            <p>v0 doesn't know your standards. Specify exactly what you want.</p>
+            
+            <h3>4. Ignoring States</h3>
+            <div class="bad">
+                <p>Only describing the happy path</p>
+            </div>
+            <p>Always specify loading, error, and empty states for data-driven components.</p>
+            
+            <h3>5. Forgetting Mobile</h3>
+            <div class="bad">
+                <p>Describing desktop layout only</p>
+            </div>
+            <p>Include mobile considerations or explicitly request responsive design.</p>
+            
+            <h2 id="library">Prompt Library</h2>
+            
+            <h3>Navigation</h3>
+            <pre><code>"Create a responsive navbar with:
+- Logo on left
+- Navigation links in center (Desktop only)
+- Search icon, notification bell, user avatar on right
+- Mobile: hamburger menu opening slide-out drawer
+- Sticky on scroll with backdrop blur"</code></pre>
+            
+            <h3>Hero Section</h3>
+            <pre><code>"Build a SaaS hero section with:
+- Large headline (max 6 words)
+- Supporting paragraph (2-3 lines)
+- Email capture form with 'Get Started' button
+- Trust indicators: '10,000+ teams' with avatars
+- Abstract gradient background, no images"</code></pre>
+            
+            <h3>Feature Grid</h3>
+            <pre><code>"Create a features section with 6 feature cards:
+- Icon, title, description per card
+- 3 columns on desktop, 2 on tablet, 1 on mobile
+- Subtle hover effect (lift + shadow)
+- Each card links somewhere (use # for now)"</code></pre>
+            
+            <h3>Pricing Table</h3>
+            <pre><code>"Design a pricing section with 3 tiers:
+- Free ($0), Pro ($29/mo), Enterprise (Contact)
+- List of features with check/x marks
+- Pro tier highlighted as 'Most Popular'
+- Annual toggle showing 20% discount
+- CTA buttons: 'Get Started' / 'Start Trial' / 'Contact Sales'"</code></pre>
+            
+            <h3>Dashboard Card</h3>
+            <pre><code>"Create a metrics card showing:
+- Label, value, and % change from last period
+- Positive change = green arrow up
+- Negative change = red arrow down
+- Small sparkline chart
+- Click expands to detailed view"</code></pre>
+            
+            <div class="cta-box">
+                <h3>Master v0 Prompting</h3>
+                <p>The better your prompts, the better your results. Start practicing today.</p>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a>
+            </div>
+            
+            <h2>Conclusion</h2>
+            <p>Effective prompting is a skill that improves with practice. Start with clear, structured prompts that specify the component, its elements, behaviors, and style. Iterate with focused follow-ups rather than rewriting from scratch.</p>
+            
+            <p>Remember: v0 is powerful but not psychic. The more clearly you communicate your vision, the better it can build it for you. Save prompts that work well, build your own library, and refine your prompting style over time.</p>
+        </article>
+        
+        <footer>
+            <p>&copy; 2026 v0 Guide. Not affiliated with Vercel.</p>
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Full-Stack Apps with v0: Complete Guide (2026) | v0 Guide</title>
+    <meta name="description" content="Learn to build complete full-stack applications with v0. From frontend UI to backend APIs, databases, and authentication - master end-to-end app development.">
+    <meta name="keywords" content="v0 full stack, v0 backend, v0 api routes, v0 server actions, build apps with v0">
+    <link rel="canonical" href="https://v0-guide.com/blog/v0-full-stack-apps-guide/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Build Full-Stack Apps with v0: Complete Guide">
+    <meta property="og:description" content="Learn to build complete full-stack applications with v0.">
+    <meta property="og:url" content="https://v0-guide.com/blog/v0-full-stack-apps-guide/">
+    <meta property="og:site_name" content="v0 Guide">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Build Full-Stack Apps with v0: Complete Guide">
+    <meta name="twitter:description" content="Learn to build complete full-stack applications with v0.">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Build Full-Stack Apps with v0: Complete Guide (2026)",
+        "description": "Learn to build complete full-stack applications with v0.",
+        "datePublished": "2026-04-06",
+        "dateModified": "2026-04-06",
+        "author": {"@type": "Organization", "name": "v0 Guide"},
+        "publisher": {"@type": "Organization", "name": "v0 Guide"},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://v0-guide.com/blog/v0-full-stack-apps-guide/"}
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #a1a1aa; --ac: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.8; }
+        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+        .nav { position: sticky; top: 0; z-index: 50; background: rgba(3,3,3,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--brd); }
+        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.5rem; }
+        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); text-decoration: none; }
+        .cta { display: inline-flex; padding: 0.6rem 1.2rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.875rem; }
+        .breadcrumb { padding: 1rem 0; font-size: 0.875rem; color: var(--mt); }
+        .breadcrumb a { color: var(--mt); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--tx); }
+        article { padding: 2rem 0 4rem; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(16,185,129,0.1); color: var(--ac); border: 1px solid rgba(16,185,129,0.2); border-radius: 9999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+        .meta { color: var(--mt); font-size: 0.875rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--brd); }
+        h2 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-top: 1rem; }
+        h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+        p { color: var(--mt); margin-bottom: 1.25rem; font-size: 1.0625rem; }
+        ul, ol { color: var(--mt); margin: 1rem 0 1.5rem 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+        strong { color: var(--tx); font-weight: 600; }
+        a { color: var(--ac); }
+        .highlight { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .highlight h4 { color: var(--tx); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .cta-box { text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(6,182,212,0.1)); border: 1px solid var(--brd); border-radius: 16px; margin: 3rem 0; }
+        .cta-box h3 { margin-bottom: 0.75rem; }
+        .cta-box p { margin-bottom: 1.5rem; }
+        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer p { font-size: 0.875rem; }
+        .toc { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .toc h4 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; color: var(--mt); }
+        .toc ul { margin: 0; list-style: none; }
+        .toc li { margin-bottom: 0.5rem; }
+        .toc a { color: var(--mt); text-decoration: none; font-size: 0.9375rem; }
+        .toc a:hover { color: var(--ac); }
+        pre { background: var(--sf); border: 1px solid var(--brd); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1rem 0; }
+        code { font-family: 'Monaco', 'Consolas', monospace; font-size: 0.875rem; color: var(--ac); }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-wrap">
+            <a href="/">&#9650; v0 Guide</a>
+            <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a>
+        </div>
+    </nav>
+    
+    <main class="wrap">
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Full-Stack Apps Guide
+        </div>
+        
+        <article>
+            <span class="badge">Full-Stack</span>
+            <h1>Build Full-Stack Apps with v0: Complete Guide</h1>
+            <p class="meta">Updated April 6, 2026 &bull; 18 min read</p>
+            
+            <div class="toc">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#introduction">What is Full-Stack v0?</a></li>
+                    <li><a href="#architecture">Application Architecture</a></li>
+                    <li><a href="#server-actions">Server Actions</a></li>
+                    <li><a href="#api-routes">API Routes</a></li>
+                    <li><a href="#database">Database Integration</a></li>
+                    <li><a href="#authentication">Authentication</a></li>
+                    <li><a href="#example">Complete Example: Task Manager</a></li>
+                </ul>
+            </div>
+            
+            <h2 id="introduction">What is Full-Stack v0?</h2>
+            <p>v0 has evolved from a UI component generator to a <strong>complete full-stack development platform</strong>. You can now build entire applications with frontend, backend, database, and authentication&mdash;all through natural language prompts and AI assistance.</p>
+            
+            <p>Full-stack v0 generates Next.js applications using the App Router, which provides:</p>
+            <ul>
+                <li><strong>Server Components:</strong> Components that render on the server for better performance</li>
+                <li><strong>Server Actions:</strong> Backend functions called directly from components</li>
+                <li><strong>API Routes:</strong> REST endpoints for external integrations</li>
+                <li><strong>Database connections:</strong> Direct integration with Postgres, Supabase, etc.</li>
+            </ul>
+            
+            <div class="highlight">
+                <h4>What You Can Build</h4>
+                <ul>
+                    <li>SaaS applications with user accounts</li>
+                    <li>E-commerce stores with payments</li>
+                    <li>Content management systems</li>
+                    <li>Internal business tools</li>
+                    <li>Real-time collaborative apps</li>
+                </ul>
+            </div>
+            
+            <h2 id="architecture">Application Architecture</h2>
+            <p>v0 generates applications following Next.js best practices:</p>
+            
+            <h3>Project Structure</h3>
+            <pre><code>my-app/
+├── app/
+│   ├── layout.tsx        # Root layout
+│   ├── page.tsx          # Homepage
+│   ├── api/              # API routes
+│   │   └── users/
+│   │       └── route.ts  # REST endpoint
+│   ├── dashboard/
+│   │   └── page.tsx      # Dashboard page
+│   └── actions/          # Server actions
+│       └── user-actions.ts
+├── components/
+│   └── ui/               # UI components
+├── lib/
+│   ├── db.ts             # Database client
+│   └── auth.ts           # Auth helpers
+└── types/
+    └── index.ts          # TypeScript types</code></pre>
+            
+            <h3>Data Flow</h3>
+            <ol>
+                <li><strong>User interacts</strong> with UI component</li>
+                <li><strong>Server Action</strong> or API route is called</li>
+                <li><strong>Backend logic</strong> validates and processes</li>
+                <li><strong>Database</strong> is queried or updated</li>
+                <li><strong>Response</strong> flows back to UI</li>
+                <li><strong>UI updates</strong> with new data</li>
+            </ol>
+            
+            <h2 id="server-actions">Server Actions</h2>
+            <p>Server Actions are the modern way to handle form submissions and mutations in Next.js. v0 generates them automatically.</p>
+            
+            <h3>Creating a Server Action</h3>
+            <p>Prompt v0:</p>
+            <pre><code>"Create a contact form that saves submissions 
+to the database with name, email, and message"</code></pre>
+            
+            <p>v0 generates:</p>
+            <pre><code>// app/actions/contact-actions.ts
+'use server'
+
+import { db } from '@/lib/db'
+import { z } from 'zod'
+import { revalidatePath } from 'next/cache'
+
+const contactSchema = z.object({
+  name: z.string().min(2),
+  email: z.string().email(),
+  message: z.string().min(10)
+})
+
+export async function submitContact(formData: FormData) {
+  const validated = contactSchema.parse({
+    name: formData.get('name'),
+    email: formData.get('email'),
+    message: formData.get('message')
+  })
+
+  await db.contact.create({
+    data: validated
+  })
+
+  revalidatePath('/contact')
+  return { success: true }
+}</code></pre>
+            
+            <h3>Using Server Actions in Components</h3>
+            <pre><code>// components/contact-form.tsx
+import { submitContact } from '@/app/actions/contact-actions'
+
+export function ContactForm() {
+  return (
+    &lt;form action={submitContact}&gt;
+      &lt;input name="name" placeholder="Your name" /&gt;
+      &lt;input name="email" type="email" placeholder="Email" /&gt;
+      &lt;textarea name="message" placeholder="Message" /&gt;
+      &lt;button type="submit"&gt;Send&lt;/button&gt;
+    &lt;/form&gt;
+  )
+}</code></pre>
+            
+            <div class="highlight">
+                <h4>Server Action Benefits</h4>
+                <ul>
+                    <li>No separate API endpoint needed</li>
+                    <li>Type-safe from frontend to backend</li>
+                    <li>Automatic form handling</li>
+                    <li>Works without JavaScript (progressive enhancement)</li>
+                </ul>
+            </div>
+            
+            <h2 id="api-routes">API Routes</h2>
+            <p>For REST APIs or webhooks, v0 generates API routes:</p>
+            
+            <h3>Creating an API Route</h3>
+            <p>Prompt:</p>
+            <pre><code>"Create a REST API for products with GET all, 
+GET by id, POST create, PUT update, DELETE"</code></pre>
+            
+            <p>v0 generates:</p>
+            <pre><code>// app/api/products/route.ts
+import { NextResponse } from 'next/server'
+import { db } from '@/lib/db'
+
+export async function GET() {
+  const products = await db.product.findMany()
+  return NextResponse.json(products)
+}
+
+export async function POST(request: Request) {
+  const body = await request.json()
+  const product = await db.product.create({ data: body })
+  return NextResponse.json(product, { status: 201 })
+}
+
+// app/api/products/[id]/route.ts
+export async function GET(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
+  const product = await db.product.findUnique({
+    where: { id: params.id }
+  })
+  if (!product) {
+    return NextResponse.json(
+      { error: 'Not found' },
+      { status: 404 }
+    )
+  }
+  return NextResponse.json(product)
+}</code></pre>
+            
+            <h2 id="database">Database Integration</h2>
+            <p>v0 supports multiple database providers and generates appropriate code for each.</p>
+            
+            <h3>Setting Up Database</h3>
+            <ol>
+                <li>In v0 settings, connect your database (Vercel Postgres, Supabase, etc.)</li>
+                <li>Describe your data model in prompts</li>
+                <li>v0 generates schema and queries</li>
+            </ol>
+            
+            <h3>Example: E-commerce Schema</h3>
+            <p>Prompt:</p>
+            <pre><code>"Set up database schema for an e-commerce store 
+with products (name, price, description, stock), 
+categories, and orders with line items"</code></pre>
+            
+            <p>v0 generates Drizzle or Prisma schema and all necessary queries.</p>
+            
+            <h3>Query Patterns</h3>
+            <pre><code>// Fetch with relations
+const ordersWithItems = await db.order.findMany({
+  include: {
+    items: {
+      include: { product: true }
+    },
+    user: true
+  }
+})
+
+// Aggregations
+const salesByCategory = await db.orderItem.groupBy({
+  by: ['categoryId'],
+  _sum: { total: true }
+})</code></pre>
+            
+            <h2 id="authentication">Authentication</h2>
+            <p>v0 can generate authentication flows using NextAuth.js or Clerk.</p>
+            
+            <h3>Adding Auth with NextAuth</h3>
+            <p>Prompt:</p>
+            <pre><code>"Add authentication with email/password and 
+Google OAuth. Include sign up, sign in, and 
+password reset flows"</code></pre>
+            
+            <p>v0 generates:</p>
+            <ul>
+                <li>NextAuth configuration</li>
+                <li>Sign in/sign up pages</li>
+                <li>Protected route middleware</li>
+                <li>Session handling hooks</li>
+            </ul>
+            
+            <h3>Protecting Routes</h3>
+            <pre><code>// middleware.ts
+import { withAuth } from 'next-auth/middleware'
+
+export default withAuth({
+  pages: {
+    signIn: '/auth/signin'
+  }
+})
+
+export const config = {
+  matcher: ['/dashboard/:path*', '/settings/:path*']
+}</code></pre>
+            
+            <h3>Using Session in Components</h3>
+            <pre><code>import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth'
+
+export default async function DashboardPage() {
+  const session = await getServerSession(authOptions)
+  
+  if (!session) {
+    redirect('/auth/signin')
+  }
+  
+  return &lt;div&gt;Welcome, {session.user.name}&lt;/div&gt;
+}</code></pre>
+            
+            <h2 id="example">Complete Example: Task Manager</h2>
+            <p>Let's walk through building a complete task management app with v0.</p>
+            
+            <h3>Step 1: Describe the Application</h3>
+            <pre><code>"Build a task management app where users can:
+- Sign up and log in
+- Create projects
+- Add tasks to projects with due dates and priority
+- Mark tasks complete
+- Filter and sort tasks
+Use Vercel Postgres for the database"</code></pre>
+            
+            <h3>Step 2: v0 Generates the Foundation</h3>
+            <p>v0 creates:</p>
+            <ul>
+                <li>Database schema for users, projects, tasks</li>
+                <li>Authentication setup</li>
+                <li>Dashboard layout</li>
+                <li>Project and task CRUD operations</li>
+            </ul>
+            
+            <h3>Step 3: Refine with Follow-ups</h3>
+            <pre><code>"Add drag-and-drop to reorder tasks"
+"Make the task list update in real-time"
+"Add a calendar view for tasks with due dates"</code></pre>
+            
+            <h3>Step 4: Polish the UI</h3>
+            <p>Use Design Mode to adjust colors, spacing, and animations without prompts.</p>
+            
+            <h3>Step 5: Deploy</h3>
+            <p>One-click deploy to Vercel with automatic database connection.</p>
+            
+            <div class="highlight">
+                <h4>Full-Stack Prompt Tips</h4>
+                <ul>
+                    <li><strong>Start with data model:</strong> Describe entities and relationships first</li>
+                    <li><strong>Specify auth needs:</strong> What users can do, role-based access</li>
+                    <li><strong>Include validation:</strong> "Validate email format and require password strength"</li>
+                    <li><strong>Think about errors:</strong> "Handle network errors gracefully with retry"</li>
+                </ul>
+            </div>
+            
+            <div class="cta-box">
+                <h3>Build Your Full-Stack App Today</h3>
+                <p>From idea to production in hours, not weeks.</p>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Start Building &rarr;</a>
+            </div>
+            
+            <h2>Conclusion</h2>
+            <p>v0's full-stack capabilities represent a paradigm shift in application development. What previously required separate frontend and backend developers, database administrators, and DevOps engineers can now be prototyped and built by a single person using natural language.</p>
+            
+            <p>The key is to think holistically&mdash;describe your application's data, users, and functionality clearly, and let v0 generate the entire stack. Iterate with focused prompts, refine with Design Mode, and deploy with one click. Full-stack development has never been more accessible.</p>
+        </article>
+        
+        <footer>
+            <p>&copy; 2026 v0 Guide. Not affiliated with Vercel.</p>
+        </footer>
+    </main>
+</body>
+</html>

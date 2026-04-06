@@ -36,3 +36,4 @@ User-agent: MJ12bot
 Disallow: /
 
 Sitemap: https://v0-guide.com/sitemap.xml
+/sitemap-index.xml

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v0 Security Best Practices: Build Secure Apps (2026) | v0 Guide</title>
+    <meta name="description" content="Security guide for v0 applications. Learn about authentication, data protection, API security, environment variables, and production security hardening.">
+    <meta name="keywords" content="v0 security, v0 authentication, v0 api security, secure v0 apps, v0 best practices">
+    <link rel="canonical" href="https://v0-guide.com/blog/v0-security-best-practices/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="v0 Security Best Practices: Build Secure Apps">
+    <meta property="og:description" content="Security guide for v0 applications and production hardening.">
+    <meta property="og:url" content="https://v0-guide.com/blog/v0-security-best-practices/">
+    <meta property="og:site_name" content="v0 Guide">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="v0 Security Best Practices: Build Secure Apps">
+    <meta name="twitter:description" content="Security guide for v0 applications and production hardening.">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "v0 Security Best Practices: Build Secure Apps (2026)",
+        "description": "Security guide for v0 applications and production hardening.",
+        "datePublished": "2026-04-06",
+        "dateModified": "2026-04-06",
+        "author": {"@type": "Organization", "name": "v0 Guide"},
+        "publisher": {"@type": "Organization", "name": "v0 Guide"},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://v0-guide.com/blog/v0-security-best-practices/"}
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #a1a1aa; --ac: #10b981; --warn: #f59e0b; --err: #ef4444; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.8; }
+        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+        .nav { position: sticky; top: 0; z-index: 50; background: rgba(3,3,3,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--brd); }
+        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.5rem; }
+        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); text-decoration: none; }
+        .cta { display: inline-flex; padding: 0.6rem 1.2rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.875rem; }
+        .breadcrumb { padding: 1rem 0; font-size: 0.875rem; color: var(--mt); }
+        .breadcrumb a { color: var(--mt); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--tx); }
+        article { padding: 2rem 0 4rem; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(16,185,129,0.1); color: var(--ac); border: 1px solid rgba(16,185,129,0.2); border-radius: 9999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+        .meta { color: var(--mt); font-size: 0.875rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--brd); }
+        h2 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-top: 1rem; }
+        h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+        p { color: var(--mt); margin-bottom: 1.25rem; font-size: 1.0625rem; }
+        ul, ol { color: var(--mt); margin: 1rem 0 1.5rem 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+        strong { color: var(--tx); font-weight: 600; }
+        a { color: var(--ac); }
+        .highlight { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .highlight h4 { color: var(--tx); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .warning { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.3); }
+        .warning h4 { color: var(--warn); }
+        .danger { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.3); }
+        .danger h4 { color: var(--err); }
+        .cta-box { text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(6,182,212,0.1)); border: 1px solid var(--brd); border-radius: 16px; margin: 3rem 0; }
+        .cta-box h3 { margin-bottom: 0.75rem; }
+        .cta-box p { margin-bottom: 1.5rem; }
+        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
+        footer p { font-size: 0.875rem; }
+        .toc { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .toc h4 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; color: var(--mt); }
+        .toc ul { margin: 0; list-style: none; }
+        .toc li { margin-bottom: 0.5rem; }
+        .toc a { color: var(--mt); text-decoration: none; font-size: 0.9375rem; }
+        .toc a:hover { color: var(--ac); }
+        pre { background: var(--sf); border: 1px solid var(--brd); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1rem 0; }
+        code { font-family: 'Monaco', 'Consolas', monospace; font-size: 0.875rem; color: var(--ac); }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-wrap">
+            <a href="/">&#9650; v0 Guide</a>
+            <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a>
+        </div>
+    </nav>
+    
+    <main class="wrap">
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Security Best Practices
+        </div>
+        
+        <article>
+            <span class="badge">Security</span>
+            <h1>v0 Security Best Practices: Build Secure Apps</h1>
+            <p class="meta">Updated April 6, 2026 &bull; 14 min read</p>
+            
+            <div class="toc">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#overview">Security Overview</a></li>
+                    <li><a href="#authentication">Authentication Security</a></li>
+                    <li><a href="#data">Data Protection</a></li>
+                    <li><a href="#api">API Security</a></li>
+                    <li><a href="#environment">Environment Variables</a></li>
+                    <li><a href="#input">Input Validation</a></li>
+                    <li><a href="#production">Production Hardening</a></li>
+                    <li><a href="#checklist">Security Checklist</a></li>
+                </ul>
+            </div>
+            
+            <h2 id="overview">Security Overview</h2>
+            <p>When building applications with v0, security should be a priority from the start. While v0 generates secure code by default, <strong>understanding security principles</strong> helps you make informed decisions and catch potential issues.</p>
+            
+            <div class="highlight warning">
+                <h4>Important Note</h4>
+                <p>AI-generated code should always be reviewed before production deployment. While v0 follows security best practices, the context of your specific application may introduce unique security requirements.</p>
+            </div>
+            
+            <h2 id="authentication">Authentication Security</h2>
+            
+            <h3>Use Established Auth Libraries</h3>
+            <p>v0 integrates with proven authentication solutions:</p>
+            <ul>
+                <li><strong>NextAuth.js:</strong> Flexible, open-source authentication</li>
+                <li><strong>Clerk:</strong> Drop-in auth with user management</li>
+                <li><strong>Supabase Auth:</strong> If using Supabase for database</li>
+            </ul>
+            
+            <p>When prompting for auth, specify your preference:</p>
+            <pre><code>"Add authentication using NextAuth with 
+email/password and Google OAuth"</code></pre>
+            
+            <h3>Password Security</h3>
+            <p>v0 generates code that:</p>
+            <ul>
+                <li>Hashes passwords using bcrypt or Argon2</li>
+                <li>Never stores plaintext passwords</li>
+                <li>Enforces minimum password requirements</li>
+            </ul>
+            
+            <h3>Session Management</h3>
+            <ul>
+                <li>Use HTTP-only cookies for session tokens</li>
+                <li>Implement session expiration</li>
+                <li>Provide "sign out of all devices" option</li>
+                <li>Rotate session tokens after authentication</li>
+            </ul>
+            
+            <div class="highlight">
+                <h4>Prompting for Secure Auth</h4>
+                <pre><code>"Add auth with:
+- Password minimum 8 chars with number and special char
+- Account lockout after 5 failed attempts
+- Email verification required
+- Session expires after 7 days of inactivity"</code></pre>
+            </div>
+            
+            <h2 id="data">Data Protection</h2>
+            
+            <h3>Database Security</h3>
+            <ul>
+                <li><strong>Use parameterized queries:</strong> v0 generates code using ORMs that prevent SQL injection</li>
+                <li><strong>Implement row-level security:</strong> Ensure users can only access their own data</li>
+                <li><strong>Encrypt sensitive fields:</strong> PII, payment info, health data</li>
+            </ul>
+            
+            <h3>Row-Level Security Example</h3>
+            <p>Prompt v0:</p>
+            <pre><code>"Add row-level security so users can only 
+view and edit their own projects"</code></pre>
+            
+            <p>v0 generates middleware and database policies to enforce this.</p>
+            
+            <h3>Data Encryption</h3>
+            <ul>
+                <li><strong>At rest:</strong> Use database-level encryption</li>
+                <li><strong>In transit:</strong> HTTPS enforced (automatic on Vercel)</li>
+                <li><strong>Application-level:</strong> Encrypt sensitive fields before storage</li>
+            </ul>
+            
+            <div class="highlight danger">
+                <h4>Never Store in Plain Text</h4>
+                <ul>
+                    <li>Passwords (hash with bcrypt/Argon2)</li>
+                    <li>API keys (use environment variables)</li>
+                    <li>Credit card numbers (use Stripe/payment processor)</li>
+                    <li>Social security numbers (encrypt if must store)</li>
+                </ul>
+            </div>
+            
+            <h2 id="api">API Security</h2>
+            
+            <h3>Authentication for APIs</h3>
+            <p>All API routes should verify authentication:</p>
+            <pre><code>// app/api/projects/route.ts
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth'
+
+export async function GET() {
+  const session = await getServerSession(authOptions)
+  
+  if (!session) {
+    return Response.json(
+      { error: 'Unauthorized' },
+      { status: 401 }
+    )
+  }
+  
+  // Proceed with authenticated request
+}</code></pre>
+            
+            <h3>Rate Limiting</h3>
+            <p>Prevent abuse with rate limiting:</p>
+            <pre><code>"Add rate limiting to the API: 
+100 requests per minute per IP for public endpoints,
+1000 requests per minute for authenticated users"</code></pre>
+            
+            <h3>Input Validation</h3>
+            <p>Always validate API inputs:</p>
+            <pre><code>import { z } from 'zod'
+
+const createProjectSchema = z.object({
+  name: z.string().min(1).max(100),
+  description: z.string().max(500).optional()
+})
+
+export async function POST(request: Request) {
+  const body = await request.json()
+  const validated = createProjectSchema.parse(body)
+  // Use validated data
+}</code></pre>
+            
+            <h3>CORS Configuration</h3>
+            <p>Configure CORS for external API access:</p>
+            <pre><code>"Configure CORS to allow requests only from 
+https://myapp.com and https://admin.myapp.com"</code></pre>
+            
+            <h2 id="environment">Environment Variables</h2>
+            
+            <h3>What to Store in Environment Variables</h3>
+            <ul>
+                <li>Database connection strings</li>
+                <li>API keys and secrets</li>
+                <li>OAuth client IDs and secrets</li>
+                <li>Encryption keys</li>
+                <li>Third-party service credentials</li>
+            </ul>
+            
+            <h3>Environment Variable Best Practices</h3>
+            <ol>
+                <li><strong>Never commit secrets:</strong> Add .env to .gitignore</li>
+                <li><strong>Use .env.example:</strong> Document required variables without values</li>
+                <li><strong>Separate by environment:</strong> Different values for dev/staging/prod</li>
+                <li><strong>Rotate regularly:</strong> Change secrets periodically</li>
+            </ol>
+            
+            <div class="highlight warning">
+                <h4>Client vs. Server Variables</h4>
+                <p>In Next.js, only variables prefixed with <code>NEXT_PUBLIC_</code> are exposed to the browser. Never prefix secrets with NEXT_PUBLIC_.</p>
+                <pre><code># Server-only (safe)
+DATABASE_URL=postgres://...
+STRIPE_SECRET_KEY=sk_live_...
+
+# Exposed to browser (be careful)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_...</code></pre>
+            </div>
+            
+            <h2 id="input">Input Validation</h2>
+            
+            <h3>Client-Side Validation</h3>
+            <p>For better UX, but never rely solely on it:</p>
+            <pre><code>&lt;input 
+  type="email" 
+  required 
+  pattern="[^@]+@[^@]+\.[^@]+"
+/&gt;</code></pre>
+            
+            <h3>Server-Side Validation</h3>
+            <p>Always validate on the server:</p>
+            <pre><code>import { z } from 'zod'
+
+const userSchema = z.object({
+  email: z.string().email(),
+  name: z.string().min(2).max(50),
+  age: z.number().int().positive().max(150).optional()
+})</code></pre>
+            
+            <h3>Sanitization</h3>
+            <p>Prevent XSS by sanitizing user content:</p>
+            <ul>
+                <li>React auto-escapes JSX (safe by default)</li>
+                <li>Be careful with <code>dangerouslySetInnerHTML</code></li>
+                <li>Sanitize markdown/HTML content with DOMPurify</li>
+            </ul>
+            
+            <h2 id="production">Production Hardening</h2>
+            
+            <h3>Security Headers</h3>
+            <p>Configure security headers in next.config.js:</p>
+            <pre><code>const securityHeaders = [
+  {
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on'
+  },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains'
+  },
+  {
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN'
+  },
+  {
+    key: 'X-Content-Type-Options',
+    value: 'nosniff'
+  },
+  {
+    key: 'Referrer-Policy',
+    value: 'origin-when-cross-origin'
+  }
+]</code></pre>
+            
+            <h3>Content Security Policy</h3>
+            <p>Define allowed sources for scripts, styles, and other resources to prevent XSS attacks.</p>
+            
+            <h3>Error Handling</h3>
+            <ul>
+                <li>Don't expose stack traces in production</li>
+                <li>Log errors server-side for debugging</li>
+                <li>Show generic error messages to users</li>
+            </ul>
+            
+            <h2 id="checklist">Security Checklist</h2>
+            
+            <h3>Before Launch</h3>
+            <ul>
+                <li>All secrets in environment variables</li>
+                <li>HTTPS enforced on all pages</li>
+                <li>Authentication required for sensitive routes</li>
+                <li>Input validation on all forms and APIs</li>
+                <li>Rate limiting on API endpoints</li>
+                <li>Security headers configured</li>
+                <li>Error messages don't leak sensitive info</li>
+            </ul>
+            
+            <h3>Ongoing</h3>
+            <ul>
+                <li>Keep dependencies updated</li>
+                <li>Monitor for unusual activity</li>
+                <li>Regular security audits</li>
+                <li>Rotate secrets periodically</li>
+                <li>Review access permissions</li>
+            </ul>
+            
+            <div class="cta-box">
+                <h3>Build Secure Applications</h3>
+                <p>Start with v0's secure defaults and follow these best practices.</p>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Start Building &rarr;</a>
+            </div>
+            
+            <h2>Conclusion</h2>
+            <p>Security is a continuous process, not a one-time task. v0 provides a solid foundation with secure code generation, but understanding these principles ensures your applications protect user data and resist attacks.</p>
+            
+            <p>Always review generated code, especially for authentication and data handling. When in doubt, prompt v0 for more secure implementations, and don't hesitate to consult security professionals for applications handling sensitive data.</p>
+        </article>
+        
+        <footer>
+            <p>&copy; 2026 v0 Guide. Not affiliated with Vercel.</p>
+        </footer>
+    </main>
+</body>
+</html>
