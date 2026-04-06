@@ -37,291 +37,336 @@
     </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #a1a1aa; --ac: #10b981; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.8; }
-        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
-        .nav { position: sticky; top: 0; z-index: 50; background: rgba(3,3,3,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--brd); }
-        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.5rem; }
-        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); text-decoration: none; }
-        .cta { display: inline-flex; padding: 0.6rem 1.2rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.875rem; }
-        .breadcrumb { padding: 1rem 0; font-size: 0.875rem; color: var(--mt); }
-        .breadcrumb a { color: var(--mt); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--tx); }
-        article { padding: 2rem 0 4rem; }
-        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(16,185,129,0.1); color: var(--ac); border: 1px solid rgba(16,185,129,0.2); border-radius: 9999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
-        h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
-        .meta { color: var(--mt); font-size: 0.875rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--brd); }
-        h2 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-top: 1rem; }
-        h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 0.75rem; }
-        p { color: var(--mt); margin-bottom: 1.25rem; font-size: 1.0625rem; }
-        ul, ol { color: var(--mt); margin: 1rem 0 1.5rem 1.5rem; }
-        li { margin-bottom: 0.5rem; }
-        strong { color: var(--tx); font-weight: 600; }
-        a { color: var(--ac); }
-        .highlight { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
-        .highlight h4 { color: var(--tx); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .cta-box { text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(6,182,212,0.1)); border: 1px solid var(--brd); border-radius: 16px; margin: 3rem 0; }
-        .cta-box h3 { margin-bottom: 0.75rem; }
-        .cta-box p { margin-bottom: 1.5rem; }
-        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
-        footer p { font-size: 0.875rem; }
-        .toc { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
-        .toc h4 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; color: var(--mt); }
-        .toc ul { margin: 0; list-style: none; }
-        .toc li { margin-bottom: 0.5rem; }
-        .toc a { color: var(--mt); text-decoration: none; font-size: 0.9375rem; }
-        .toc a:hover { color: var(--ac); }
-        .kbd { display: inline-block; padding: 0.2rem 0.5rem; background: var(--sf); border: 1px solid var(--brd); border-radius: 4px; font-family: monospace; font-size: 0.875rem; }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-wrap">
-            <a href="/">&#9650; v0 Guide</a>
-            <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">&#9650; v0 Guide</a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="/blog/" class="nav-link nav-dropdown-trigger">
+                        Guides
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/what-is-v0-2026/" class="nav-dropdown-item">What is v0?</a>
+                        <a href="/blog/v0-pricing-guide-2026/" class="nav-dropdown-item">Pricing Guide</a>
+                        <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="nav-dropdown-item">v0 vs Cursor vs Bolt</a>
+                        <a href="/blog/v0-prompt-engineering-masterclass/" class="nav-dropdown-item">Prompt Engineering</a>
+                        <a href="/blog/v0-deployment-guide-2026/" class="nav-dropdown-item">Deployment Guide</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Features
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-agentic-features-guide/" class="nav-dropdown-item">Agentic Features</a>
+                        <a href="/blog/v0-figma-to-code/" class="nav-dropdown-item">Figma to Code</a>
+                        <a href="/blog/v0-design-mode-tutorial/" class="nav-dropdown-item">Design Mode</a>
+                        <a href="/blog/v0-github-integration-guide/" class="nav-dropdown-item">GitHub Integration</a>
+                        <a href="/blog/v0-database-integrations/" class="nav-dropdown-item">Database Integrations</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Use Cases
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-for-developers/" class="nav-dropdown-item">For Developers</a>
+                        <a href="/blog/v0-for-designers/" class="nav-dropdown-item">For Designers</a>
+                        <a href="/blog/v0-for-product-managers/" class="nav-dropdown-item">For Product Managers</a>
+                        <a href="/blog/v0-full-stack-apps-guide/" class="nav-dropdown-item">Full-Stack Apps</a>
+                        <a href="/blog/v0-enterprise-features/" class="nav-dropdown-item">Enterprise Features</a>
+                    </div>
+                </div>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
         </div>
     </nav>
-    
-    <main class="wrap">
-        <div class="breadcrumb">
-            <a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Design Mode Tutorial
-        </div>
+
+    <main class="container-narrow">
+        <div class="breadcrumbs"><a href="/">Home</a> <span>&rsaquo;</span> <a href="/blog/">Blog</a> <span>&rsaquo;</span> Design Mode Tutorial</div>
         
         <article>
-            <span class="badge">Tutorial</span>
-            <h1>v0 Design Mode: Visual Editing Without Code</h1>
-            <p class="meta">Updated April 6, 2026 &bull; 11 min read</p>
+            <header class="article-header">
+                <span class="article-category">Tutorial</span>
+                <h1 class="article-title">v0 Design Mode: Visual Editing Without Code</h1>
+                <p class="article-meta">Updated April 6, 2026 &bull; 11 min read</p>
+            </header>
             
-            <div class="toc">
-                <h4>Table of Contents</h4>
+            <div class="article-content">
+                <div class="info-box">
+                    <h4>Table of Contents</h4>
+                    <ul>
+                        <li><a href="#introduction">What is Design Mode?</a></li>
+                        <li><a href="#accessing">Accessing Design Mode</a></li>
+                        <li><a href="#selection">Selecting Elements</a></li>
+                        <li><a href="#styling">Styling Controls</a></li>
+                        <li><a href="#layout">Layout Adjustments</a></li>
+                        <li><a href="#typography">Typography Panel</a></li>
+                        <li><a href="#colors">Color & Effects</a></li>
+                        <li><a href="#tips">Pro Tips</a></li>
+                    </ul>
+                </div>
+                
+                <h2 id="introduction">What is Design Mode?</h2>
+                <p>Design Mode is v0's <strong>visual editing interface</strong> that lets you modify generated components without touching code. Think of it as a hybrid between a design tool like Figma and a development environment&mdash;you can click on elements, adjust their properties, and see changes instantly.</p>
+                
+                <p>This feature is particularly powerful for:</p>
                 <ul>
-                    <li><a href="#introduction">What is Design Mode?</a></li>
-                    <li><a href="#accessing">Accessing Design Mode</a></li>
-                    <li><a href="#selection">Selecting Elements</a></li>
-                    <li><a href="#styling">Styling Controls</a></li>
-                    <li><a href="#layout">Layout Adjustments</a></li>
-                    <li><a href="#typography">Typography Panel</a></li>
-                    <li><a href="#colors">Color & Effects</a></li>
-                    <li><a href="#tips">Pro Tips</a></li>
+                    <li><strong>Non-developers:</strong> Adjust designs without learning CSS</li>
+                    <li><strong>Rapid iteration:</strong> Tweak layouts faster than typing prompts</li>
+                    <li><strong>Precision work:</strong> Fine-tune spacing and alignment exactly</li>
+                    <li><strong>Design handoff:</strong> Designers can polish developer-generated code</li>
                 </ul>
+                
+                <div class="info-box">
+                    <h4>Design Mode vs. Prompt Mode</h4>
+                    <p>Use <strong>prompts</strong> for structural changes ("add a sidebar") and <strong>Design Mode</strong> for visual refinements (adjusting spacing, colors, fonts). They work best in combination.</p>
+                </div>
+                
+                <h2 id="accessing">Accessing Design Mode</h2>
+                
+                <h3>Toggle Design Mode</h3>
+                <ol>
+                    <li>Open any v0 project with generated components</li>
+                    <li>Look for the <strong>Design Mode toggle</strong> in the toolbar (paintbrush icon)</li>
+                    <li>Click to switch from Code view to Design view</li>
+                    <li>The preview panel becomes interactive</li>
+                </ol>
+                
+                <h3>Keyboard Shortcuts</h3>
+                <ul>
+                    <li><kbd>D</kbd> - Toggle Design Mode</li>
+                    <li><kbd>Esc</kbd> - Deselect current element</li>
+                    <li><kbd>Cmd/Ctrl + Z</kbd> - Undo changes</li>
+                    <li><kbd>Cmd/Ctrl + Shift + Z</kbd> - Redo changes</li>
+                </ul>
+                
+                <h2 id="selection">Selecting Elements</h2>
+                <p>In Design Mode, clicking on elements in the preview selects them for editing:</p>
+                
+                <h3>Selection Indicators</h3>
+                <ul>
+                    <li><strong>Blue outline:</strong> Shows the selected element's boundaries</li>
+                    <li><strong>Orange guides:</strong> Display padding and margin</li>
+                    <li><strong>Handles:</strong> Appear for resizing where applicable</li>
+                </ul>
+                
+                <h3>Selection Tips</h3>
+                <ul>
+                    <li><strong>Click:</strong> Select an element</li>
+                    <li><strong>Double-click:</strong> Select nested element (go deeper)</li>
+                    <li><strong>Hold Alt + click:</strong> Select parent container</li>
+                    <li><strong>Layers panel:</strong> Click layer name for precise selection</li>
+                </ul>
+                
+                <p>The <strong>Layers panel</strong> on the left shows the component hierarchy. This is especially useful for selecting invisible containers or elements hidden behind others.</p>
+                
+                <h2 id="styling">Styling Controls</h2>
+                <p>When an element is selected, the right sidebar displays styling controls organized into panels:</p>
+                
+                <h3>Quick Actions Bar</h3>
+                <p>At the top of the styling panel, you'll find quick actions:</p>
+                <ul>
+                    <li><strong>Duplicate:</strong> Create a copy of the element</li>
+                    <li><strong>Delete:</strong> Remove the element</li>
+                    <li><strong>Copy styles:</strong> Copy styling to paste elsewhere</li>
+                    <li><strong>Reset:</strong> Revert to original generated styles</li>
+                </ul>
+                
+                <h3>Dimension Controls</h3>
+                <ul>
+                    <li><strong>Width:</strong> Set fixed, percentage, or auto width</li>
+                    <li><strong>Height:</strong> Set fixed, percentage, or auto height</li>
+                    <li><strong>Min/Max:</strong> Constrain dimensions for responsiveness</li>
+                    <li><strong>Aspect ratio:</strong> Lock proportions</li>
+                </ul>
+                
+                <h2 id="layout">Layout Adjustments</h2>
+                
+                <h3>Flexbox Controls</h3>
+                <p>For flex containers, Design Mode provides intuitive controls:</p>
+                <ul>
+                    <li><strong>Direction:</strong> Row or column layout</li>
+                    <li><strong>Justify:</strong> Main axis alignment (start, center, between, etc.)</li>
+                    <li><strong>Align:</strong> Cross axis alignment</li>
+                    <li><strong>Gap:</strong> Spacing between children</li>
+                    <li><strong>Wrap:</strong> Allow items to wrap to next line</li>
+                </ul>
+                
+                <div class="info-box info-box-success">
+                    <h4>Visual Alignment</h4>
+                    <p>The alignment controls show a visual grid. Click the position where you want content aligned rather than remembering CSS property names.</p>
+                </div>
+                
+                <h3>Spacing (Margin & Padding)</h3>
+                <p>The spacing control shows a box model visualization:</p>
+                <ul>
+                    <li><strong>Outer box (orange):</strong> Margin values</li>
+                    <li><strong>Inner box (green):</strong> Padding values</li>
+                    <li><strong>Click on a side:</strong> Edit that specific value</li>
+                    <li><strong>Link icon:</strong> Apply same value to all sides</li>
+                </ul>
+                
+                <h3>Position</h3>
+                <ul>
+                    <li><strong>Static:</strong> Normal document flow</li>
+                    <li><strong>Relative:</strong> Offset from normal position</li>
+                    <li><strong>Absolute:</strong> Position relative to parent</li>
+                    <li><strong>Fixed:</strong> Position relative to viewport</li>
+                    <li><strong>Sticky:</strong> Hybrid relative/fixed behavior</li>
+                </ul>
+                
+                <h2 id="typography">Typography Panel</h2>
+                <p>For text elements, the typography panel provides comprehensive controls:</p>
+                
+                <h3>Font Properties</h3>
+                <ul>
+                    <li><strong>Font family:</strong> Choose from available fonts</li>
+                    <li><strong>Font size:</strong> Adjust with slider or input</li>
+                    <li><strong>Font weight:</strong> Light to black (100-900)</li>
+                    <li><strong>Line height:</strong> Spacing between lines</li>
+                    <li><strong>Letter spacing:</strong> Space between characters</li>
+                </ul>
+                
+                <h3>Text Alignment</h3>
+                <ul>
+                    <li>Left, center, right, justify options</li>
+                    <li>Vertical alignment for inline/flex contexts</li>
+                </ul>
+                
+                <h3>Text Decoration</h3>
+                <ul>
+                    <li><strong>Underline, strikethrough, overline</strong></li>
+                    <li><strong>Text transform:</strong> Uppercase, lowercase, capitalize</li>
+                    <li><strong>Font style:</strong> Italic, normal</li>
+                </ul>
+                
+                <h2 id="colors">Color & Effects</h2>
+                
+                <h3>Color Picker</h3>
+                <p>v0's color picker includes:</p>
+                <ul>
+                    <li><strong>Gradient picker:</strong> Visual hue/saturation selector</li>
+                    <li><strong>Opacity slider:</strong> Adjust transparency</li>
+                    <li><strong>Hex input:</strong> Enter exact color codes</li>
+                    <li><strong>RGB/HSL toggle:</strong> Switch color formats</li>
+                    <li><strong>Eyedropper:</strong> Sample colors from the design</li>
+                </ul>
+                
+                <h3>Background Options</h3>
+                <ul>
+                    <li><strong>Solid color:</strong> Single background color</li>
+                    <li><strong>Gradient:</strong> Linear or radial gradients</li>
+                    <li><strong>Image:</strong> Background image with positioning</li>
+                </ul>
+                
+                <h3>Effects</h3>
+                <ul>
+                    <li><strong>Box shadow:</strong> Add depth with shadows</li>
+                    <li><strong>Border radius:</strong> Round corners</li>
+                    <li><strong>Border:</strong> Style, width, and color</li>
+                    <li><strong>Opacity:</strong> Element transparency</li>
+                    <li><strong>Blur:</strong> Background blur effects</li>
+                </ul>
+                
+                <div class="info-box">
+                    <h4>Shadow Presets</h4>
+                    <p>v0 includes shadow presets (sm, md, lg, xl, 2xl) that match Tailwind's defaults. Use these for consistent shadow styling across your project.</p>
+                </div>
+                
+                <h2 id="tips">Pro Tips for Design Mode</h2>
+                
+                <h3>1. Use the Layers Panel</h3>
+                <p>The layers panel is your best friend for complex components. It shows the full hierarchy and lets you:</p>
+                <ul>
+                    <li>Select deeply nested elements easily</li>
+                    <li>Rename layers for clarity</li>
+                    <li>Toggle visibility to work on hidden elements</li>
+                    <li>Lock layers to prevent accidental edits</li>
+                </ul>
+                
+                <h3>2. Combine with Prompts</h3>
+                <p>Make structural changes with prompts, then refine in Design Mode:</p>
+                <ol>
+                    <li>Prompt: "Add a testimonial section with 3 cards"</li>
+                    <li>Design Mode: Adjust card spacing, colors, typography</li>
+                    <li>Prompt: "Add hover effects to the cards"</li>
+                    <li>Design Mode: Fine-tune the hover state colors</li>
+                </ol>
+                
+                <h3>3. Check Responsive Behavior</h3>
+                <p>Use the viewport toggle to see how your changes look on different screen sizes. Design Mode edits can be made per-breakpoint for responsive designs.</p>
+                
+                <h3>4. Copy Styles Between Elements</h3>
+                <p>Select an element, copy its styles, then paste onto another element. This ensures consistency without manually matching values.</p>
+                
+                <h3>5. Use the Reset Option</h3>
+                <p>If you've made many changes and want to start over, the "Reset" option reverts an element to its original generated state while keeping other modifications.</p>
+                
+                <h3>6. Inspect Generated Code</h3>
+                <p>After making Design Mode changes, switch to Code view to see the Tailwind classes v0 generated. This is a great way to learn Tailwind CSS.</p>
+                
+                <div class="cta-section">
+                    <h3>Try Design Mode Today</h3>
+                    <p>Experience visual editing that generates production-ready code.</p>
+                    <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Open v0 &rarr;</a>
+                </div>
+                
+                <h2>Conclusion</h2>
+                <p>Design Mode transforms v0 from a prompt-based generator into a full-featured design tool. By combining natural language prompts for structure with visual editing for refinement, you get the best of both worlds&mdash;rapid creation and precise control.</p>
+                
+                <p>Whether you're a designer who wants to adjust AI-generated code or a developer who prefers visual tweaking for styling, Design Mode streamlines the workflow from concept to polished component.</p>
             </div>
-            
-            <h2 id="introduction">What is Design Mode?</h2>
-            <p>Design Mode is v0's <strong>visual editing interface</strong> that lets you modify generated components without touching code. Think of it as a hybrid between a design tool like Figma and a development environment&mdash;you can click on elements, adjust their properties, and see changes instantly.</p>
-            
-            <p>This feature is particularly powerful for:</p>
-            <ul>
-                <li><strong>Non-developers:</strong> Adjust designs without learning CSS</li>
-                <li><strong>Rapid iteration:</strong> Tweak layouts faster than typing prompts</li>
-                <li><strong>Precision work:</strong> Fine-tune spacing and alignment exactly</li>
-                <li><strong>Design handoff:</strong> Designers can polish developer-generated code</li>
-            </ul>
-            
-            <div class="highlight">
-                <h4>Design Mode vs. Prompt Mode</h4>
-                <p>Use <strong>prompts</strong> for structural changes ("add a sidebar") and <strong>Design Mode</strong> for visual refinements (adjusting spacing, colors, fonts). They work best in combination.</p>
-            </div>
-            
-            <h2 id="accessing">Accessing Design Mode</h2>
-            
-            <h3>Toggle Design Mode</h3>
-            <ol>
-                <li>Open any v0 project with generated components</li>
-                <li>Look for the <strong>Design Mode toggle</strong> in the toolbar (paintbrush icon)</li>
-                <li>Click to switch from Code view to Design view</li>
-                <li>The preview panel becomes interactive</li>
-            </ol>
-            
-            <h3>Keyboard Shortcuts</h3>
-            <ul>
-                <li><span class="kbd">D</span> - Toggle Design Mode</li>
-                <li><span class="kbd">Esc</span> - Deselect current element</li>
-                <li><span class="kbd">Cmd/Ctrl + Z</span> - Undo changes</li>
-                <li><span class="kbd">Cmd/Ctrl + Shift + Z</span> - Redo changes</li>
-            </ul>
-            
-            <h2 id="selection">Selecting Elements</h2>
-            <p>In Design Mode, clicking on elements in the preview selects them for editing:</p>
-            
-            <h3>Selection Indicators</h3>
-            <ul>
-                <li><strong>Blue outline:</strong> Shows the selected element's boundaries</li>
-                <li><strong>Orange guides:</strong> Display padding and margin</li>
-                <li><strong>Handles:</strong> Appear for resizing where applicable</li>
-            </ul>
-            
-            <h3>Selection Tips</h3>
-            <ul>
-                <li><strong>Click:</strong> Select an element</li>
-                <li><strong>Double-click:</strong> Select nested element (go deeper)</li>
-                <li><strong>Hold Alt + click:</strong> Select parent container</li>
-                <li><strong>Layers panel:</strong> Click layer name for precise selection</li>
-            </ul>
-            
-            <p>The <strong>Layers panel</strong> on the left shows the component hierarchy. This is especially useful for selecting invisible containers or elements hidden behind others.</p>
-            
-            <h2 id="styling">Styling Controls</h2>
-            <p>When an element is selected, the right sidebar displays styling controls organized into panels:</p>
-            
-            <h3>Quick Actions Bar</h3>
-            <p>At the top of the styling panel, you'll find quick actions:</p>
-            <ul>
-                <li><strong>Duplicate:</strong> Create a copy of the element</li>
-                <li><strong>Delete:</strong> Remove the element</li>
-                <li><strong>Copy styles:</strong> Copy styling to paste elsewhere</li>
-                <li><strong>Reset:</strong> Revert to original generated styles</li>
-            </ul>
-            
-            <h3>Dimension Controls</h3>
-            <ul>
-                <li><strong>Width:</strong> Set fixed, percentage, or auto width</li>
-                <li><strong>Height:</strong> Set fixed, percentage, or auto height</li>
-                <li><strong>Min/Max:</strong> Constrain dimensions for responsiveness</li>
-                <li><strong>Aspect ratio:</strong> Lock proportions</li>
-            </ul>
-            
-            <h2 id="layout">Layout Adjustments</h2>
-            
-            <h3>Flexbox Controls</h3>
-            <p>For flex containers, Design Mode provides intuitive controls:</p>
-            <ul>
-                <li><strong>Direction:</strong> Row or column layout</li>
-                <li><strong>Justify:</strong> Main axis alignment (start, center, between, etc.)</li>
-                <li><strong>Align:</strong> Cross axis alignment</li>
-                <li><strong>Gap:</strong> Spacing between children</li>
-                <li><strong>Wrap:</strong> Allow items to wrap to next line</li>
-            </ul>
-            
-            <div class="highlight">
-                <h4>Visual Alignment</h4>
-                <p>The alignment controls show a visual grid. Click the position where you want content aligned rather than remembering CSS property names.</p>
-            </div>
-            
-            <h3>Spacing (Margin & Padding)</h3>
-            <p>The spacing control shows a box model visualization:</p>
-            <ul>
-                <li><strong>Outer box (orange):</strong> Margin values</li>
-                <li><strong>Inner box (green):</strong> Padding values</li>
-                <li><strong>Click on a side:</strong> Edit that specific value</li>
-                <li><strong>Link icon:</strong> Apply same value to all sides</li>
-            </ul>
-            
-            <h3>Position</h3>
-            <ul>
-                <li><strong>Static:</strong> Normal document flow</li>
-                <li><strong>Relative:</strong> Offset from normal position</li>
-                <li><strong>Absolute:</strong> Position relative to parent</li>
-                <li><strong>Fixed:</strong> Position relative to viewport</li>
-                <li><strong>Sticky:</strong> Hybrid relative/fixed behavior</li>
-            </ul>
-            
-            <h2 id="typography">Typography Panel</h2>
-            <p>For text elements, the typography panel provides comprehensive controls:</p>
-            
-            <h3>Font Properties</h3>
-            <ul>
-                <li><strong>Font family:</strong> Choose from available fonts</li>
-                <li><strong>Font size:</strong> Adjust with slider or input</li>
-                <li><strong>Font weight:</strong> Light to black (100-900)</li>
-                <li><strong>Line height:</strong> Spacing between lines</li>
-                <li><strong>Letter spacing:</strong> Space between characters</li>
-            </ul>
-            
-            <h3>Text Alignment</h3>
-            <ul>
-                <li>Left, center, right, justify options</li>
-                <li>Vertical alignment for inline/flex contexts</li>
-            </ul>
-            
-            <h3>Text Decoration</h3>
-            <ul>
-                <li><strong>Underline, strikethrough, overline</strong></li>
-                <li><strong>Text transform:</strong> Uppercase, lowercase, capitalize</li>
-                <li><strong>Font style:</strong> Italic, normal</li>
-            </ul>
-            
-            <h2 id="colors">Color & Effects</h2>
-            
-            <h3>Color Picker</h3>
-            <p>v0's color picker includes:</p>
-            <ul>
-                <li><strong>Gradient picker:</strong> Visual hue/saturation selector</li>
-                <li><strong>Opacity slider:</strong> Adjust transparency</li>
-                <li><strong>Hex input:</strong> Enter exact color codes</li>
-                <li><strong>RGB/HSL toggle:</strong> Switch color formats</li>
-                <li><strong>Eyedropper:</strong> Sample colors from the design</li>
-            </ul>
-            
-            <h3>Background Options</h3>
-            <ul>
-                <li><strong>Solid color:</strong> Single background color</li>
-                <li><strong>Gradient:</strong> Linear or radial gradients</li>
-                <li><strong>Image:</strong> Background image with positioning</li>
-            </ul>
-            
-            <h3>Effects</h3>
-            <ul>
-                <li><strong>Box shadow:</strong> Add depth with shadows</li>
-                <li><strong>Border radius:</strong> Round corners</li>
-                <li><strong>Border:</strong> Style, width, and color</li>
-                <li><strong>Opacity:</strong> Element transparency</li>
-                <li><strong>Blur:</strong> Background blur effects</li>
-            </ul>
-            
-            <div class="highlight">
-                <h4>Shadow Presets</h4>
-                <p>v0 includes shadow presets (sm, md, lg, xl, 2xl) that match Tailwind's defaults. Use these for consistent shadow styling across your project.</p>
-            </div>
-            
-            <h2 id="tips">Pro Tips for Design Mode</h2>
-            
-            <h3>1. Use the Layers Panel</h3>
-            <p>The layers panel is your best friend for complex components. It shows the full hierarchy and lets you:</p>
-            <ul>
-                <li>Select deeply nested elements easily</li>
-                <li>Rename layers for clarity</li>
-                <li>Toggle visibility to work on hidden elements</li>
-                <li>Lock layers to prevent accidental edits</li>
-            </ul>
-            
-            <h3>2. Combine with Prompts</h3>
-            <p>Make structural changes with prompts, then refine in Design Mode:</p>
-            <ol>
-                <li>Prompt: "Add a testimonial section with 3 cards"</li>
-                <li>Design Mode: Adjust card spacing, colors, typography</li>
-                <li>Prompt: "Add hover effects to the cards"</li>
-                <li>Design Mode: Fine-tune the hover state colors</li>
-            </ol>
-            
-            <h3>3. Check Responsive Behavior</h3>
-            <p>Use the viewport toggle to see how your changes look on different screen sizes. Design Mode edits can be made per-breakpoint for responsive designs.</p>
-            
-            <h3>4. Copy Styles Between Elements</h3>
-            <p>Select an element, copy its styles, then paste onto another element. This ensures consistency without manually matching values.</p>
-            
-            <h3>5. Use the Reset Option</h3>
-            <p>If you've made many changes and want to start over, the "Reset" option reverts an element to its original generated state while keeping other modifications.</p>
-            
-            <h3>6. Inspect Generated Code</h3>
-            <p>After making Design Mode changes, switch to Code view to see the Tailwind classes v0 generated. This is a great way to learn Tailwind CSS.</p>
-            
-            <div class="cta-box">
-                <h3>Try Design Mode Today</h3>
-                <p>Experience visual editing that generates production-ready code.</p>
-                <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Open v0 &rarr;</a>
-            </div>
-            
-            <h2>Conclusion</h2>
-            <p>Design Mode transforms v0 from a prompt-based generator into a full-featured design tool. By combining natural language prompts for structure with visual editing for refinement, you get the best of both worlds&mdash;rapid creation and precise control.</p>
-            
-            <p>Whether you're a designer who wants to adjust AI-generated code or a developer who prefers visual tweaking for styling, Design Mode streamlines the workflow from concept to polished component.</p>
         </article>
-        
-        <footer>
-            <p>&copy; 2026 v0 Guide. Not affiliated with Vercel.</p>
-        </footer>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Guides</h4>
+                    <a href="/blog/what-is-v0-2026/">What is v0?</a>
+                    <a href="/blog/v0-pricing-guide-2026/">Pricing Guide</a>
+                    <a href="/blog/v0-vs-cursor-vs-bolt-2026/">v0 vs Competitors</a>
+                    <a href="/blog/v0-prompt-engineering-masterclass/">Prompt Engineering</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <a href="/blog/v0-agentic-features-guide/">Agentic Features</a>
+                    <a href="/blog/v0-figma-to-code/">Figma to Code</a>
+                    <a href="/blog/v0-design-mode-tutorial/">Design Mode</a>
+                    <a href="/blog/v0-github-integration-guide/">GitHub Integration</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Use Cases</h4>
+                    <a href="/blog/v0-for-developers/">For Developers</a>
+                    <a href="/blog/v0-for-designers/">For Designers</a>
+                    <a href="/blog/v0-for-product-managers/">For PMs</a>
+                    <a href="/blog/v0-enterprise-features/">Enterprise</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="/blog/">All Guides</a>
+                    <a href="https://v0.dev" target="_blank" rel="noopener">v0.dev</a>
+                    <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>v0 Guide</strong> &mdash; The definitive resource for Vercel v0</p>
+                <p>&copy; 2026 v0 Guide. Independent reviews and tutorials. Not affiliated with Vercel.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

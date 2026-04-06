@@ -37,209 +37,253 @@
     </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #a1a1aa; --ac: #10b981; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.8; }
-        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
-        .nav { position: sticky; top: 0; z-index: 50; background: rgba(3,3,3,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--brd); }
-        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.5rem; }
-        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); text-decoration: none; }
-        .cta { display: inline-flex; padding: 0.6rem 1.2rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.875rem; }
-        .breadcrumb { padding: 1rem 0; font-size: 0.875rem; color: var(--mt); }
-        .breadcrumb a { color: var(--mt); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--tx); }
-        article { padding: 2rem 0 4rem; }
-        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(16,185,129,0.1); color: var(--ac); border: 1px solid rgba(16,185,129,0.2); border-radius: 9999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
-        h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
-        .meta { color: var(--mt); font-size: 0.875rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--brd); }
-        h2 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-top: 1rem; }
-        h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 0.75rem; }
-        p { color: var(--mt); margin-bottom: 1.25rem; font-size: 1.0625rem; }
-        ul, ol { color: var(--mt); margin: 1rem 0 1.5rem 1.5rem; }
-        li { margin-bottom: 0.5rem; }
-        strong { color: var(--tx); font-weight: 600; }
-        a { color: var(--ac); }
-        .highlight { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
-        .highlight h4 { color: var(--tx); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .cta-box { text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(6,182,212,0.1)); border: 1px solid var(--brd); border-radius: 16px; margin: 3rem 0; }
-        .cta-box h3 { margin-bottom: 0.75rem; }
-        .cta-box p { margin-bottom: 1.5rem; }
-        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
-        footer p { font-size: 0.875rem; }
-        .toc { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
-        .toc h4 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; color: var(--mt); }
-        .toc ul { margin: 0; list-style: none; }
-        .toc li { margin-bottom: 0.5rem; }
-        .toc a { color: var(--mt); text-decoration: none; font-size: 0.9375rem; }
-        .toc a:hover { color: var(--ac); }
-        pre { background: var(--sf); border: 1px solid var(--brd); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1rem 0; }
-        code { font-family: 'Monaco', 'Consolas', monospace; font-size: 0.875rem; color: var(--ac); }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-wrap">
-            <a href="/">&#9650; v0 Guide</a>
-            <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">&#9650; v0 Guide</a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="/blog/" class="nav-link nav-dropdown-trigger">
+                        Guides
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/what-is-v0-2026/" class="nav-dropdown-item">What is v0?</a>
+                        <a href="/blog/v0-pricing-guide-2026/" class="nav-dropdown-item">Pricing Guide</a>
+                        <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="nav-dropdown-item">v0 vs Cursor vs Bolt</a>
+                        <a href="/blog/v0-prompt-engineering-masterclass/" class="nav-dropdown-item">Prompt Engineering</a>
+                        <a href="/blog/v0-deployment-guide-2026/" class="nav-dropdown-item">Deployment Guide</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Features
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-agentic-features-guide/" class="nav-dropdown-item">Agentic Features</a>
+                        <a href="/blog/v0-figma-to-code/" class="nav-dropdown-item">Figma to Code</a>
+                        <a href="/blog/v0-design-mode-tutorial/" class="nav-dropdown-item">Design Mode</a>
+                        <a href="/blog/v0-github-integration-guide/" class="nav-dropdown-item">GitHub Integration</a>
+                        <a href="/blog/v0-database-integrations/" class="nav-dropdown-item">Database Integrations</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Use Cases
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-for-developers/" class="nav-dropdown-item">For Developers</a>
+                        <a href="/blog/v0-for-designers/" class="nav-dropdown-item">For Designers</a>
+                        <a href="/blog/v0-for-product-managers/" class="nav-dropdown-item">For Product Managers</a>
+                        <a href="/blog/v0-full-stack-apps-guide/" class="nav-dropdown-item">Full-Stack Apps</a>
+                        <a href="/blog/v0-enterprise-features/" class="nav-dropdown-item">Enterprise Features</a>
+                    </div>
+                </div>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
         </div>
     </nav>
-    
-    <main class="wrap">
-        <div class="breadcrumb">
-            <a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Figma to Code
-        </div>
+
+    <main class="container-narrow">
+        <div class="breadcrumbs"><a href="/">Home</a> <span>&rsaquo;</span> <a href="/blog/">Blog</a> <span>&rsaquo;</span> Figma to Code</div>
         
         <article>
-            <span class="badge">Integration</span>
-            <h1>v0 Figma to Code: Convert Designs to React Instantly</h1>
-            <p class="meta">Updated April 6, 2026 &bull; 10 min read</p>
+            <header class="article-header">
+                <span class="article-category">Integration</span>
+                <h1 class="article-title">v0 Figma to Code: Convert Designs to React Instantly</h1>
+                <p class="article-meta">Updated April 6, 2026 &bull; 10 min read</p>
+            </header>
             
-            <div class="toc">
-                <h4>Table of Contents</h4>
+            <div class="article-content">
+                <div class="info-box">
+                    <h4>Table of Contents</h4>
+                    <ul>
+                        <li><a href="#introduction">Introduction to Figma Integration</a></li>
+                        <li><a href="#how-it-works">How v0 Figma Import Works</a></li>
+                        <li><a href="#step-by-step">Step-by-Step Guide</a></li>
+                        <li><a href="#best-practices">Design Best Practices</a></li>
+                        <li><a href="#limitations">Current Limitations</a></li>
+                        <li><a href="#tips">Pro Tips for Better Results</a></li>
+                    </ul>
+                </div>
+                
+                <h2 id="introduction">Introduction to Figma Integration</h2>
+                <p>One of v0's most powerful features is its ability to <strong>convert Figma designs directly into production-ready React code</strong>. This bridges the gap between design and development, allowing teams to move from mockups to working prototypes in minutes rather than days.</p>
+                
+                <p>The Figma integration uses advanced AI to understand your design's visual hierarchy, component structure, and interactive patterns. It then generates clean, semantic code that follows modern React best practices with Tailwind CSS styling.</p>
+                
+                <div class="info-box">
+                    <h4>Key Benefits</h4>
+                    <ul>
+                        <li><strong>Speed:</strong> Convert complex designs in seconds</li>
+                        <li><strong>Accuracy:</strong> AI understands spacing, typography, and layout intent</li>
+                        <li><strong>Clean Code:</strong> Generates maintainable, component-based architecture</li>
+                        <li><strong>Iteration:</strong> Refine with natural language prompts</li>
+                    </ul>
+                </div>
+                
+                <h2 id="how-it-works">How v0 Figma Import Works</h2>
+                <p>v0's Figma integration works through a multi-step AI analysis process:</p>
+                
+                <ol>
+                    <li><strong>Design Parsing:</strong> v0 analyzes your Figma selection, extracting layers, groups, auto-layout settings, and component relationships</li>
+                    <li><strong>Visual Understanding:</strong> The AI interprets visual hierarchy, identifying headers, navigation, content areas, and interactive elements</li>
+                    <li><strong>Code Generation:</strong> Based on its analysis, v0 generates React components with appropriate Tailwind classes</li>
+                    <li><strong>Optimization:</strong> The code is optimized for responsiveness and accessibility</li>
+                </ol>
+                
+                <h2 id="step-by-step">Step-by-Step Guide</h2>
+                
+                <h3>Method 1: Copy from Figma</h3>
+                <ol>
+                    <li>Open your Figma file and select the frame or component you want to convert</li>
+                    <li>Press <code>Cmd/Ctrl + C</code> to copy the selection</li>
+                    <li>Go to <a href="https://v0.dev" target="_blank">v0.dev</a> and create a new project</li>
+                    <li>Paste your design with <code>Cmd/Ctrl + V</code></li>
+                    <li>v0 will analyze the design and generate code</li>
+                </ol>
+                
+                <h3>Method 2: Upload Screenshot</h3>
+                <ol>
+                    <li>Export your Figma design as PNG or take a screenshot</li>
+                    <li>In v0, click the image upload button or drag-and-drop the file</li>
+                    <li>Add context with a prompt like "Convert this dashboard design to React"</li>
+                    <li>Review and iterate on the generated code</li>
+                </ol>
+                
+                <h3>Method 3: Share Figma Link</h3>
+                <ol>
+                    <li>In Figma, right-click your frame and select "Copy link to selection"</li>
+                    <li>Paste the link directly in v0's chat</li>
+                    <li>v0 will fetch and analyze the design automatically</li>
+                </ol>
+                
+                <div class="info-box info-box-success">
+                    <h4>Pro Tip</h4>
+                    <p>For best results, use Figma's Auto Layout feature in your designs. v0 translates auto-layout rules directly into Flexbox/Grid CSS, resulting in more accurate responsive behavior.</p>
+                </div>
+                
+                <h2 id="best-practices">Design Best Practices for v0 Conversion</h2>
+                
+                <h3>Structure Your Figma File Well</h3>
                 <ul>
-                    <li><a href="#introduction">Introduction to Figma Integration</a></li>
-                    <li><a href="#how-it-works">How v0 Figma Import Works</a></li>
-                    <li><a href="#step-by-step">Step-by-Step Guide</a></li>
-                    <li><a href="#best-practices">Design Best Practices</a></li>
-                    <li><a href="#limitations">Current Limitations</a></li>
-                    <li><a href="#tips">Pro Tips for Better Results</a></li>
+                    <li><strong>Use meaningful layer names:</strong> "Header," "ProductCard," "NavButton" instead of "Frame 1," "Group 2"</li>
+                    <li><strong>Organize with frames:</strong> Group related elements into logical frames</li>
+                    <li><strong>Leverage components:</strong> Figma components translate well to React components</li>
+                    <li><strong>Apply Auto Layout:</strong> v0 converts auto-layout to proper Flexbox</li>
                 </ul>
-            </div>
-            
-            <h2 id="introduction">Introduction to Figma Integration</h2>
-            <p>One of v0's most powerful features is its ability to <strong>convert Figma designs directly into production-ready React code</strong>. This bridges the gap between design and development, allowing teams to move from mockups to working prototypes in minutes rather than days.</p>
-            
-            <p>The Figma integration uses advanced AI to understand your design's visual hierarchy, component structure, and interactive patterns. It then generates clean, semantic code that follows modern React best practices with Tailwind CSS styling.</p>
-            
-            <div class="highlight">
-                <h4>Key Benefits</h4>
+                
+                <h3>Typography and Spacing</h3>
                 <ul>
-                    <li><strong>Speed:</strong> Convert complex designs in seconds</li>
-                    <li><strong>Accuracy:</strong> AI understands spacing, typography, and layout intent</li>
-                    <li><strong>Clean Code:</strong> Generates maintainable, component-based architecture</li>
-                    <li><strong>Iteration:</strong> Refine with natural language prompts</li>
+                    <li>Use consistent type scales that map to Tailwind's defaults (16px base)</li>
+                    <li>Apply 4px or 8px spacing grids for cleaner utility class mapping</li>
+                    <li>Define text styles in Figma for consistent heading hierarchy</li>
                 </ul>
-            </div>
-            
-            <h2 id="how-it-works">How v0 Figma Import Works</h2>
-            <p>v0's Figma integration works through a multi-step AI analysis process:</p>
-            
-            <ol>
-                <li><strong>Design Parsing:</strong> v0 analyzes your Figma selection, extracting layers, groups, auto-layout settings, and component relationships</li>
-                <li><strong>Visual Understanding:</strong> The AI interprets visual hierarchy, identifying headers, navigation, content areas, and interactive elements</li>
-                <li><strong>Code Generation:</strong> Based on its analysis, v0 generates React components with appropriate Tailwind classes</li>
-                <li><strong>Optimization:</strong> The code is optimized for responsiveness and accessibility</li>
-            </ol>
-            
-            <h2 id="step-by-step">Step-by-Step Guide</h2>
-            
-            <h3>Method 1: Copy from Figma</h3>
-            <ol>
-                <li>Open your Figma file and select the frame or component you want to convert</li>
-                <li>Press <code>Cmd/Ctrl + C</code> to copy the selection</li>
-                <li>Go to <a href="https://v0.dev" target="_blank">v0.dev</a> and create a new project</li>
-                <li>Paste your design with <code>Cmd/Ctrl + V</code></li>
-                <li>v0 will analyze the design and generate code</li>
-            </ol>
-            
-            <h3>Method 2: Upload Screenshot</h3>
-            <ol>
-                <li>Export your Figma design as PNG or take a screenshot</li>
-                <li>In v0, click the image upload button or drag-and-drop the file</li>
-                <li>Add context with a prompt like "Convert this dashboard design to React"</li>
-                <li>Review and iterate on the generated code</li>
-            </ol>
-            
-            <h3>Method 3: Share Figma Link</h3>
-            <ol>
-                <li>In Figma, right-click your frame and select "Copy link to selection"</li>
-                <li>Paste the link directly in v0's chat</li>
-                <li>v0 will fetch and analyze the design automatically</li>
-            </ol>
-            
-            <div class="highlight">
-                <h4>Pro Tip</h4>
-                <p>For best results, use Figma's Auto Layout feature in your designs. v0 translates auto-layout rules directly into Flexbox/Grid CSS, resulting in more accurate responsive behavior.</p>
-            </div>
-            
-            <h2 id="best-practices">Design Best Practices for v0 Conversion</h2>
-            
-            <h3>Structure Your Figma File Well</h3>
-            <ul>
-                <li><strong>Use meaningful layer names:</strong> "Header," "ProductCard," "NavButton" instead of "Frame 1," "Group 2"</li>
-                <li><strong>Organize with frames:</strong> Group related elements into logical frames</li>
-                <li><strong>Leverage components:</strong> Figma components translate well to React components</li>
-                <li><strong>Apply Auto Layout:</strong> v0 converts auto-layout to proper Flexbox</li>
-            </ul>
-            
-            <h3>Typography and Spacing</h3>
-            <ul>
-                <li>Use consistent type scales that map to Tailwind's defaults (16px base)</li>
-                <li>Apply 4px or 8px spacing grids for cleaner utility class mapping</li>
-                <li>Define text styles in Figma for consistent heading hierarchy</li>
-            </ul>
-            
-            <h3>Colors and Effects</h3>
-            <ul>
-                <li>Use a defined color palette that can be mapped to CSS variables</li>
-                <li>Shadows and blurs will be converted to Tailwind shadow utilities</li>
-                <li>Gradients are supported but complex ones may need manual adjustment</li>
-            </ul>
-            
-            <h2 id="limitations">Current Limitations</h2>
-            <p>While v0's Figma integration is powerful, there are some limitations to be aware of:</p>
-            
-            <ul>
-                <li><strong>Complex animations:</strong> Figma prototyping animations don't transfer; you'll need to add motion separately</li>
-                <li><strong>Vector graphics:</strong> Complex illustrations may be simplified or converted to images</li>
-                <li><strong>Interactive states:</strong> Hover states and variants need to be specified via prompts</li>
-                <li><strong>Custom fonts:</strong> Ensure fonts are available as web fonts or specify alternatives</li>
-                <li><strong>Very large designs:</strong> Break complex pages into smaller sections for better results</li>
-            </ul>
-            
-            <h2 id="tips">Pro Tips for Better Results</h2>
-            
-            <h3>1. Provide Context with Your Design</h3>
-            <p>Don't just paste the design silently. Add context:</p>
-            <pre><code>"This is a SaaS pricing page. The cards should be 
+                
+                <h3>Colors and Effects</h3>
+                <ul>
+                    <li>Use a defined color palette that can be mapped to CSS variables</li>
+                    <li>Shadows and blurs will be converted to Tailwind shadow utilities</li>
+                    <li>Gradients are supported but complex ones may need manual adjustment</li>
+                </ul>
+                
+                <h2 id="limitations">Current Limitations</h2>
+                <p>While v0's Figma integration is powerful, there are some limitations to be aware of:</p>
+                
+                <ul>
+                    <li><strong>Complex animations:</strong> Figma prototyping animations don't transfer; you'll need to add motion separately</li>
+                    <li><strong>Vector graphics:</strong> Complex illustrations may be simplified or converted to images</li>
+                    <li><strong>Interactive states:</strong> Hover states and variants need to be specified via prompts</li>
+                    <li><strong>Custom fonts:</strong> Ensure fonts are available as web fonts or specify alternatives</li>
+                    <li><strong>Very large designs:</strong> Break complex pages into smaller sections for better results</li>
+                </ul>
+                
+                <h2 id="tips">Pro Tips for Better Results</h2>
+                
+                <h3>1. Provide Context with Your Design</h3>
+                <p>Don't just paste the design silently. Add context:</p>
+                <pre><code>"This is a SaaS pricing page. The cards should be 
 interactive with hover effects. The middle plan 
 should be highlighted as 'Popular'."</code></pre>
-            
-            <h3>2. Iterate Incrementally</h3>
-            <p>After the initial conversion, use follow-up prompts to refine:</p>
-            <ul>
-                <li>"Make the buttons larger on mobile"</li>
-                <li>"Add a subtle hover animation to the cards"</li>
-                <li>"The spacing between sections should be more generous"</li>
-            </ul>
-            
-            <h3>3. Request Specific Technologies</h3>
-            <p>Guide v0 toward your stack:</p>
-            <pre><code>"Convert this to React with TypeScript and 
+                
+                <h3>2. Iterate Incrementally</h3>
+                <p>After the initial conversion, use follow-up prompts to refine:</p>
+                <ul>
+                    <li>"Make the buttons larger on mobile"</li>
+                    <li>"Add a subtle hover animation to the cards"</li>
+                    <li>"The spacing between sections should be more generous"</li>
+                </ul>
+                
+                <h3>3. Request Specific Technologies</h3>
+                <p>Guide v0 toward your stack:</p>
+                <pre><code>"Convert this to React with TypeScript and 
 shadcn/ui components. Use Framer Motion for 
 the animations."</code></pre>
-            
-            <h3>4. Handle Responsive Design</h3>
-            <p>Figma designs are often for a single viewport. Prompt v0 for responsiveness:</p>
-            <pre><code>"Make this fully responsive. On mobile, stack 
+                
+                <h3>4. Handle Responsive Design</h3>
+                <p>Figma designs are often for a single viewport. Prompt v0 for responsiveness:</p>
+                <pre><code>"Make this fully responsive. On mobile, stack 
 the cards vertically. On tablet, show 2 columns."</code></pre>
-            
-            <div class="cta-box">
-                <h3>Ready to Convert Your Figma Designs?</h3>
-                <p>Start building production-ready React apps from your designs in seconds.</p>
-                <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a>
+                
+                <div class="cta-section">
+                    <h3>Ready to Convert Your Figma Designs?</h3>
+                    <p>Start building production-ready React apps from your designs in seconds.</p>
+                    <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+                </div>
+                
+                <h2>Conclusion</h2>
+                <p>v0's Figma integration represents a significant leap forward in design-to-code workflows. By understanding how v0 interprets designs and following best practices, you can dramatically accelerate your development process while maintaining high-quality, maintainable code.</p>
+                
+                <p>The key is to think of v0 as a collaborative tool&mdash;provide good input designs with clear structure, give context about your intentions, and iterate on the output. With practice, you'll find that what used to take hours of manual coding can now be accomplished in minutes.</p>
             </div>
-            
-            <h2>Conclusion</h2>
-            <p>v0's Figma integration represents a significant leap forward in design-to-code workflows. By understanding how v0 interprets designs and following best practices, you can dramatically accelerate your development process while maintaining high-quality, maintainable code.</p>
-            
-            <p>The key is to think of v0 as a collaborative tool&mdash;provide good input designs with clear structure, give context about your intentions, and iterate on the output. With practice, you'll find that what used to take hours of manual coding can now be accomplished in minutes.</p>
         </article>
-        
-        <footer>
-            <p>&copy; 2026 v0 Guide. Not affiliated with Vercel.</p>
-        </footer>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Guides</h4>
+                    <a href="/blog/what-is-v0-2026/">What is v0?</a>
+                    <a href="/blog/v0-pricing-guide-2026/">Pricing Guide</a>
+                    <a href="/blog/v0-vs-cursor-vs-bolt-2026/">v0 vs Competitors</a>
+                    <a href="/blog/v0-prompt-engineering-masterclass/">Prompt Engineering</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <a href="/blog/v0-agentic-features-guide/">Agentic Features</a>
+                    <a href="/blog/v0-figma-to-code/">Figma to Code</a>
+                    <a href="/blog/v0-design-mode-tutorial/">Design Mode</a>
+                    <a href="/blog/v0-github-integration-guide/">GitHub Integration</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Use Cases</h4>
+                    <a href="/blog/v0-for-developers/">For Developers</a>
+                    <a href="/blog/v0-for-designers/">For Designers</a>
+                    <a href="/blog/v0-for-product-managers/">For PMs</a>
+                    <a href="/blog/v0-enterprise-features/">Enterprise</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="/blog/">All Guides</a>
+                    <a href="https://v0.dev" target="_blank" rel="noopener">v0.dev</a>
+                    <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>v0 Guide</strong> &mdash; The definitive resource for Vercel v0</p>
+                <p>&copy; 2026 v0 Guide. Independent reviews and tutorials. Not affiliated with Vercel.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

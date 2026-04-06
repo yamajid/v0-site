@@ -56,73 +56,80 @@
     </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #a1a1aa; --ac: #10b981; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.8; }
-        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
-        .nav { position: sticky; top: 0; z-index: 50; background: rgba(3,3,3,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--brd); }
-        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.5rem; }
-        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); text-decoration: none; }
-        .cta { display: inline-flex; padding: 0.6rem 1.2rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.875rem; }
-        .breadcrumb { padding: 1rem 0; font-size: 0.875rem; color: var(--mt); }
-        .breadcrumb a { color: var(--mt); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--tx); }
-        article { padding: 2rem 0 4rem; }
-        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(16,185,129,0.1); color: var(--ac); border: 1px solid rgba(16,185,129,0.2); border-radius: 9999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
-        h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
-        .meta { color: var(--mt); font-size: 0.875rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--brd); }
-        h2 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-top: 1rem; }
-        h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: var(--tx); }
-        p { color: var(--mt); margin-bottom: 1.25rem; font-size: 1.0625rem; }
-        ul, ol { color: var(--mt); margin: 1rem 0 1.5rem 1.5rem; }
-        li { margin-bottom: 0.5rem; }
-        strong { color: var(--tx); font-weight: 600; }
-        a { color: var(--ac); }
-        .highlight { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
-        .highlight h4 { color: var(--tx); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .cta-box { text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(6,182,212,0.1)); border: 1px solid var(--brd); border-radius: 16px; margin: 3rem 0; }
-        .cta-box h3 { margin-bottom: 0.75rem; font-size: 1.25rem; }
-        .cta-box p { margin-bottom: 1.5rem; }
-        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
-        footer p { font-size: 0.875rem; }
-        .toc { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
-        .toc h4 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; color: var(--mt); }
-        .toc ul { margin: 0; list-style: none; }
-        .toc li { margin-bottom: 0.5rem; }
-        .toc a { color: var(--mt); text-decoration: none; font-size: 0.9375rem; }
-        .toc a:hover { color: var(--ac); }
-        .faq-item { border-bottom: 1px solid var(--brd); padding: 1.5rem 0; }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-q { color: var(--tx); font-weight: 600; margin-bottom: 0.75rem; }
-        .faq-a { color: var(--mt); }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-wrap">
-            <a href="/">&#9650; v0 Guide</a>
-            <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">&#9650; v0 Guide</a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="/blog/" class="nav-link nav-dropdown-trigger">
+                        Guides
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/what-is-v0-2026/" class="nav-dropdown-item">What is v0?</a>
+                        <a href="/blog/v0-pricing-guide-2026/" class="nav-dropdown-item">Pricing Guide</a>
+                        <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="nav-dropdown-item">v0 vs Cursor vs Bolt</a>
+                        <a href="/blog/v0-prompt-engineering-masterclass/" class="nav-dropdown-item">Prompt Engineering</a>
+                        <a href="/blog/v0-deployment-guide-2026/" class="nav-dropdown-item">Deployment Guide</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Features
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-agentic-features-guide/" class="nav-dropdown-item">Agentic Features</a>
+                        <a href="/blog/v0-figma-to-code/" class="nav-dropdown-item">Figma to Code</a>
+                        <a href="/blog/v0-design-mode-tutorial/" class="nav-dropdown-item">Design Mode</a>
+                        <a href="/blog/v0-github-integration-guide/" class="nav-dropdown-item">GitHub Integration</a>
+                        <a href="/blog/v0-database-integrations/" class="nav-dropdown-item">Database Integrations</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Use Cases
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-for-developers/" class="nav-dropdown-item">For Developers</a>
+                        <a href="/blog/v0-for-designers/" class="nav-dropdown-item">For Designers</a>
+                        <a href="/blog/v0-for-product-managers/" class="nav-dropdown-item">For Product Managers</a>
+                        <a href="/blog/v0-full-stack-apps-guide/" class="nav-dropdown-item">Full-Stack Apps</a>
+                        <a href="/blog/v0-enterprise-features/" class="nav-dropdown-item">Enterprise Features</a>
+                    </div>
+                </div>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
         </div>
     </nav>
-    
-    <main class="wrap">
-        <div class="breadcrumb">
+
+    <main class="container-narrow">
+        <div class="breadcrumbs">
             <a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; FAQs Complete Guide
         </div>
         
-        <article>
-            <span class="badge">FAQ</span>
-            <h1>v0 FAQs: Complete Guide to Common Questions</h1>
-            <p class="meta">Updated April 6, 2026 &bull; 12 min read</p>
+        <article class="article-content">
+            <header class="article-header">
+                <span class="article-category">FAQ</span>
+                <h1 class="article-title">v0 FAQs: Complete Guide to Common Questions</h1>
+                <p class="article-meta">Updated April 6, 2026 &bull; 12 min read</p>
+            </header>
             
-            <div class="toc">
+            <div class="info-box">
                 <h4>Jump to Section</h4>
                 <ul>
                     <li><a href="#general">General Questions</a></li>
-                    <li><a href="#pricing">Pricing & Plans</a></li>
-                    <li><a href="#features">Features & Capabilities</a></li>
-                    <li><a href="#code">Code & Export</a></li>
+                    <li><a href="#pricing">Pricing &amp; Plans</a></li>
+                    <li><a href="#features">Features &amp; Capabilities</a></li>
+                    <li><a href="#code">Code &amp; Export</a></li>
                     <li><a href="#technical">Technical Questions</a></li>
                     <li><a href="#troubleshooting">Troubleshooting</a></li>
                 </ul>
@@ -130,171 +137,218 @@
             
             <h2 id="general">General Questions</h2>
             
-            <div class="faq-item">
-                <p class="faq-q">What is v0?</p>
-                <p class="faq-a">v0 is an AI-powered development tool by Vercel that generates React and Next.js code from text descriptions and images. It can create UI components, full pages, and even full-stack applications with database integration.</p>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <p class="faq-q">What is v0?</p>
+                    <p class="faq-a">v0 is an AI-powered development tool by Vercel that generates React and Next.js code from text descriptions and images. It can create UI components, full pages, and even full-stack applications with database integration.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Who makes v0?</p>
+                    <p class="faq-a">v0 is developed by Vercel, the company behind Next.js and the Vercel hosting platform. It's designed to integrate seamlessly with the Vercel ecosystem.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Do I need to know how to code to use v0?</p>
+                    <p class="faq-a">No coding knowledge is required to generate components. However, understanding React basics helps you better customize and extend the generated code. Designers and product managers successfully use v0 for prototyping without writing code.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Is v0 an alternative to Figma?</p>
+                    <p class="faq-a">v0 complements Figma rather than replacing it. You can design in Figma and convert to code with v0, or use v0's Design Mode for visual editing. Many teams use both tools together in their workflow.</p>
+                </div>
             </div>
             
-            <div class="faq-item">
-                <p class="faq-q">Who makes v0?</p>
-                <p class="faq-a">v0 is developed by Vercel, the company behind Next.js and the Vercel hosting platform. It's designed to integrate seamlessly with the Vercel ecosystem.</p>
+            <h2 id="pricing">Pricing &amp; Plans</h2>
+            
+            <div class="faq-section">
+                <div class="faq-item">
+                    <p class="faq-q">Is v0 free to use?</p>
+                    <p class="faq-a">Yes, v0 has a free tier that includes a limited number of generations per month. This is sufficient for trying out the platform and small projects. Paid plans offer more generations and additional features.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">What do paid plans include?</p>
+                    <p class="faq-a">Paid plans (Pro, Team, Enterprise) include more monthly generations, priority processing, advanced features like full-stack capabilities, team collaboration tools, and premium support. Check v0.dev/pricing for current details.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Can I upgrade or downgrade my plan?</p>
+                    <p class="faq-a">Yes, you can change your plan at any time. Upgrades take effect immediately, while downgrades apply at the next billing cycle. Unused generations don't roll over between months.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Is there an annual discount?</p>
+                    <p class="faq-a">Yes, annual plans typically offer a 20% discount compared to monthly billing. Check the current pricing page for exact discounts.</p>
+                </div>
             </div>
             
-            <div class="faq-item">
-                <p class="faq-q">Do I need to know how to code to use v0?</p>
-                <p class="faq-a">No coding knowledge is required to generate components. However, understanding React basics helps you better customize and extend the generated code. Designers and product managers successfully use v0 for prototyping without writing code.</p>
+            <h2 id="features">Features &amp; Capabilities</h2>
+            
+            <div class="faq-section">
+                <div class="faq-item">
+                    <p class="faq-q">What can I build with v0?</p>
+                    <p class="faq-a">v0 can generate UI components, landing pages, dashboards, forms, e-commerce interfaces, blog layouts, documentation sites, and full-stack applications with authentication, database integration, and API routes.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Can v0 convert Figma designs to code?</p>
+                    <p class="faq-a">Yes, you can copy frames from Figma and paste them into v0, or share Figma links. v0 will analyze the design and generate corresponding React code with Tailwind CSS styling.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Does v0 support databases?</p>
+                    <p class="faq-a">Yes, v0 integrates with Vercel Postgres, Supabase, Neon, PlanetScale, and other databases. It can generate database schemas, queries, and full CRUD functionality.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Can v0 add authentication to my app?</p>
+                    <p class="faq-a">Yes, v0 can generate authentication flows using NextAuth.js, Clerk, or Supabase Auth. This includes sign-up, sign-in, password reset, and OAuth providers like Google and GitHub.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">What is Design Mode?</p>
+                    <p class="faq-a">Design Mode is v0's visual editing interface. It lets you click on elements and adjust their properties (colors, spacing, typography) without writing code, similar to design tools like Figma.</p>
+                </div>
             </div>
             
-            <div class="faq-item">
-                <p class="faq-q">Is v0 an alternative to Figma?</p>
-                <p class="faq-a">v0 complements Figma rather than replacing it. You can design in Figma and convert to code with v0, or use v0's Design Mode for visual editing. Many teams use both tools together in their workflow.</p>
-            </div>
+            <h2 id="code">Code &amp; Export</h2>
             
-            <h2 id="pricing">Pricing & Plans</h2>
-            
-            <div class="faq-item">
-                <p class="faq-q">Is v0 free to use?</p>
-                <p class="faq-a">Yes, v0 has a free tier that includes a limited number of generations per month. This is sufficient for trying out the platform and small projects. Paid plans offer more generations and additional features.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">What do paid plans include?</p>
-                <p class="faq-a">Paid plans (Pro, Team, Enterprise) include more monthly generations, priority processing, advanced features like full-stack capabilities, team collaboration tools, and premium support. Check v0.dev/pricing for current details.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Can I upgrade or downgrade my plan?</p>
-                <p class="faq-a">Yes, you can change your plan at any time. Upgrades take effect immediately, while downgrades apply at the next billing cycle. Unused generations don't roll over between months.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Is there an annual discount?</p>
-                <p class="faq-a">Yes, annual plans typically offer a 20% discount compared to monthly billing. Check the current pricing page for exact discounts.</p>
-            </div>
-            
-            <h2 id="features">Features & Capabilities</h2>
-            
-            <div class="faq-item">
-                <p class="faq-q">What can I build with v0?</p>
-                <p class="faq-a">v0 can generate UI components, landing pages, dashboards, forms, e-commerce interfaces, blog layouts, documentation sites, and full-stack applications with authentication, database integration, and API routes.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Can v0 convert Figma designs to code?</p>
-                <p class="faq-a">Yes, you can copy frames from Figma and paste them into v0, or share Figma links. v0 will analyze the design and generate corresponding React code with Tailwind CSS styling.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Does v0 support databases?</p>
-                <p class="faq-a">Yes, v0 integrates with Vercel Postgres, Supabase, Neon, PlanetScale, and other databases. It can generate database schemas, queries, and full CRUD functionality.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Can v0 add authentication to my app?</p>
-                <p class="faq-a">Yes, v0 can generate authentication flows using NextAuth.js, Clerk, or Supabase Auth. This includes sign-up, sign-in, password reset, and OAuth providers like Google and GitHub.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">What is Design Mode?</p>
-                <p class="faq-a">Design Mode is v0's visual editing interface. It lets you click on elements and adjust their properties (colors, spacing, typography) without writing code, similar to design tools like Figma.</p>
-            </div>
-            
-            <h2 id="code">Code & Export</h2>
-            
-            <div class="faq-item">
-                <p class="faq-q">What technologies does v0 generate?</p>
-                <p class="faq-a">v0 generates React components for Next.js applications, styled with Tailwind CSS. It uses TypeScript by default and often incorporates shadcn/ui components for common UI patterns.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Can I use v0 code commercially?</p>
-                <p class="faq-a">Yes, code generated by v0 can be used for commercial projects. You own the output and can use it in client work, products, or any other commercial application.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">How do I export code from v0?</p>
-                <p class="faq-a">You can export code by: 1) Copying directly from the Code panel, 2) Pushing to a GitHub repository, 3) Deploying directly to Vercel, or 4) Downloading as a ZIP file.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Can I use v0 code outside of Next.js?</p>
-                <p class="faq-a">The generated React components work in any React project. You may need to adjust imports and remove Next.js-specific features (like next/image or app router patterns) for other frameworks.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Does v0 support Vue, Svelte, or other frameworks?</p>
-                <p class="faq-a">v0 primarily generates React code. However, you can prompt v0 to generate code for other frameworks like Vue or Svelte, though results may be less polished than React output.</p>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <p class="faq-q">What technologies does v0 generate?</p>
+                    <p class="faq-a">v0 generates React components for Next.js applications, styled with Tailwind CSS. It uses TypeScript by default and often incorporates shadcn/ui components for common UI patterns.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Can I use v0 code commercially?</p>
+                    <p class="faq-a">Yes, code generated by v0 can be used for commercial projects. You own the output and can use it in client work, products, or any other commercial application.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">How do I export code from v0?</p>
+                    <p class="faq-a">You can export code by: 1) Copying directly from the Code panel, 2) Pushing to a GitHub repository, 3) Deploying directly to Vercel, or 4) Downloading as a ZIP file.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Can I use v0 code outside of Next.js?</p>
+                    <p class="faq-a">The generated React components work in any React project. You may need to adjust imports and remove Next.js-specific features (like next/image or app router patterns) for other frameworks.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Does v0 support Vue, Svelte, or other frameworks?</p>
+                    <p class="faq-a">v0 primarily generates React code. However, you can prompt v0 to generate code for other frameworks like Vue or Svelte, though results may be less polished than React output.</p>
+                </div>
             </div>
             
             <h2 id="technical">Technical Questions</h2>
             
-            <div class="faq-item">
-                <p class="faq-q">Is v0 code accessible?</p>
-                <p class="faq-a">v0 follows accessibility best practices by default, including semantic HTML, ARIA labels, and keyboard navigation. However, you should always test accessibility for your specific use case.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Is the generated code responsive?</p>
-                <p class="faq-a">Yes, v0 generates mobile-responsive code by default using Tailwind's responsive utilities. You can also specify exact responsive behavior in your prompts.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">How does v0 handle images?</p>
-                <p class="faq-a">v0 uses Next.js Image component for optimized image handling. For placeholder images, it typically uses external services like Unsplash or placeholder.com. Replace these with your actual images.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Can v0 generate backend APIs?</p>
-                <p class="faq-a">Yes, v0 can generate Next.js API routes and Server Actions for backend functionality. This includes REST endpoints, form handlers, and database operations.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Does v0 support real-time features?</p>
-                <p class="faq-a">Yes, v0 can generate real-time features using WebSockets or services like Supabase Realtime. Specify real-time requirements in your prompt for appropriate implementation.</p>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <p class="faq-q">Is v0 code accessible?</p>
+                    <p class="faq-a">v0 follows accessibility best practices by default, including semantic HTML, ARIA labels, and keyboard navigation. However, you should always test accessibility for your specific use case.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Is the generated code responsive?</p>
+                    <p class="faq-a">Yes, v0 generates mobile-responsive code by default using Tailwind's responsive utilities. You can also specify exact responsive behavior in your prompts.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">How does v0 handle images?</p>
+                    <p class="faq-a">v0 uses Next.js Image component for optimized image handling. For placeholder images, it typically uses external services like Unsplash or placeholder.com. Replace these with your actual images.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Can v0 generate backend APIs?</p>
+                    <p class="faq-a">Yes, v0 can generate Next.js API routes and Server Actions for backend functionality. This includes REST endpoints, form handlers, and database operations.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Does v0 support real-time features?</p>
+                    <p class="faq-a">Yes, v0 can generate real-time features using WebSockets or services like Supabase Realtime. Specify real-time requirements in your prompt for appropriate implementation.</p>
+                </div>
             </div>
             
             <h2 id="troubleshooting">Troubleshooting</h2>
             
-            <div class="faq-item">
-                <p class="faq-q">Why is my generation taking a long time?</p>
-                <p class="faq-a">Complex prompts or high server load can cause longer generation times. Try simplifying your prompt or breaking it into smaller parts. Paid plans have priority processing.</p>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <p class="faq-q">Why is my generation taking a long time?</p>
+                    <p class="faq-a">Complex prompts or high server load can cause longer generation times. Try simplifying your prompt or breaking it into smaller parts. Paid plans have priority processing.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">The generated code doesn't match my prompt. What should I do?</p>
+                    <p class="faq-a">Be more specific in your prompts. Add details about layout, styling, and behavior. Use follow-up prompts to refine. Try rephrasing if v0 misunderstands your intent.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Why won't my code deploy?</p>
+                    <p class="faq-a">Check for missing environment variables, dependency issues, or build errors. v0's generated code is designed for Vercel deployment but may need configuration for environment-specific settings.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">How do I report a bug or request a feature?</p>
+                    <p class="faq-a">Use the feedback button in v0's interface, join the Vercel Discord community, or reach out via Vercel's support channels. Feature requests and bug reports help improve the platform.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Is my code and data secure?</p>
+                    <p class="faq-a">Vercel takes security seriously. Your code is processed securely, and v0 doesn't store your prompts or generated code beyond your active session (except in your saved projects). See Vercel's security documentation for details.</p>
+                </div>
             </div>
             
-            <div class="faq-item">
-                <p class="faq-q">The generated code doesn't match my prompt. What should I do?</p>
-                <p class="faq-a">Be more specific in your prompts. Add details about layout, styling, and behavior. Use follow-up prompts to refine. Try rephrasing if v0 misunderstands your intent.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Why won't my code deploy?</p>
-                <p class="faq-a">Check for missing environment variables, dependency issues, or build errors. v0's generated code is designed for Vercel deployment but may need configuration for environment-specific settings.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">How do I report a bug or request a feature?</p>
-                <p class="faq-a">Use the feedback button in v0's interface, join the Vercel Discord community, or reach out via Vercel's support channels. Feature requests and bug reports help improve the platform.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-q">Is my code and data secure?</p>
-                <p class="faq-a">Vercel takes security seriously. Your code is processed securely, and v0 doesn't store your prompts or generated code beyond your active session (except in your saved projects). See Vercel's security documentation for details.</p>
-            </div>
-            
-            <div class="highlight">
+            <div class="info-box">
                 <h4>Still Have Questions?</h4>
                 <p>If your question isn't answered here, check Vercel's official documentation at <a href="https://v0.dev/docs" target="_blank">v0.dev/docs</a> or join the community Discord for help from other users.</p>
             </div>
             
-            <div class="cta-box">
+            <div class="cta-section">
                 <h3>Try v0 Today</h3>
                 <p>Experience AI-powered development yourself.</p>
-                <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Get Started Free &rarr;</a>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Get Started Free &rarr;</a>
             </div>
         </article>
-        
-        <footer>
-            <p>&copy; 2026 v0 Guide. Not affiliated with Vercel.</p>
-        </footer>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Guides</h4>
+                    <a href="/blog/what-is-v0-2026/">What is v0?</a>
+                    <a href="/blog/v0-pricing-guide-2026/">Pricing Guide</a>
+                    <a href="/blog/v0-vs-cursor-vs-bolt-2026/">v0 vs Competitors</a>
+                    <a href="/blog/v0-prompt-engineering-masterclass/">Prompt Engineering</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <a href="/blog/v0-agentic-features-guide/">Agentic Features</a>
+                    <a href="/blog/v0-figma-to-code/">Figma to Code</a>
+                    <a href="/blog/v0-design-mode-tutorial/">Design Mode</a>
+                    <a href="/blog/v0-github-integration-guide/">GitHub Integration</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Use Cases</h4>
+                    <a href="/blog/v0-for-developers/">For Developers</a>
+                    <a href="/blog/v0-for-designers/">For Designers</a>
+                    <a href="/blog/v0-for-product-managers/">For PMs</a>
+                    <a href="/blog/v0-enterprise-features/">Enterprise</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="/blog/">All Guides</a>
+                    <a href="https://v0.dev" target="_blank" rel="noopener">v0.dev</a>
+                    <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>v0 Guide</strong> &mdash; The definitive resource for Vercel v0</p>
+                <p>&copy; 2026 v0 Guide. Independent reviews and tutorials. Not affiliated with Vercel.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

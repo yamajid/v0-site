@@ -37,150 +37,154 @@
     </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #a1a1aa; --ac: #10b981; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.8; }
-        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
-        .nav { position: sticky; top: 0; z-index: 50; background: rgba(3,3,3,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--brd); }
-        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.5rem; }
-        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); text-decoration: none; }
-        .cta { display: inline-flex; padding: 0.6rem 1.2rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.875rem; }
-        .breadcrumb { padding: 1rem 0; font-size: 0.875rem; color: var(--mt); }
-        .breadcrumb a { color: var(--mt); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--tx); }
-        article { padding: 2rem 0 4rem; }
-        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(16,185,129,0.1); color: var(--ac); border: 1px solid rgba(16,185,129,0.2); border-radius: 9999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
-        h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
-        .meta { color: var(--mt); font-size: 0.875rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--brd); }
-        h2 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-top: 1rem; }
-        h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 0.75rem; }
-        p { color: var(--mt); margin-bottom: 1.25rem; font-size: 1.0625rem; }
-        ul, ol { color: var(--mt); margin: 1rem 0 1.5rem 1.5rem; }
-        li { margin-bottom: 0.5rem; }
-        strong { color: var(--tx); font-weight: 600; }
-        a { color: var(--ac); }
-        .highlight { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
-        .highlight h4 { color: var(--tx); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .cta-box { text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(6,182,212,0.1)); border: 1px solid var(--brd); border-radius: 16px; margin: 3rem 0; }
-        .cta-box h3 { margin-bottom: 0.75rem; }
-        .cta-box p { margin-bottom: 1.5rem; }
-        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
-        footer p { font-size: 0.875rem; }
-        .toc { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
-        .toc h4 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; color: var(--mt); }
-        .toc ul { margin: 0; list-style: none; }
-        .toc li { margin-bottom: 0.5rem; }
-        .toc a { color: var(--mt); text-decoration: none; font-size: 0.9375rem; }
-        .toc a:hover { color: var(--ac); }
-        pre { background: var(--sf); border: 1px solid var(--brd); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 1rem 0; }
-        code { font-family: 'Monaco', 'Consolas', monospace; font-size: 0.875rem; color: var(--ac); }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-        th, td { text-align: left; padding: 0.75rem; border-bottom: 1px solid var(--brd); }
-        th { color: var(--tx); font-weight: 600; }
-        td { color: var(--mt); }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-wrap">
-            <a href="/">&#9650; v0 Guide</a>
-            <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">&#9650; v0 Guide</a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="/blog/" class="nav-link nav-dropdown-trigger">
+                        Guides
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/what-is-v0-2026/" class="nav-dropdown-item">What is v0?</a>
+                        <a href="/blog/v0-pricing-guide-2026/" class="nav-dropdown-item">Pricing Guide</a>
+                        <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="nav-dropdown-item">v0 vs Cursor vs Bolt</a>
+                        <a href="/blog/v0-prompt-engineering-masterclass/" class="nav-dropdown-item">Prompt Engineering</a>
+                        <a href="/blog/v0-deployment-guide-2026/" class="nav-dropdown-item">Deployment Guide</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Features
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-agentic-features-guide/" class="nav-dropdown-item">Agentic Features</a>
+                        <a href="/blog/v0-figma-to-code/" class="nav-dropdown-item">Figma to Code</a>
+                        <a href="/blog/v0-design-mode-tutorial/" class="nav-dropdown-item">Design Mode</a>
+                        <a href="/blog/v0-github-integration-guide/" class="nav-dropdown-item">GitHub Integration</a>
+                        <a href="/blog/v0-database-integrations/" class="nav-dropdown-item">Database Integrations</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Use Cases
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-for-developers/" class="nav-dropdown-item">For Developers</a>
+                        <a href="/blog/v0-for-designers/" class="nav-dropdown-item">For Designers</a>
+                        <a href="/blog/v0-for-product-managers/" class="nav-dropdown-item">For Product Managers</a>
+                        <a href="/blog/v0-full-stack-apps-guide/" class="nav-dropdown-item">Full-Stack Apps</a>
+                        <a href="/blog/v0-enterprise-features/" class="nav-dropdown-item">Enterprise Features</a>
+                    </div>
+                </div>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
         </div>
     </nav>
-    
-    <main class="wrap">
-        <div class="breadcrumb">
-            <a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Database Integrations
-        </div>
+
+    <main class="container-narrow">
+        <div class="breadcrumbs"><a href="/">Home</a> <span>&rsaquo;</span> <a href="/blog/">Blog</a> <span>&rsaquo;</span> Database Integrations</div>
         
         <article>
-            <span class="badge">Full-Stack</span>
-            <h1>v0 Database Integrations: Complete Guide</h1>
-            <p class="meta">Updated April 6, 2026 &bull; 15 min read</p>
+            <header class="article-header">
+                <span class="article-category">Full-Stack</span>
+                <h1 class="article-title">v0 Database Integrations: Complete Guide</h1>
+                <p class="article-meta">Updated April 6, 2026 &bull; 15 min read</p>
+            </header>
             
-            <div class="toc">
-                <h4>Table of Contents</h4>
-                <ul>
-                    <li><a href="#overview">Database Support Overview</a></li>
-                    <li><a href="#vercel-postgres">Vercel Postgres</a></li>
-                    <li><a href="#supabase">Supabase Integration</a></li>
-                    <li><a href="#neon">Neon Database</a></li>
-                    <li><a href="#planetscale">PlanetScale</a></li>
-                    <li><a href="#schema-generation">AI Schema Generation</a></li>
-                    <li><a href="#best-practices">Best Practices</a></li>
-                </ul>
-            </div>
-            
-            <h2 id="overview">Database Support Overview</h2>
-            <p>v0 has evolved beyond UI generation to support <strong>full-stack application development</strong>. This means you can now connect databases and have v0 generate not just frontend components, but also backend logic, API routes, and database queries.</p>
-            
-            <p>v0 integrates with several popular database providers, with first-class support for serverless PostgreSQL solutions that work seamlessly with Vercel's deployment infrastructure.</p>
-            
-            <div class="highlight">
-                <h4>Supported Databases</h4>
-                <table>
-                    <tr>
-                        <th>Provider</th>
-                        <th>Type</th>
-                        <th>Integration Level</th>
-                    </tr>
-                    <tr>
-                        <td>Vercel Postgres</td>
-                        <td>Serverless PostgreSQL</td>
-                        <td>Native</td>
-                    </tr>
-                    <tr>
-                        <td>Supabase</td>
-                        <td>PostgreSQL + Auth + Storage</td>
-                        <td>First-class</td>
-                    </tr>
-                    <tr>
-                        <td>Neon</td>
-                        <td>Serverless PostgreSQL</td>
-                        <td>First-class</td>
-                    </tr>
-                    <tr>
-                        <td>PlanetScale</td>
-                        <td>Serverless MySQL</td>
-                        <td>Supported</td>
-                    </tr>
-                    <tr>
-                        <td>Upstash</td>
-                        <td>Serverless Redis</td>
-                        <td>Supported</td>
-                    </tr>
-                </table>
-            </div>
-            
-            <h2 id="vercel-postgres">Vercel Postgres</h2>
-            <p>Vercel Postgres is the most tightly integrated database option, offering seamless setup directly from v0.</p>
-            
-            <h3>Setting Up Vercel Postgres</h3>
-            <ol>
-                <li>In your v0 project, go to Settings &rarr; Databases</li>
-                <li>Click "Add Database" and select "Vercel Postgres"</li>
-                <li>Choose to create a new database or connect existing</li>
-                <li>v0 automatically configures environment variables</li>
-                <li>The connection is ready to use in your code</li>
-            </ol>
-            
-            <h3>Using Vercel Postgres in v0</h3>
-            <p>Once connected, you can prompt v0 to generate database-connected features:</p>
-            <pre><code>"Create a user registration system that stores 
+            <div class="article-content">
+                <div class="info-box">
+                    <h4>Table of Contents</h4>
+                    <ul>
+                        <li><a href="#overview">Database Support Overview</a></li>
+                        <li><a href="#vercel-postgres">Vercel Postgres</a></li>
+                        <li><a href="#supabase">Supabase Integration</a></li>
+                        <li><a href="#neon">Neon Database</a></li>
+                        <li><a href="#planetscale">PlanetScale</a></li>
+                        <li><a href="#schema-generation">AI Schema Generation</a></li>
+                        <li><a href="#best-practices">Best Practices</a></li>
+                    </ul>
+                </div>
+                
+                <h2 id="overview">Database Support Overview</h2>
+                <p>v0 has evolved beyond UI generation to support <strong>full-stack application development</strong>. This means you can now connect databases and have v0 generate not just frontend components, but also backend logic, API routes, and database queries.</p>
+                
+                <p>v0 integrates with several popular database providers, with first-class support for serverless PostgreSQL solutions that work seamlessly with Vercel's deployment infrastructure.</p>
+                
+                <div class="info-box">
+                    <h4>Supported Databases</h4>
+                    <table>
+                        <tr>
+                            <th>Provider</th>
+                            <th>Type</th>
+                            <th>Integration Level</th>
+                        </tr>
+                        <tr>
+                            <td>Vercel Postgres</td>
+                            <td>Serverless PostgreSQL</td>
+                            <td>Native</td>
+                        </tr>
+                        <tr>
+                            <td>Supabase</td>
+                            <td>PostgreSQL + Auth + Storage</td>
+                            <td>First-class</td>
+                        </tr>
+                        <tr>
+                            <td>Neon</td>
+                            <td>Serverless PostgreSQL</td>
+                            <td>First-class</td>
+                        </tr>
+                        <tr>
+                            <td>PlanetScale</td>
+                            <td>Serverless MySQL</td>
+                            <td>Supported</td>
+                        </tr>
+                        <tr>
+                            <td>Upstash</td>
+                            <td>Serverless Redis</td>
+                            <td>Supported</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h2 id="vercel-postgres">Vercel Postgres</h2>
+                <p>Vercel Postgres is the most tightly integrated database option, offering seamless setup directly from v0.</p>
+                
+                <h3>Setting Up Vercel Postgres</h3>
+                <ol>
+                    <li>In your v0 project, go to Settings &rarr; Databases</li>
+                    <li>Click "Add Database" and select "Vercel Postgres"</li>
+                    <li>Choose to create a new database or connect existing</li>
+                    <li>v0 automatically configures environment variables</li>
+                    <li>The connection is ready to use in your code</li>
+                </ol>
+                
+                <h3>Using Vercel Postgres in v0</h3>
+                <p>Once connected, you can prompt v0 to generate database-connected features:</p>
+                <pre><code>"Create a user registration system that stores 
 users in Vercel Postgres with email, name, 
 and created_at fields"</code></pre>
-            
-            <p>v0 will generate:</p>
-            <ul>
-                <li>Database schema and migrations</li>
-                <li>Server actions or API routes</li>
-                <li>Form components with validation</li>
-                <li>Error handling and loading states</li>
-            </ul>
-            
-            <h3>Example Generated Code</h3>
-            <pre><code>// app/actions/users.ts
+                
+                <p>v0 will generate:</p>
+                <ul>
+                    <li>Database schema and migrations</li>
+                    <li>Server actions or API routes</li>
+                    <li>Form components with validation</li>
+                    <li>Error handling and loading states</li>
+                </ul>
+                
+                <h3>Example Generated Code</h3>
+                <pre><code>// app/actions/users.ts
 import { sql } from '@vercel/postgres';
 
 export async function createUser(formData: FormData) {
@@ -192,56 +196,56 @@ export async function createUser(formData: FormData) {
     VALUES (${email}, ${name}, NOW())
   `;
 }</code></pre>
-            
-            <h2 id="supabase">Supabase Integration</h2>
-            <p>Supabase provides PostgreSQL plus authentication, storage, and real-time subscriptions. v0's Supabase integration lets you leverage all these features.</p>
-            
-            <h3>Connecting Supabase</h3>
-            <ol>
-                <li>Create a project at <a href="https://supabase.com" target="_blank">supabase.com</a></li>
-                <li>In v0, go to Settings &rarr; Databases &rarr; Add Database</li>
-                <li>Select "Supabase" and enter your project URL</li>
-                <li>Add your anon/public key and service role key</li>
-                <li>v0 configures the Supabase client automatically</li>
-            </ol>
-            
-            <h3>Supabase Features in v0</h3>
-            <ul>
-                <li><strong>Database queries:</strong> CRUD operations with Supabase client</li>
-                <li><strong>Authentication:</strong> Sign up, sign in, OAuth providers</li>
-                <li><strong>Row Level Security:</strong> v0 can generate RLS policies</li>
-                <li><strong>Real-time:</strong> Live data subscriptions</li>
-                <li><strong>Storage:</strong> File uploads and management</li>
-            </ul>
-            
-            <div class="highlight">
-                <h4>Pro Tip</h4>
-                <p>When prompting for Supabase features, be specific: "Create a chat feature with Supabase real-time subscriptions" will generate code using Supabase's real-time capabilities rather than polling.</p>
-            </div>
-            
-            <h2 id="neon">Neon Database</h2>
-            <p>Neon offers serverless PostgreSQL with branching&mdash;perfect for development workflows where you want database branches to match code branches.</p>
-            
-            <h3>Why Neon with v0?</h3>
-            <ul>
-                <li><strong>Database branching:</strong> Create instant database copies for testing</li>
-                <li><strong>Scale to zero:</strong> No costs when not in use</li>
-                <li><strong>Fast cold starts:</strong> Sub-second database activation</li>
-                <li><strong>Generous free tier:</strong> Great for prototyping in v0</li>
-            </ul>
-            
-            <h3>Setting Up Neon</h3>
-            <ol>
-                <li>Create a Neon account and project at <a href="https://neon.tech" target="_blank">neon.tech</a></li>
-                <li>Copy your connection string from the Neon dashboard</li>
-                <li>In v0, add Neon as a database provider</li>
-                <li>Paste your connection string</li>
-                <li>v0 sets up the connection using your preferred ORM</li>
-            </ol>
-            
-            <h3>Using Drizzle ORM with Neon</h3>
-            <p>v0 often generates Neon code using Drizzle ORM for type-safe queries:</p>
-            <pre><code>// db/schema.ts
+                
+                <h2 id="supabase">Supabase Integration</h2>
+                <p>Supabase provides PostgreSQL plus authentication, storage, and real-time subscriptions. v0's Supabase integration lets you leverage all these features.</p>
+                
+                <h3>Connecting Supabase</h3>
+                <ol>
+                    <li>Create a project at <a href="https://supabase.com" target="_blank">supabase.com</a></li>
+                    <li>In v0, go to Settings &rarr; Databases &rarr; Add Database</li>
+                    <li>Select "Supabase" and enter your project URL</li>
+                    <li>Add your anon/public key and service role key</li>
+                    <li>v0 configures the Supabase client automatically</li>
+                </ol>
+                
+                <h3>Supabase Features in v0</h3>
+                <ul>
+                    <li><strong>Database queries:</strong> CRUD operations with Supabase client</li>
+                    <li><strong>Authentication:</strong> Sign up, sign in, OAuth providers</li>
+                    <li><strong>Row Level Security:</strong> v0 can generate RLS policies</li>
+                    <li><strong>Real-time:</strong> Live data subscriptions</li>
+                    <li><strong>Storage:</strong> File uploads and management</li>
+                </ul>
+                
+                <div class="info-box info-box-success">
+                    <h4>Pro Tip</h4>
+                    <p>When prompting for Supabase features, be specific: "Create a chat feature with Supabase real-time subscriptions" will generate code using Supabase's real-time capabilities rather than polling.</p>
+                </div>
+                
+                <h2 id="neon">Neon Database</h2>
+                <p>Neon offers serverless PostgreSQL with branching&mdash;perfect for development workflows where you want database branches to match code branches.</p>
+                
+                <h3>Why Neon with v0?</h3>
+                <ul>
+                    <li><strong>Database branching:</strong> Create instant database copies for testing</li>
+                    <li><strong>Scale to zero:</strong> No costs when not in use</li>
+                    <li><strong>Fast cold starts:</strong> Sub-second database activation</li>
+                    <li><strong>Generous free tier:</strong> Great for prototyping in v0</li>
+                </ul>
+                
+                <h3>Setting Up Neon</h3>
+                <ol>
+                    <li>Create a Neon account and project at <a href="https://neon.tech" target="_blank">neon.tech</a></li>
+                    <li>Copy your connection string from the Neon dashboard</li>
+                    <li>In v0, add Neon as a database provider</li>
+                    <li>Paste your connection string</li>
+                    <li>v0 sets up the connection using your preferred ORM</li>
+                </ol>
+                
+                <h3>Using Drizzle ORM with Neon</h3>
+                <p>v0 often generates Neon code using Drizzle ORM for type-safe queries:</p>
+                <pre><code>// db/schema.ts
 import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
 
 export const posts = pgTable('posts', {
@@ -250,88 +254,124 @@ export const posts = pgTable('posts', {
   content: text('content'),
   createdAt: timestamp('created_at').defaultNow()
 });</code></pre>
-            
-            <h2 id="planetscale">PlanetScale</h2>
-            <p>For MySQL-based projects, PlanetScale offers a serverless database with branching and non-blocking schema changes.</p>
-            
-            <h3>PlanetScale Setup</h3>
-            <ol>
-                <li>Create a PlanetScale database at <a href="https://planetscale.com" target="_blank">planetscale.com</a></li>
-                <li>Generate a connection password</li>
-                <li>In v0, add PlanetScale as your database</li>
-                <li>Enter your connection details</li>
-                <li>v0 generates MySQL-compatible queries</li>
-            </ol>
-            
-            <div class="highlight">
-                <h4>Note on PlanetScale</h4>
-                <p>PlanetScale doesn't support foreign key constraints. When using v0 with PlanetScale, mention this in your prompts so v0 generates appropriate code without foreign keys.</p>
-            </div>
-            
-            <h2 id="schema-generation">AI Schema Generation</h2>
-            <p>One of v0's most powerful database features is its ability to <strong>design database schemas from natural language descriptions</strong>.</p>
-            
-            <h3>Example: E-commerce Schema</h3>
-            <p>Prompt:</p>
-            <pre><code>"Design a database schema for an e-commerce 
+                
+                <h2 id="planetscale">PlanetScale</h2>
+                <p>For MySQL-based projects, PlanetScale offers a serverless database with branching and non-blocking schema changes.</p>
+                
+                <h3>PlanetScale Setup</h3>
+                <ol>
+                    <li>Create a PlanetScale database at <a href="https://planetscale.com" target="_blank">planetscale.com</a></li>
+                    <li>Generate a connection password</li>
+                    <li>In v0, add PlanetScale as your database</li>
+                    <li>Enter your connection details</li>
+                    <li>v0 generates MySQL-compatible queries</li>
+                </ol>
+                
+                <div class="info-box info-box-warning">
+                    <h4>Note on PlanetScale</h4>
+                    <p>PlanetScale doesn't support foreign key constraints. When using v0 with PlanetScale, mention this in your prompts so v0 generates appropriate code without foreign keys.</p>
+                </div>
+                
+                <h2 id="schema-generation">AI Schema Generation</h2>
+                <p>One of v0's most powerful database features is its ability to <strong>design database schemas from natural language descriptions</strong>.</p>
+                
+                <h3>Example: E-commerce Schema</h3>
+                <p>Prompt:</p>
+                <pre><code>"Design a database schema for an e-commerce 
 store with products, categories, users, 
 orders, and reviews"</code></pre>
-            
-            <p>v0 generates a complete, normalized schema with proper relationships, indexes, and types.</p>
-            
-            <h3>Schema Best Practices v0 Follows</h3>
-            <ul>
-                <li><strong>Normalization:</strong> Properly related tables to avoid redundancy</li>
-                <li><strong>Indexes:</strong> Suggested indexes for common query patterns</li>
-                <li><strong>Timestamps:</strong> created_at and updated_at on all tables</li>
-                <li><strong>Soft deletes:</strong> Optional deleted_at for recoverable data</li>
-                <li><strong>UUIDs vs serial:</strong> Appropriate ID strategies based on use case</li>
-            </ul>
-            
-            <h2 id="best-practices">Best Practices</h2>
-            
-            <h3>1. Start with the Data Model</h3>
-            <p>Before building UI, describe your data model to v0. This helps generate more coherent full-stack code:</p>
-            <pre><code>"I'm building a project management app. 
+                
+                <p>v0 generates a complete, normalized schema with proper relationships, indexes, and types.</p>
+                
+                <h3>Schema Best Practices v0 Follows</h3>
+                <ul>
+                    <li><strong>Normalization:</strong> Properly related tables to avoid redundancy</li>
+                    <li><strong>Indexes:</strong> Suggested indexes for common query patterns</li>
+                    <li><strong>Timestamps:</strong> created_at and updated_at on all tables</li>
+                    <li><strong>Soft deletes:</strong> Optional deleted_at for recoverable data</li>
+                    <li><strong>UUIDs vs serial:</strong> Appropriate ID strategies based on use case</li>
+                </ul>
+                
+                <h2 id="best-practices">Best Practices</h2>
+                
+                <h3>1. Start with the Data Model</h3>
+                <p>Before building UI, describe your data model to v0. This helps generate more coherent full-stack code:</p>
+                <pre><code>"I'm building a project management app. 
 Users belong to organizations. Organizations 
 have projects. Projects have tasks. Tasks 
 can be assigned to users."</code></pre>
-            
-            <h3>2. Use Environment Variables</h3>
-            <p>Never hardcode database credentials. v0 automatically uses environment variables, but double-check generated code before deploying.</p>
-            
-            <h3>3. Add Validation</h3>
-            <p>Ask v0 to include input validation:</p>
-            <pre><code>"Add Zod validation for user input before 
+                
+                <h3>2. Use Environment Variables</h3>
+                <p>Never hardcode database credentials. v0 automatically uses environment variables, but double-check generated code before deploying.</p>
+                
+                <h3>3. Add Validation</h3>
+                <p>Ask v0 to include input validation:</p>
+                <pre><code>"Add Zod validation for user input before 
 database insertion"</code></pre>
-            
-            <h3>4. Consider Security</h3>
-            <p>For sensitive operations, prompt for security measures:</p>
-            <pre><code>"Generate with row-level security policies 
+                
+                <h3>4. Consider Security</h3>
+                <p>For sensitive operations, prompt for security measures:</p>
+                <pre><code>"Generate with row-level security policies 
 so users can only access their own data"</code></pre>
-            
-            <h3>5. Plan for Scale</h3>
-            <p>If you expect growth, mention it:</p>
-            <pre><code>"This table may have millions of rows. 
+                
+                <h3>5. Plan for Scale</h3>
+                <p>If you expect growth, mention it:</p>
+                <pre><code>"This table may have millions of rows. 
 Add appropriate indexes for the common 
 query: filtering by user_id and sorting 
 by created_at"</code></pre>
-            
-            <div class="cta-box">
-                <h3>Build Full-Stack Apps with v0</h3>
-                <p>Connect your database and let AI generate your entire application stack.</p>
-                <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Start Building &rarr;</a>
+                
+                <div class="cta-section">
+                    <h3>Build Full-Stack Apps with v0</h3>
+                    <p>Connect your database and let AI generate your entire application stack.</p>
+                    <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Start Building &rarr;</a>
+                </div>
+                
+                <h2>Conclusion</h2>
+                <p>v0's database integrations transform it from a UI generation tool into a true full-stack development platform. By connecting to modern serverless databases like Vercel Postgres, Supabase, or Neon, you can build complete applications with AI assistance.</p>
+                
+                <p>The key to success is providing v0 with clear data models and requirements. The more context you give about your data relationships, security needs, and expected scale, the better the generated code will be. Start with your schema, then build outward to API routes and UI components for a cohesive application architecture.</p>
             </div>
-            
-            <h2>Conclusion</h2>
-            <p>v0's database integrations transform it from a UI generation tool into a true full-stack development platform. By connecting to modern serverless databases like Vercel Postgres, Supabase, or Neon, you can build complete applications with AI assistance.</p>
-            
-            <p>The key to success is providing v0 with clear data models and requirements. The more context you give about your data relationships, security needs, and expected scale, the better the generated code will be. Start with your schema, then build outward to API routes and UI components for a cohesive application architecture.</p>
         </article>
-        
-        <footer>
-            <p>&copy; 2026 v0 Guide. Not affiliated with Vercel.</p>
-        </footer>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Guides</h4>
+                    <a href="/blog/what-is-v0-2026/">What is v0?</a>
+                    <a href="/blog/v0-pricing-guide-2026/">Pricing Guide</a>
+                    <a href="/blog/v0-vs-cursor-vs-bolt-2026/">v0 vs Competitors</a>
+                    <a href="/blog/v0-prompt-engineering-masterclass/">Prompt Engineering</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <a href="/blog/v0-agentic-features-guide/">Agentic Features</a>
+                    <a href="/blog/v0-figma-to-code/">Figma to Code</a>
+                    <a href="/blog/v0-design-mode-tutorial/">Design Mode</a>
+                    <a href="/blog/v0-github-integration-guide/">GitHub Integration</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Use Cases</h4>
+                    <a href="/blog/v0-for-developers/">For Developers</a>
+                    <a href="/blog/v0-for-designers/">For Designers</a>
+                    <a href="/blog/v0-for-product-managers/">For PMs</a>
+                    <a href="/blog/v0-enterprise-features/">Enterprise</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="/blog/">All Guides</a>
+                    <a href="https://v0.dev" target="_blank" rel="noopener">v0.dev</a>
+                    <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>v0 Guide</strong> &mdash; The definitive resource for Vercel v0</p>
+                <p>&copy; 2026 v0 Guide. Independent reviews and tutorials. Not affiliated with Vercel.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

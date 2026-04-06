@@ -37,276 +37,308 @@
     </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #a1a1aa; --ac: #10b981; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.8; }
-        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
-        .nav { position: sticky; top: 0; z-index: 50; background: rgba(3,3,3,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--brd); }
-        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.5rem; }
-        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); text-decoration: none; }
-        .cta { display: inline-flex; padding: 0.6rem 1.2rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.875rem; }
-        .breadcrumb { padding: 1rem 0; font-size: 0.875rem; color: var(--mt); }
-        .breadcrumb a { color: var(--mt); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--tx); }
-        article { padding: 2rem 0 4rem; }
-        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(16,185,129,0.1); color: var(--ac); border: 1px solid rgba(16,185,129,0.2); border-radius: 9999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
-        h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
-        .meta { color: var(--mt); font-size: 0.875rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--brd); }
-        h2 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-top: 1rem; }
-        h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 0.75rem; }
-        p { color: var(--mt); margin-bottom: 1.25rem; font-size: 1.0625rem; }
-        ul, ol { color: var(--mt); margin: 1rem 0 1.5rem 1.5rem; }
-        li { margin-bottom: 0.5rem; }
-        strong { color: var(--tx); font-weight: 600; }
-        a { color: var(--ac); }
-        .highlight { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
-        .highlight h4 { color: var(--tx); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .cta-box { text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(6,182,212,0.1)); border: 1px solid var(--brd); border-radius: 16px; margin: 3rem 0; }
-        .cta-box h3 { margin-bottom: 0.75rem; }
-        .cta-box p { margin-bottom: 1.5rem; }
-        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
-        footer p { font-size: 0.875rem; }
-        .toc { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
-        .toc h4 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; color: var(--mt); }
-        .toc ul { margin: 0; list-style: none; }
-        .toc li { margin-bottom: 0.5rem; }
-        .toc a { color: var(--mt); text-decoration: none; font-size: 0.9375rem; }
-        .toc a:hover { color: var(--ac); }
-        .template-card { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; }
-        .template-card h4 { color: var(--tx); margin-bottom: 0.5rem; }
-        .template-card p { margin-bottom: 0.75rem; font-size: 0.9375rem; }
-        .template-tag { display: inline-block; padding: 0.15rem 0.5rem; background: var(--brd); border-radius: 4px; font-size: 0.75rem; margin-right: 0.5rem; color: var(--mt); }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-wrap">
-            <a href="/">&#9650; v0 Guide</a>
-            <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">&#9650; v0 Guide</a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="/blog/" class="nav-link nav-dropdown-trigger">
+                        Guides
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/what-is-v0-2026/" class="nav-dropdown-item">What is v0?</a>
+                        <a href="/blog/v0-pricing-guide-2026/" class="nav-dropdown-item">Pricing Guide</a>
+                        <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="nav-dropdown-item">v0 vs Cursor vs Bolt</a>
+                        <a href="/blog/v0-prompt-engineering-masterclass/" class="nav-dropdown-item">Prompt Engineering</a>
+                        <a href="/blog/v0-deployment-guide-2026/" class="nav-dropdown-item">Deployment Guide</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Features
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-agentic-features-guide/" class="nav-dropdown-item">Agentic Features</a>
+                        <a href="/blog/v0-figma-to-code/" class="nav-dropdown-item">Figma to Code</a>
+                        <a href="/blog/v0-design-mode-tutorial/" class="nav-dropdown-item">Design Mode</a>
+                        <a href="/blog/v0-github-integration-guide/" class="nav-dropdown-item">GitHub Integration</a>
+                        <a href="/blog/v0-database-integrations/" class="nav-dropdown-item">Database Integrations</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Use Cases
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-for-developers/" class="nav-dropdown-item">For Developers</a>
+                        <a href="/blog/v0-for-designers/" class="nav-dropdown-item">For Designers</a>
+                        <a href="/blog/v0-for-product-managers/" class="nav-dropdown-item">For Product Managers</a>
+                        <a href="/blog/v0-full-stack-apps-guide/" class="nav-dropdown-item">Full-Stack Apps</a>
+                        <a href="/blog/v0-enterprise-features/" class="nav-dropdown-item">Enterprise Features</a>
+                    </div>
+                </div>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
         </div>
     </nav>
-    
-    <main class="wrap">
-        <div class="breadcrumb">
-            <a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Templates Guide
-        </div>
+
+    <main class="container-narrow">
+        <div class="breadcrumbs"><a href="/">Home</a> <span>&rsaquo;</span> <a href="/blog/">Blog</a> <span>&rsaquo;</span> Templates Guide</div>
         
         <article>
-            <span class="badge">Resources</span>
-            <h1>v0 Templates: Start with Pre-Built Projects</h1>
-            <p class="meta">Updated April 6, 2026 &bull; 10 min read</p>
+            <header class="article-header">
+                <span class="article-category">Resources</span>
+                <h1 class="article-title">v0 Templates: Start with Pre-Built Projects</h1>
+                <p class="article-meta">Updated April 6, 2026 &bull; 10 min read</p>
+            </header>
             
-            <div class="toc">
-                <h4>Table of Contents</h4>
+            <div class="article-content">
+                <div class="info-box">
+                    <h4>Table of Contents</h4>
+                    <ul>
+                        <li><a href="#overview">Templates Overview</a></li>
+                        <li><a href="#categories">Template Categories</a></li>
+                        <li><a href="#using">Using Templates</a></li>
+                        <li><a href="#customizing">Customizing Templates</a></li>
+                        <li><a href="#popular">Popular Templates</a></li>
+                        <li><a href="#creating">Creating Your Own</a></li>
+                    </ul>
+                </div>
+                
+                <h2 id="overview">Templates Overview</h2>
+                <p>v0's template library provides <strong>pre-built starting points</strong> for common application types. Instead of starting from a blank canvas, you can begin with a polished foundation and customize it with AI assistance.</p>
+                
+                <p>Templates include:</p>
                 <ul>
-                    <li><a href="#overview">Templates Overview</a></li>
-                    <li><a href="#categories">Template Categories</a></li>
-                    <li><a href="#using">Using Templates</a></li>
-                    <li><a href="#customizing">Customizing Templates</a></li>
-                    <li><a href="#popular">Popular Templates</a></li>
-                    <li><a href="#creating">Creating Your Own</a></li>
+                    <li>Complete UI designs with multiple pages</li>
+                    <li>Pre-configured database schemas</li>
+                    <li>Authentication flows</li>
+                    <li>Common integrations (Stripe, analytics, etc.)</li>
+                    <li>Production-ready code structure</li>
                 </ul>
-            </div>
-            
-            <h2 id="overview">Templates Overview</h2>
-            <p>v0's template library provides <strong>pre-built starting points</strong> for common application types. Instead of starting from a blank canvas, you can begin with a polished foundation and customize it with AI assistance.</p>
-            
-            <p>Templates include:</p>
-            <ul>
-                <li>Complete UI designs with multiple pages</li>
-                <li>Pre-configured database schemas</li>
-                <li>Authentication flows</li>
-                <li>Common integrations (Stripe, analytics, etc.)</li>
-                <li>Production-ready code structure</li>
-            </ul>
-            
-            <div class="highlight">
-                <h4>Templates vs. Starting Fresh</h4>
-                <p><strong>Use a template when:</strong> You want to ship faster and your project fits a common pattern (SaaS, e-commerce, portfolio).</p>
-                <p><strong>Start fresh when:</strong> You have a unique concept or want complete control over architecture from the beginning.</p>
-            </div>
-            
-            <h2 id="categories">Template Categories</h2>
-            
-            <h3>Marketing & Landing Pages</h3>
-            <p>Conversion-optimized pages for products and services:</p>
-            <ul>
-                <li>SaaS landing pages with feature sections</li>
-                <li>Product launch pages</li>
-                <li>Agency and portfolio sites</li>
-                <li>Coming soon / waitlist pages</li>
-            </ul>
-            
-            <h3>Dashboards & Admin</h3>
-            <p>Data-rich interfaces for managing applications:</p>
-            <ul>
-                <li>Analytics dashboards</li>
-                <li>Admin panels with CRUD</li>
-                <li>CRM interfaces</li>
-                <li>Project management boards</li>
-            </ul>
-            
-            <h3>E-commerce</h3>
-            <p>Complete shopping experiences:</p>
-            <ul>
-                <li>Product catalogs</li>
-                <li>Shopping carts</li>
-                <li>Checkout flows</li>
-                <li>Order management</li>
-            </ul>
-            
-            <h3>Authentication</h3>
-            <p>User account flows:</p>
-            <ul>
-                <li>Sign up / sign in pages</li>
-                <li>Password reset flows</li>
-                <li>OAuth integration</li>
-                <li>Profile management</li>
-            </ul>
-            
-            <h3>Content & Blog</h3>
-            <p>Publishing and content management:</p>
-            <ul>
-                <li>Blog with MDX support</li>
-                <li>Documentation sites</li>
-                <li>Knowledge bases</li>
-                <li>Changelog pages</li>
-            </ul>
-            
-            <h2 id="using">Using Templates</h2>
-            
-            <h3>Step 1: Browse Templates</h3>
-            <ol>
-                <li>Go to <a href="https://v0.dev/templates" target="_blank">v0.dev/templates</a></li>
-                <li>Filter by category, features, or style</li>
-                <li>Preview templates to see all pages</li>
-            </ol>
-            
-            <h3>Step 2: Start with Template</h3>
-            <ol>
-                <li>Click "Use Template" on your chosen template</li>
-                <li>v0 creates a new project with the template code</li>
-                <li>The template opens in the editor</li>
-            </ol>
-            
-            <h3>Step 3: Customize</h3>
-            <ol>
-                <li>Update branding (logo, colors, fonts)</li>
-                <li>Modify content to match your needs</li>
-                <li>Add or remove features via prompts</li>
-                <li>Connect your database and services</li>
-            </ol>
-            
-            <h2 id="customizing">Customizing Templates</h2>
-            
-            <h3>Branding Changes</h3>
-            <p>Quick wins for making a template your own:</p>
-            <pre><code>"Change the primary color to blue (#3B82F6)"
+                
+                <div class="info-box">
+                    <h4>Templates vs. Starting Fresh</h4>
+                    <p><strong>Use a template when:</strong> You want to ship faster and your project fits a common pattern (SaaS, e-commerce, portfolio).</p>
+                    <p><strong>Start fresh when:</strong> You have a unique concept or want complete control over architecture from the beginning.</p>
+                </div>
+                
+                <h2 id="categories">Template Categories</h2>
+                
+                <h3>Marketing & Landing Pages</h3>
+                <p>Conversion-optimized pages for products and services:</p>
+                <ul>
+                    <li>SaaS landing pages with feature sections</li>
+                    <li>Product launch pages</li>
+                    <li>Agency and portfolio sites</li>
+                    <li>Coming soon / waitlist pages</li>
+                </ul>
+                
+                <h3>Dashboards & Admin</h3>
+                <p>Data-rich interfaces for managing applications:</p>
+                <ul>
+                    <li>Analytics dashboards</li>
+                    <li>Admin panels with CRUD</li>
+                    <li>CRM interfaces</li>
+                    <li>Project management boards</li>
+                </ul>
+                
+                <h3>E-commerce</h3>
+                <p>Complete shopping experiences:</p>
+                <ul>
+                    <li>Product catalogs</li>
+                    <li>Shopping carts</li>
+                    <li>Checkout flows</li>
+                    <li>Order management</li>
+                </ul>
+                
+                <h3>Authentication</h3>
+                <p>User account flows:</p>
+                <ul>
+                    <li>Sign up / sign in pages</li>
+                    <li>Password reset flows</li>
+                    <li>OAuth integration</li>
+                    <li>Profile management</li>
+                </ul>
+                
+                <h3>Content & Blog</h3>
+                <p>Publishing and content management:</p>
+                <ul>
+                    <li>Blog with MDX support</li>
+                    <li>Documentation sites</li>
+                    <li>Knowledge bases</li>
+                    <li>Changelog pages</li>
+                </ul>
+                
+                <h2 id="using">Using Templates</h2>
+                
+                <h3>Step 1: Browse Templates</h3>
+                <ol>
+                    <li>Go to <a href="https://v0.dev/templates" target="_blank">v0.dev/templates</a></li>
+                    <li>Filter by category, features, or style</li>
+                    <li>Preview templates to see all pages</li>
+                </ol>
+                
+                <h3>Step 2: Start with Template</h3>
+                <ol>
+                    <li>Click "Use Template" on your chosen template</li>
+                    <li>v0 creates a new project with the template code</li>
+                    <li>The template opens in the editor</li>
+                </ol>
+                
+                <h3>Step 3: Customize</h3>
+                <ol>
+                    <li>Update branding (logo, colors, fonts)</li>
+                    <li>Modify content to match your needs</li>
+                    <li>Add or remove features via prompts</li>
+                    <li>Connect your database and services</li>
+                </ol>
+                
+                <h2 id="customizing">Customizing Templates</h2>
+                
+                <h3>Branding Changes</h3>
+                <p>Quick wins for making a template your own:</p>
+                <pre><code>"Change the primary color to blue (#3B82F6)"
 "Replace the logo with my company name 'Acme Inc'"
 "Update the footer with our social links"</code></pre>
-            
-            <h3>Structural Changes</h3>
-            <p>Modify the template's structure:</p>
-            <pre><code>"Add a pricing section between features and testimonials"
+                
+                <h3>Structural Changes</h3>
+                <p>Modify the template's structure:</p>
+                <pre><code>"Add a pricing section between features and testimonials"
 "Remove the blog section, we don't need it"
 "Add a fourth column to the footer"</code></pre>
-            
-            <h3>Feature Additions</h3>
-            <p>Extend template functionality:</p>
-            <pre><code>"Add a newsletter signup form that connects to Mailchimp"
+                
+                <h3>Feature Additions</h3>
+                <p>Extend template functionality:</p>
+                <pre><code>"Add a newsletter signup form that connects to Mailchimp"
 "Include a live chat widget in the bottom right"
 "Add dark mode toggle to the header"</code></pre>
-            
-            <h3>Data Model Changes</h3>
-            <p>Adapt the database to your needs:</p>
-            <pre><code>"Add a 'priority' field to tasks with high/medium/low options"
+                
+                <h3>Data Model Changes</h3>
+                <p>Adapt the database to your needs:</p>
+                <pre><code>"Add a 'priority' field to tasks with high/medium/low options"
 "Create a new 'categories' table and link products to categories"
 "Add soft delete to all models"</code></pre>
-            
-            <h2 id="popular">Popular Templates</h2>
-            
-            <div class="template-card">
-                <h4>SaaS Starter</h4>
-                <p>Complete SaaS foundation with authentication, subscription billing, dashboard, and settings.</p>
-                <span class="template-tag">Auth</span>
-                <span class="template-tag">Stripe</span>
-                <span class="template-tag">Dashboard</span>
+                
+                <h2 id="popular">Popular Templates</h2>
+                
+                <div class="info-box">
+                    <h4>SaaS Starter</h4>
+                    <p>Complete SaaS foundation with authentication, subscription billing, dashboard, and settings.</p>
+                    <p><span class="tag">Auth</span> <span class="tag">Stripe</span> <span class="tag">Dashboard</span></p>
+                </div>
+                
+                <div class="info-box">
+                    <h4>E-commerce Store</h4>
+                    <p>Full shopping experience with product catalog, cart, checkout, and order history.</p>
+                    <p><span class="tag">Payments</span> <span class="tag">Products</span> <span class="tag">Orders</span></p>
+                </div>
+                
+                <div class="info-box">
+                    <h4>Admin Dashboard</h4>
+                    <p>Feature-rich admin panel with data tables, charts, user management, and settings.</p>
+                    <p><span class="tag">Tables</span> <span class="tag">Charts</span> <span class="tag">CRUD</span></p>
+                </div>
+                
+                <div class="info-box">
+                    <h4>Portfolio</h4>
+                    <p>Personal portfolio with project showcase, about section, blog, and contact form.</p>
+                    <p><span class="tag">Projects</span> <span class="tag">Blog</span> <span class="tag">Contact</span></p>
+                </div>
+                
+                <div class="info-box">
+                    <h4>Documentation</h4>
+                    <p>Technical documentation site with sidebar navigation, search, and MDX support.</p>
+                    <p><span class="tag">MDX</span> <span class="tag">Search</span> <span class="tag">Navigation</span></p>
+                </div>
+                
+                <h2 id="creating">Creating Your Own Templates</h2>
+                <p>If you've built something useful, you can save it as a template for future projects.</p>
+                
+                <h3>Saving a Project as Template</h3>
+                <ol>
+                    <li>Open your completed v0 project</li>
+                    <li>Go to Project Settings</li>
+                    <li>Click "Save as Template"</li>
+                    <li>Add name, description, and tags</li>
+                    <li>Choose visibility (private or public)</li>
+                </ol>
+                
+                <h3>Template Best Practices</h3>
+                <ul>
+                    <li><strong>Generic naming:</strong> Use placeholder names like "Your Company"</li>
+                    <li><strong>Neutral colors:</strong> Easy-to-customize color scheme</li>
+                    <li><strong>Clear structure:</strong> Well-organized files and components</li>
+                    <li><strong>Documentation:</strong> Add comments explaining customization points</li>
+                    <li><strong>Environment variables:</strong> Use .env.example with all required vars</li>
+                </ul>
+                
+                <div class="info-box info-box-success">
+                    <h4>Community Templates</h4>
+                    <p>Public templates from the v0 community are available in the template gallery. If you create something useful, consider sharing it to help others get started faster.</p>
+                </div>
+                
+                <div class="cta-section">
+                    <h3>Explore v0 Templates</h3>
+                    <p>Find the perfect starting point for your next project.</p>
+                    <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Browse Templates &rarr;</a>
+                </div>
+                
+                <h2>Conclusion</h2>
+                <p>v0 templates dramatically accelerate development by providing production-ready starting points. Whether you're building a SaaS application, e-commerce store, or portfolio site, there's likely a template that gets you 80% of the way there.</p>
+                
+                <p>The key is to choose a template close to your vision, then customize with targeted prompts and Design Mode adjustments. This approach combines the speed of templates with the flexibility of AI-assisted customization&mdash;the best of both worlds.</p>
             </div>
-            
-            <div class="template-card">
-                <h4>E-commerce Store</h4>
-                <p>Full shopping experience with product catalog, cart, checkout, and order history.</p>
-                <span class="template-tag">Payments</span>
-                <span class="template-tag">Products</span>
-                <span class="template-tag">Orders</span>
-            </div>
-            
-            <div class="template-card">
-                <h4>Admin Dashboard</h4>
-                <p>Feature-rich admin panel with data tables, charts, user management, and settings.</p>
-                <span class="template-tag">Tables</span>
-                <span class="template-tag">Charts</span>
-                <span class="template-tag">CRUD</span>
-            </div>
-            
-            <div class="template-card">
-                <h4>Portfolio</h4>
-                <p>Personal portfolio with project showcase, about section, blog, and contact form.</p>
-                <span class="template-tag">Projects</span>
-                <span class="template-tag">Blog</span>
-                <span class="template-tag">Contact</span>
-            </div>
-            
-            <div class="template-card">
-                <h4>Documentation</h4>
-                <p>Technical documentation site with sidebar navigation, search, and MDX support.</p>
-                <span class="template-tag">MDX</span>
-                <span class="template-tag">Search</span>
-                <span class="template-tag">Navigation</span>
-            </div>
-            
-            <h2 id="creating">Creating Your Own Templates</h2>
-            <p>If you've built something useful, you can save it as a template for future projects.</p>
-            
-            <h3>Saving a Project as Template</h3>
-            <ol>
-                <li>Open your completed v0 project</li>
-                <li>Go to Project Settings</li>
-                <li>Click "Save as Template"</li>
-                <li>Add name, description, and tags</li>
-                <li>Choose visibility (private or public)</li>
-            </ol>
-            
-            <h3>Template Best Practices</h3>
-            <ul>
-                <li><strong>Generic naming:</strong> Use placeholder names like "Your Company"</li>
-                <li><strong>Neutral colors:</strong> Easy-to-customize color scheme</li>
-                <li><strong>Clear structure:</strong> Well-organized files and components</li>
-                <li><strong>Documentation:</strong> Add comments explaining customization points</li>
-                <li><strong>Environment variables:</strong> Use .env.example with all required vars</li>
-            </ul>
-            
-            <div class="highlight">
-                <h4>Community Templates</h4>
-                <p>Public templates from the v0 community are available in the template gallery. If you create something useful, consider sharing it to help others get started faster.</p>
-            </div>
-            
-            <div class="cta-box">
-                <h3>Explore v0 Templates</h3>
-                <p>Find the perfect starting point for your next project.</p>
-                <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Browse Templates &rarr;</a>
-            </div>
-            
-            <h2>Conclusion</h2>
-            <p>v0 templates dramatically accelerate development by providing production-ready starting points. Whether you're building a SaaS application, e-commerce store, or portfolio site, there's likely a template that gets you 80% of the way there.</p>
-            
-            <p>The key is to choose a template close to your vision, then customize with targeted prompts and Design Mode adjustments. This approach combines the speed of templates with the flexibility of AI-assisted customization&mdash;the best of both worlds.</p>
         </article>
-        
-        <footer>
-            <p>&copy; 2026 v0 Guide. Not affiliated with Vercel.</p>
-        </footer>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Guides</h4>
+                    <a href="/blog/what-is-v0-2026/">What is v0?</a>
+                    <a href="/blog/v0-pricing-guide-2026/">Pricing Guide</a>
+                    <a href="/blog/v0-vs-cursor-vs-bolt-2026/">v0 vs Competitors</a>
+                    <a href="/blog/v0-prompt-engineering-masterclass/">Prompt Engineering</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <a href="/blog/v0-agentic-features-guide/">Agentic Features</a>
+                    <a href="/blog/v0-figma-to-code/">Figma to Code</a>
+                    <a href="/blog/v0-design-mode-tutorial/">Design Mode</a>
+                    <a href="/blog/v0-github-integration-guide/">GitHub Integration</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Use Cases</h4>
+                    <a href="/blog/v0-for-developers/">For Developers</a>
+                    <a href="/blog/v0-for-designers/">For Designers</a>
+                    <a href="/blog/v0-for-product-managers/">For PMs</a>
+                    <a href="/blog/v0-enterprise-features/">Enterprise</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="/blog/">All Guides</a>
+                    <a href="https://v0.dev" target="_blank" rel="noopener">v0.dev</a>
+                    <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>v0 Guide</strong> &mdash; The definitive resource for Vercel v0</p>
+                <p>&copy; 2026 v0 Guide. Independent reviews and tutorials. Not affiliated with Vercel.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

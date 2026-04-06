@@ -16,160 +16,230 @@
     {"@context":"https://schema.org","@type":"Article","headline":"v0 Prompt Engineering Masterclass","datePublished":"2026-04-06","author":{"@type":"Organization","name":"v0 Guide"}}
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #030303; --sf: #0a0a0a; --brd: #1a1a1a; --tx: #fafafa; --mt: #a1a1aa; --ac: #10b981; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.8; }
-        .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
-        .nav { position: sticky; top: 0; z-index: 50; background: rgba(3,3,3,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--brd); }
-        .nav-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.5rem; }
-        .nav a { font-weight: 900; font-size: 1.1rem; color: var(--tx); text-decoration: none; }
-        .cta { display: inline-flex; padding: 0.6rem 1.2rem; background: var(--ac); color: #000; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.875rem; }
-        .breadcrumb { padding: 1rem 0; font-size: 0.875rem; color: var(--mt); }
-        .breadcrumb a { color: var(--mt); text-decoration: none; }
-        article { padding: 2rem 0 4rem; }
-        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(16,185,129,0.1); color: var(--ac); border: 1px solid rgba(16,185,129,0.2); border-radius: 9999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
-        h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
-        .meta { color: var(--mt); font-size: 0.875rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--brd); }
-        h2 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 0.75rem; }
-        p { color: var(--mt); margin-bottom: 1.25rem; font-size: 1.0625rem; }
-        ul, ol { color: var(--mt); margin: 1rem 0 1.5rem 1.5rem; }
-        li { margin-bottom: 0.5rem; }
-        strong { color: var(--tx); font-weight: 600; }
-        a { color: var(--ac); }
-        .prompt-box { background: #0f172a; border: 1px solid #1e3a5f; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; font-family: monospace; font-size: 0.9rem; color: #94a3b8; }
-        .prompt-box.good { border-color: var(--ac); }
-        .prompt-box.bad { border-color: #ef4444; }
-        .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
-        .label.good { color: var(--ac); }
-        .label.bad { color: #ef4444; }
-        .tip-card { background: var(--sf); border: 1px solid var(--brd); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
-        .tip-card h4 { color: var(--tx); margin-bottom: 0.75rem; }
-        .cta-box { text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(6,182,212,0.1)); border: 1px solid var(--brd); border-radius: 16px; margin: 3rem 0; }
-        footer { border-top: 1px solid var(--brd); padding: 2rem 0; margin-top: 4rem; text-align: center; }
-        footer p { font-size: 0.875rem; }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <nav class="nav"><div class="nav-wrap"><a href="/">&#9650; v0 Guide</a><a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a></div></nav>
-    
-    <main class="wrap">
-        <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; Prompt Engineering</div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">&#9650; v0 Guide</a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="/blog/" class="nav-link nav-dropdown-trigger">
+                        Guides
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/what-is-v0-2026/" class="nav-dropdown-item">What is v0?</a>
+                        <a href="/blog/v0-pricing-guide-2026/" class="nav-dropdown-item">Pricing Guide</a>
+                        <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="nav-dropdown-item">v0 vs Cursor vs Bolt</a>
+                        <a href="/blog/v0-prompt-engineering-masterclass/" class="nav-dropdown-item">Prompt Engineering</a>
+                        <a href="/blog/v0-deployment-guide-2026/" class="nav-dropdown-item">Deployment Guide</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Features
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-agentic-features-guide/" class="nav-dropdown-item">Agentic Features</a>
+                        <a href="/blog/v0-figma-to-code/" class="nav-dropdown-item">Figma to Code</a>
+                        <a href="/blog/v0-design-mode-tutorial/" class="nav-dropdown-item">Design Mode</a>
+                        <a href="/blog/v0-github-integration-guide/" class="nav-dropdown-item">GitHub Integration</a>
+                        <a href="/blog/v0-database-integrations/" class="nav-dropdown-item">Database Integrations</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Use Cases
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-for-developers/" class="nav-dropdown-item">For Developers</a>
+                        <a href="/blog/v0-for-designers/" class="nav-dropdown-item">For Designers</a>
+                        <a href="/blog/v0-for-product-managers/" class="nav-dropdown-item">For Product Managers</a>
+                        <a href="/blog/v0-full-stack-apps-guide/" class="nav-dropdown-item">Full-Stack Apps</a>
+                        <a href="/blog/v0-enterprise-features/" class="nav-dropdown-item">Enterprise Features</a>
+                    </div>
+                </div>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container-narrow">
+        <div class="breadcrumbs"><a href="/">Home</a> <span>&rsaquo;</span> <a href="/blog/">Blog</a> <span>&rsaquo;</span> Prompt Engineering</div>
         
         <article>
-            <span class="badge">Prompt Engineering</span>
-            <h1>v0 Prompt Engineering Masterclass: Write Prompts That Generate Production Code</h1>
-            <p class="meta">Updated April 6, 2026 &bull; 14 min read</p>
+            <header class="article-header">
+                <span class="article-category">Prompt Engineering</span>
+                <h1 class="article-title">v0 Prompt Engineering Masterclass: Write Prompts That Generate Production Code</h1>
+                <p class="article-meta">Updated April 6, 2026 &bull; 14 min read</p>
+            </header>
             
-            <p>The quality of your v0 output depends heavily on how you write your prompts. This guide teaches you the proven techniques for writing prompts that generate production-ready, deployable code.</p>
-            
-            <h2>The Golden Rule: Be Specific</h2>
-            
-            <p>The more specific your prompt, the better the results. Include details about functionality, design preferences, and technical requirements.</p>
-            
-            <p class="label bad">Instead of:</p>
-            <div class="prompt-box bad">"Make a website"</div>
-            
-            <p class="label good">Try:</p>
-            <div class="prompt-box good">"Create a portfolio website for a freelance designer with hero section, projects showcase with filterable grid, contact form with validation, and responsive dark mode design"</div>
-            
-            <h2>Basic Prompt Examples</h2>
-            
-            <p>Start with simple, descriptive prompts:</p>
-            
-            <div class="prompt-box">"A dashboard with a login page and user profile view"</div>
-            <div class="prompt-box">"A landing page for a mobile app with a hero section, features grid, and pricing table"</div>
-            <div class="prompt-box">"An internal tool to manage customer support tickets"</div>
-            <div class="prompt-box">"A product feedback form that writes to a database"</div>
-            
-            <h2>AI Prompt Enhancement</h2>
-            
-            <p>After writing a simple prompt, v0 may offer to enhance it with more details. Select the enhancement option to get a comprehensive specification that improves your results.</p>
-            
-            <p class="label">Original:</p>
-            <div class="prompt-box">"Make a todo app"</div>
-            
-            <p class="label good">Enhanced:</p>
-            <div class="prompt-box good">"Create a modern todo application with add/edit/delete tasks, completion tracking, filtering by status, localStorage persistence, and responsive dark mode design"</div>
-            
-            <h2>Best Practices</h2>
-            
-            <div class="tip-card">
-                <h4>1. Break Down Complex Tasks</h4>
-                <p>Large applications are better built incrementally. This reduces errors and makes debugging easier.</p>
-                <p class="label bad">Too complex:</p>
-                <div class="prompt-box bad">"Create a full e-commerce platform with auth, catalog, cart, payments, orders, admin dashboard, and analytics"</div>
-                <p class="label good">Better approach:</p>
-                <div class="prompt-box good">"Start with a product catalogue page showing products in a grid layout"</div>
-                <p>Then follow up: "Add a shopping cart with localStorage persistence"</p>
-            </div>
-            
-            <div class="tip-card">
-                <h4>2. Include Technical Details</h4>
-                <p>Specify your preferred technologies, frameworks, and integrations.</p>
-                <div class="prompt-box good">"Build a real-time chat app using:<br>- Next.js 14 with App Router<br>- Socket.io for messaging<br>- MongoDB for storage<br>- NextAuth.js for authentication"</div>
-            </div>
-            
-            <div class="tip-card">
-                <h4>3. Specify UI/UX Preferences</h4>
-                <p>Include design preferences to match your vision.</p>
-                <div class="prompt-box good">"Design a minimal, dark-mode interface with mobile-first responsive layout and subtle animations"</div>
-            </div>
-            
-            <div class="tip-card">
-                <h4>4. Include Error Handling</h4>
-                <p>Specify how you want to handle failure scenarios.</p>
-                <div class="prompt-box good">"Add comprehensive error handling for network failures, invalid input, and empty states with user-friendly error messages"</div>
-            </div>
-            
-            <h2>Advanced Techniques</h2>
-            
-            <h3>Ask v0 to Plan</h3>
-            <p>When unsure how to approach a complex project, let v0 help break it down:</p>
-            <div class="prompt-box">"Break down the development of a social media dashboard into smaller steps"</div>
-            
-            <h3>Component-First Development</h3>
-            <p>Build piece by piece for more control:</p>
-            <div class="prompt-box">"Create a header component with navigation and logo"</div>
-            <p>Then: "Add a hero section below the header"</p>
-            
-            <h3>Progressive Enhancement</h3>
-            <ol>
-                <li><strong>Core Features:</strong> "Create a basic todo list with add/delete"</li>
-                <li><strong>Data Persistence:</strong> "Add localStorage to save todos"</li>
-                <li><strong>User Experience:</strong> "Add completion checkboxes and filtering"</li>
-            </ol>
-            
-            <h2>Prompt Templates</h2>
-            
-            <h3>CRUD Operations</h3>
-            <div class="prompt-box">"Create a resource management interface with list view, add/edit forms, delete confirmation, and search/pagination"</div>
-            
-            <h3>Authentication</h3>
-            <div class="prompt-box">"Implement NextAuth.js authentication with login/register forms, password reset, session management, and protected routes"</div>
-            
-            <h3>Dashboards</h3>
-            <div class="prompt-box">"Build a dashboard widget showing revenue with current value, trend indicator, comparison to last month, and interactive chart"</div>
-            
-            <h2>Prompt Queuing</h2>
-            
-            <p>You can queue up to <strong>10 prompts</strong> while v0 is still generating. Queued prompts run automatically in order, so you can plan multi-step workflows:</p>
-            
-            <ol>
-                <li>"Add authentication"</li>
-                <li>"Connect the database"</li>
-                <li>"Add a settings page"</li>
-            </ol>
-            
-            <div class="cta-box">
-                <h3>Put These Techniques to Work</h3>
-                <p>Start generating better code with v0 today.</p>
-                <a href="https://v0.dev" target="_blank" rel="noopener" class="cta">Try v0 Free &rarr;</a>
+            <div class="article-content">
+                <p>The quality of your v0 output depends heavily on how you write your prompts. This guide teaches you the proven techniques for writing prompts that generate production-ready, deployable code.</p>
+                
+                <h2>The Golden Rule: Be Specific</h2>
+                
+                <p>The more specific your prompt, the better the results. Include details about functionality, design preferences, and technical requirements.</p>
+                
+                <div class="info-box info-box-warning">
+                    <strong>Instead of:</strong>
+                    <pre><code>"Make a website"</code></pre>
+                </div>
+                
+                <div class="info-box info-box-success">
+                    <strong>Try:</strong>
+                    <pre><code>"Create a portfolio website for a freelance designer with hero section, projects showcase with filterable grid, contact form with validation, and responsive dark mode design"</code></pre>
+                </div>
+                
+                <h2>Basic Prompt Examples</h2>
+                
+                <p>Start with simple, descriptive prompts:</p>
+                
+                <pre><code>"A dashboard with a login page and user profile view"</code></pre>
+                <pre><code>"A landing page for a mobile app with a hero section, features grid, and pricing table"</code></pre>
+                <pre><code>"An internal tool to manage customer support tickets"</code></pre>
+                <pre><code>"A product feedback form that writes to a database"</code></pre>
+                
+                <h2>AI Prompt Enhancement</h2>
+                
+                <p>After writing a simple prompt, v0 may offer to enhance it with more details. Select the enhancement option to get a comprehensive specification that improves your results.</p>
+                
+                <div class="info-box">
+                    <strong>Original:</strong>
+                    <pre><code>"Make a todo app"</code></pre>
+                </div>
+                
+                <div class="info-box info-box-success">
+                    <strong>Enhanced:</strong>
+                    <pre><code>"Create a modern todo application with add/edit/delete tasks, completion tracking, filtering by status, localStorage persistence, and responsive dark mode design"</code></pre>
+                </div>
+                
+                <h2>Best Practices</h2>
+                
+                <div class="info-box">
+                    <h4>1. Break Down Complex Tasks</h4>
+                    <p>Large applications are better built incrementally. This reduces errors and makes debugging easier.</p>
+                    <p><strong>Too complex:</strong></p>
+                    <pre><code>"Create a full e-commerce platform with auth, catalog, cart, payments, orders, admin dashboard, and analytics"</code></pre>
+                    <p><strong>Better approach:</strong></p>
+                    <pre><code>"Start with a product catalogue page showing products in a grid layout"</code></pre>
+                    <p>Then follow up: "Add a shopping cart with localStorage persistence"</p>
+                </div>
+                
+                <div class="info-box">
+                    <h4>2. Include Technical Details</h4>
+                    <p>Specify your preferred technologies, frameworks, and integrations.</p>
+                    <pre><code>"Build a real-time chat app using:
+- Next.js 14 with App Router
+- Socket.io for messaging
+- MongoDB for storage
+- NextAuth.js for authentication"</code></pre>
+                </div>
+                
+                <div class="info-box">
+                    <h4>3. Specify UI/UX Preferences</h4>
+                    <p>Include design preferences to match your vision.</p>
+                    <pre><code>"Design a minimal, dark-mode interface with mobile-first responsive layout and subtle animations"</code></pre>
+                </div>
+                
+                <div class="info-box">
+                    <h4>4. Include Error Handling</h4>
+                    <p>Specify how you want to handle failure scenarios.</p>
+                    <pre><code>"Add comprehensive error handling for network failures, invalid input, and empty states with user-friendly error messages"</code></pre>
+                </div>
+                
+                <h2>Advanced Techniques</h2>
+                
+                <h3>Ask v0 to Plan</h3>
+                <p>When unsure how to approach a complex project, let v0 help break it down:</p>
+                <pre><code>"Break down the development of a social media dashboard into smaller steps"</code></pre>
+                
+                <h3>Component-First Development</h3>
+                <p>Build piece by piece for more control:</p>
+                <pre><code>"Create a header component with navigation and logo"</code></pre>
+                <p>Then: "Add a hero section below the header"</p>
+                
+                <h3>Progressive Enhancement</h3>
+                <ol>
+                    <li><strong>Core Features:</strong> "Create a basic todo list with add/delete"</li>
+                    <li><strong>Data Persistence:</strong> "Add localStorage to save todos"</li>
+                    <li><strong>User Experience:</strong> "Add completion checkboxes and filtering"</li>
+                </ol>
+                
+                <h2>Prompt Templates</h2>
+                
+                <h3>CRUD Operations</h3>
+                <pre><code>"Create a resource management interface with list view, add/edit forms, delete confirmation, and search/pagination"</code></pre>
+                
+                <h3>Authentication</h3>
+                <pre><code>"Implement NextAuth.js authentication with login/register forms, password reset, session management, and protected routes"</code></pre>
+                
+                <h3>Dashboards</h3>
+                <pre><code>"Build a dashboard widget showing revenue with current value, trend indicator, comparison to last month, and interactive chart"</code></pre>
+                
+                <h2>Prompt Queuing</h2>
+                
+                <p>You can queue up to <strong>10 prompts</strong> while v0 is still generating. Queued prompts run automatically in order, so you can plan multi-step workflows:</p>
+                
+                <ol>
+                    <li>"Add authentication"</li>
+                    <li>"Connect the database"</li>
+                    <li>"Add a settings page"</li>
+                </ol>
+                
+                <div class="cta-section">
+                    <h3>Put These Techniques to Work</h3>
+                    <p>Start generating better code with v0 today.</p>
+                    <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+                </div>
             </div>
         </article>
     </main>
-    
-    <footer><div class="wrap"><p><strong>&#9650; v0 Guide</strong> &mdash; The definitive resource for Vercel v0</p></div></footer>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Guides</h4>
+                    <a href="/blog/what-is-v0-2026/">What is v0?</a>
+                    <a href="/blog/v0-pricing-guide-2026/">Pricing Guide</a>
+                    <a href="/blog/v0-vs-cursor-vs-bolt-2026/">v0 vs Competitors</a>
+                    <a href="/blog/v0-prompt-engineering-masterclass/">Prompt Engineering</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <a href="/blog/v0-agentic-features-guide/">Agentic Features</a>
+                    <a href="/blog/v0-figma-to-code/">Figma to Code</a>
+                    <a href="/blog/v0-design-mode-tutorial/">Design Mode</a>
+                    <a href="/blog/v0-github-integration-guide/">GitHub Integration</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Use Cases</h4>
+                    <a href="/blog/v0-for-developers/">For Developers</a>
+                    <a href="/blog/v0-for-designers/">For Designers</a>
+                    <a href="/blog/v0-for-product-managers/">For PMs</a>
+                    <a href="/blog/v0-enterprise-features/">Enterprise</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="/blog/">All Guides</a>
+                    <a href="https://v0.dev" target="_blank" rel="noopener">v0.dev</a>
+                    <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>v0 Guide</strong> &mdash; The definitive resource for Vercel v0</p>
+                <p>&copy; 2026 v0 Guide. Independent reviews and tutorials. Not affiliated with Vercel.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
