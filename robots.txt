@@ -35,4 +35,4 @@ Disallow: /
 User-agent: MJ12bot
 Disallow: /
 
-Sitemap: https://yamajid.github.io/v0-site/sitemap-index.xml
+Sitemap: https://v0-guide.com/sitemap.xml
