@@ -1,50 +1,38 @@
-# robots.txt — v0 Guide
-# https://v0-guide.com/
-
-# ─── Search engines ───────────────────────────────────────────────
 User-agent: *
 Allow: /
 
-# ─── AI / Chatbot crawlers (explicitly allowed) ───────────────────
-# OpenAI (ChatGPT, Bing Copilot)
+# AI & LLM Bots - Full Access
 User-agent: GPTBot
 Allow: /
-
 User-agent: ChatGPT-User
 Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-# Anthropic (Claude)
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-# Google (Gemini, AI Overviews)
 User-agent: Google-Extended
 Allow: /
-
-# Perplexity
+User-agent: CCBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Omgilibot
+Allow: /
+User-agent: ImagesiftBot
+Allow: /
+User-agent: Diffbot
+Allow: /
 User-agent: PerplexityBot
 Allow: /
-
-# Meta (Llama)
-User-agent: FacebookBot
+User-agent: YouBot
 Allow: /
-
-# Apple
 User-agent: Applebot-Extended
 Allow: /
 
-# Common
-User-agent: cohere-ai
-Allow: /
+# Block aggressive SEO bots
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
 
-User-agent: YouBot
-Allow: /
-
-# ─── Sitemap ──────────────────────────────────────────────────────
-Sitemap: https://v0-guide.com/sitemap.xml
+Sitemap: https://yamajid.github.io/v0-site/sitemap-index.xml
