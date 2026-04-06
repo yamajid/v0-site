@@ -1,5 +1,5 @@
 # robots.txt — v0 Guide
-# https://yamajid.github.io/v0-site/
+# https://yamajid.github.io/
 
 # ─── Search engines ───────────────────────────────────────────────
 User-agent: *
@@ -48,4 +48,4 @@ User-agent: YouBot
 Allow: /
 
 # ─── Sitemap ──────────────────────────────────────────────────────
-Sitemap: https://yamajid.github.io/v0-site/sitemap.xml
+Sitemap: https://yamajid.github.io/sitemap.xml
