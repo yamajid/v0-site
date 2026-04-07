@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Stripe Payments to v0: Checkout, Webhooks &amp; Billing | v0 Guide</title>
+    <meta name="description" content="Complete tutorial for integrating Stripe with v0-generated apps — checkout pages, subscription billing, webhook handling, and payment success states.">
+    <meta name="keywords" content="v0, vercel, ai coding, prompt engineering, tutorial">
+    <link rel="canonical" href="https://v0-guide.com/blog/v0-stripe-integration/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Add Stripe Payments to v0: Checkout, Webhooks &amp; Billing">
+    <meta property="og:description" content="Complete tutorial for integrating Stripe with v0-generated apps — checkout pages, subscription billing, webhook handling, and payment success states.">
+    <meta property="og:url" content="https://v0-guide.com/blog/v0-stripe-integration/">
+    <meta property="og:site_name" content="v0 Guide">
+    <meta property="og:image" content="https://v0-guide.com/images/articles/og-default.svg">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2026-04-07">
+    <meta property="article:modified_time" content="2026-04-07">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Add Stripe Payments to v0: Checkout, Webhooks &amp; Billing">
+    <meta name="twitter:description" content="Complete tutorial for integrating Stripe with v0-generated apps — checkout pages, subscription billing, webhook handling, and payment success states.">
+    <meta name="twitter:image" content="https://v0-guide.com/images/articles/og-default.svg">
+    
+    <!-- Language -->
+    <link rel="alternate" hreflang="en" href="https://v0-guide.com/blog/v0-stripe-integration/">
+    <link rel="alternate" hreflang="x-default" href="https://v0-guide.com/blog/v0-stripe-integration/">
+    
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Add Stripe Payments to v0: Checkout, Webhooks &amp; Billing",
+        "description": "Complete tutorial for integrating Stripe with v0-generated apps — checkout pages, subscription billing, webhook handling, and payment success states.",
+        "image": "https://v0-guide.com/images/articles/og-default.svg",
+        "datePublished": "2026-04-07",
+        "dateModified": "2026-04-07",
+        "author": {"@type": "Organization", "name": "v0 Guide"},
+        "publisher": {"@type": "Organization", "name": "v0 Guide", "logo": {"@type": "ImageObject", "url": "https://v0-guide.com/favicon.svg"}},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://v0-guide.com/blog/v0-stripe-integration/"}
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://v0-guide.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://v0-guide.com/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Add Stripe to v0", "item": "https://v0-guide.com/blog/v0-stripe-integration/"}
+        ]
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{"@type":"Question","name":"Can v0 generate Stripe checkout pages?","acceptedAnswer":{"@type":"Answer","text":"v0 generates the UI for pricing and checkout pages. You need to wire the Stripe API calls server-side."}},{"@type":"Question","name":"Does Stripe have a free tier?","acceptedAnswer":{"@type":"Answer","text":"Yes, Stripe charges per transaction (2.9% + 30¢) with no monthly fee."}},{"@type":"Question","name":"Can I test Stripe before going live?","acceptedAnswer":{"@type":"Answer","text":"Yes, Stripe has a comprehensive test mode with test cards and API keys."}}]
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">&#9654; v0 Guide</a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="/blog/" class="nav-link nav-dropdown-trigger active">
+                        Guides
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/what-is-v0-2026/" class="nav-dropdown-item">What is v0?</a>
+                        <a href="/blog/v0-pricing-guide-2026/" class="nav-dropdown-item">Pricing Guide</a>
+                        <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="nav-dropdown-item">v0 vs Cursor vs Bolt</a>
+                        <a href="/blog/v0-prompt-engineering-masterclass/" class="nav-dropdown-item">Prompt Engineering</a>
+                        <a href="/blog/v0-deployment-guide-2026/" class="nav-dropdown-item">Deployment Guide</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Features
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-agentic-features-guide/" class="nav-dropdown-item">Agentic Features</a>
+                        <a href="/blog/v0-figma-to-code/" class="nav-dropdown-item">Figma to Code</a>
+                        <a href="/blog/v0-design-mode-tutorial/" class="nav-dropdown-item">Design Mode</a>
+                        <a href="/blog/v0-github-integration-guide/" class="nav-dropdown-item">GitHub Integration</a>
+                        <a href="/blog/v0-database-integrations/" class="nav-dropdown-item">Database Integrations</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Use Cases
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-for-developers/" class="nav-dropdown-item">For Developers</a>
+                        <a href="/blog/v0-for-designers/" class="nav-dropdown-item">For Designers</a>
+                        <a href="/blog/v0-for-product-managers/" class="nav-dropdown-item">For Product Managers</a>
+                        <a href="/blog/v0-full-stack-apps-guide/" class="nav-dropdown-item">Full-Stack Apps</a>
+                        <a href="/blog/v0-enterprise-features/" class="nav-dropdown-item">Enterprise Features</a>
+                    </div>
+                </div>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container-narrow">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <a href="/">Home</a><span>&rsaquo;</span><a href="/blog/">Guides</a><span>&rsaquo;</span>Add Stripe to v0
+        </nav>
+        
+        <!-- Article Header -->
+        <header class="article-header">
+            <span class="article-category">Tutorial</span>
+            <h1 class="article-title">Add Stripe Payments to v0: Checkout, Webhooks &amp; Billing</h1>
+            <div class="article-meta">
+                <span>Updated April 7, 2026</span>
+                <span>15 min read</span>
+            </div>
+        </header>
+        
+        <!-- Article Content -->
+        <article class="article-content">
+            <!-- Table of Contents -->
+            <div class="toc" style="position: relative; top: 0; max-height: none; margin-bottom: 2rem;">
+                <h4>Table of Contents</h4>
+                <a href="#overview">Overview</a>
+                <a href="#design">Design Pricing Page</a>
+                <a href="#account">Stripe Account</a>
+                <a href="#sdk">Install SDK</a>
+                <a href="#checkout">Checkout API</a>
+                <a href="#webhooks">Webhooks</a>
+                <a href="#post-payment">Post-Payment UI</a>
+                <a href="#portal">Customer Portal</a>
+            </div>
+            
+            <p>Adding Stripe payments to your v0-built app involves three parts: the checkout UI (v0 designs this), server-side payment processing (Next.js API routes), and post-payment state management.</p>
+
+<h2 id="design">Step 1: Design Your Pricing Page in v0</h2>
+<p>Use v0 to generate a beautiful three-tier pricing layout with feature comparison and subscribe buttons. These buttons will connect to Stripe checkout in the next step.</p>
+
+<h2 id="account">Step 2: Set Up Stripe Account</h2>
+<p>Create a Stripe account, get your publishable and secret keys, and configure your products with prices in the Stripe dashboard.</p>
+
+<h2 id="sdk">Step 3: Install Stripe SDK</h2>
+<p>Install required packages: <code>npm install stripe @stripe/stripe-js</code>. Add your Stripe secret key to environment variables — never expose this client-side.</p>
+
+<div class="info-box">
+<div class="info-box-title">Security Note</div>
+<p>Never expose your Stripe secret key in client-side code. Always process payments server-side through API routes.</p>
+</div>
+
+<h2 id="checkout">Step 4: Create Checkout API Route</h2>
+<p>Set up a Next.js API route that creates Stripe Checkout sessions with your product prices and success/cancel URLs.</p>
+
+<h2 id="connect">Step 5: Connect Subscribe Buttons</h2>
+<p>Wire your v0-generated pricing buttons to call the checkout API route, which redirects users to Stripe&apos;s hosted checkout page.</p>
+
+<h2 id="webhooks">Step 6: Handle Webhooks</h2>
+<p>Set up a Stripe webhook endpoint to receive payment events (payment succeeded, subscription cancelled, payment failed). Update your database accordingly based on each event type.</p>
+
+<h2 id="post-payment">Step 7: Post-Payment UI</h2>
+<p>Create success and cancellation pages in v0. The success page should confirm the subscription and provide clear next steps for the user.</p>
+
+<h2 id="portal">Step 8: Customer Portal</h2>
+<p>Implement Stripe Customer Portal for subscription management — users can upgrade, downgrade, or cancel without building custom UI yourself.</p>
+
+<h3>Important Notes</h3>
+<ul>
+<li>Never store credit card data yourself — Stripe handles it all</li>
+<li>Use Stripe&apos;s test mode during development with test card numbers</li>
+<li>Handle failed payments gracefully with helpful UI error states</li>
+<li>Set up webhook retry handling for reliability</li>
+</ul>
+            
+            <!-- FAQ Section -->
+            <section class="faq-section" id="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item active">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Can v0 generate Stripe checkout pages?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>v0 generates the UI for pricing and checkout pages. You need to wire the Stripe API calls server-side.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Does Stripe have a free tier?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, Stripe charges per transaction (2.9% + 30¢) with no monthly fee.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Can I test Stripe before going live?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, Stripe has a comprehensive test mode with test cards and API keys.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Ready to Build?</h2>
+                <p>Start building with v0 today. No credit card required for the free tier.</p>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+            </div>
+            
+            <!-- Related Guides -->
+            <section class="related-guides">
+                <h3>Related Guides</h3>
+                <div class="related-grid">
+                    <a href="/blog/what-is-v0-2026/" class="related-card">
+                        <div class="related-card-title">What is v0?</div>
+                        <div class="related-card-desc">Everything you need to know about Vercel's AI platform.</div>
+                    </a>
+                    <a href="/blog/v0-pricing-guide-2026/" class="related-card">
+                        <div class="related-card-title">Pricing Guide</div>
+                        <div class="related-card-desc">Compare free vs premium plans and find the right tier.</div>
+                    </a>
+                    <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="related-card">
+                        <div class="related-card-title">v0 vs Cursor vs Bolt</div>
+                        <div class="related-card-desc">Compare top AI coding tools side by side.</div>
+                    </a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Guides</h4>
+                    <a href="/blog/what-is-v0-2026/">What is v0?</a>
+                    <a href="/blog/v0-pricing-guide-2026/">Pricing Guide</a>
+                    <a href="/blog/v0-vs-cursor-vs-bolt-2026/">v0 vs Competitors</a>
+                    <a href="/blog/v0-prompt-engineering-masterclass/">Prompt Engineering</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <a href="/blog/v0-agentic-features-guide/">Agentic Features</a>
+                    <a href="/blog/v0-figma-to-code/">Figma to Code</a>
+                    <a href="/blog/v0-design-mode-tutorial/">Design Mode</a>
+                    <a href="/blog/v0-github-integration-guide/">GitHub Integration</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Use Cases</h4>
+                    <a href="/blog/v0-for-developers/">For Developers</a>
+                    <a href="/blog/v0-for-designers/">For Designers</a>
+                    <a href="/blog/v0-for-product-managers/">For PMs</a>
+                    <a href="/blog/v0-enterprise-features/">Enterprise</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="/blog/">All Guides</a>
+                    <a href="https://v0.dev" target="_blank" rel="noopener">v0.dev</a>
+                    <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>v0 Guide</strong> &mdash; The definitive resource for Vercel v0</p>
+                <p>&copy; 2026 v0 Guide. Independent reviews and tutorials. Not affiliated with Vercel.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

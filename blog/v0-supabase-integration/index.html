@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Connect v0 to Supabase: Database + Auth Setup (2026) | v0 Guide</title>
+    <meta name="description" content="Step-by-step guide to connecting your v0-generated UI to Supabase — including database tables, authentication, and real-time data fetching.">
+    <meta name="keywords" content="v0, vercel, ai coding, prompt engineering, tutorial">
+    <link rel="canonical" href="https://v0-guide.com/blog/v0-supabase-integration/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to Connect v0 to Supabase: Database + Auth Setup (2026)">
+    <meta property="og:description" content="Step-by-step guide to connecting your v0-generated UI to Supabase — including database tables, authentication, and real-time data fetching.">
+    <meta property="og:url" content="https://v0-guide.com/blog/v0-supabase-integration/">
+    <meta property="og:site_name" content="v0 Guide">
+    <meta property="og:image" content="https://v0-guide.com/images/articles/og-default.svg">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2026-04-07">
+    <meta property="article:modified_time" content="2026-04-07">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Connect v0 to Supabase: Database + Auth Setup (2026)">
+    <meta name="twitter:description" content="Step-by-step guide to connecting your v0-generated UI to Supabase — including database tables, authentication, and real-time data fetching.">
+    <meta name="twitter:image" content="https://v0-guide.com/images/articles/og-default.svg">
+    
+    <!-- Language -->
+    <link rel="alternate" hreflang="en" href="https://v0-guide.com/blog/v0-supabase-integration/">
+    <link rel="alternate" hreflang="x-default" href="https://v0-guide.com/blog/v0-supabase-integration/">
+    
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Connect v0 to Supabase: Database + Auth Setup (2026)",
+        "description": "Step-by-step guide to connecting your v0-generated UI to Supabase — including database tables, authentication, and real-time data fetching.",
+        "image": "https://v0-guide.com/images/articles/og-default.svg",
+        "datePublished": "2026-04-07",
+        "dateModified": "2026-04-07",
+        "author": {"@type": "Organization", "name": "v0 Guide"},
+        "publisher": {"@type": "Organization", "name": "v0 Guide", "logo": {"@type": "ImageObject", "url": "https://v0-guide.com/favicon.svg"}},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://v0-guide.com/blog/v0-supabase-integration/"}
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://v0-guide.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://v0-guide.com/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Connect v0 to Supabase", "item": "https://v0-guide.com/blog/v0-supabase-integration/"}
+        ]
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{"@type":"Question","name":"Can v0 connect to Supabase?","acceptedAnswer":{"@type":"Answer","text":"Yes. Export your v0 code and add the Supabase client library to wire up your UI to the database."}},{"@type":"Question","name":"Does v0 generate backend code for Supabase?","acceptedAnswer":{"@type":"Answer","text":"v0 scaffolds API routes and data fetching, but you need to configure the Supabase client manually."}},{"@type":"Question","name":"Is Supabase free?","acceptedAnswer":{"@type":"Answer"}}]
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">&#9654; v0 Guide</a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="/blog/" class="nav-link nav-dropdown-trigger active">
+                        Guides
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/what-is-v0-2026/" class="nav-dropdown-item">What is v0?</a>
+                        <a href="/blog/v0-pricing-guide-2026/" class="nav-dropdown-item">Pricing Guide</a>
+                        <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="nav-dropdown-item">v0 vs Cursor vs Bolt</a>
+                        <a href="/blog/v0-prompt-engineering-masterclass/" class="nav-dropdown-item">Prompt Engineering</a>
+                        <a href="/blog/v0-deployment-guide-2026/" class="nav-dropdown-item">Deployment Guide</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Features
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-agentic-features-guide/" class="nav-dropdown-item">Agentic Features</a>
+                        <a href="/blog/v0-figma-to-code/" class="nav-dropdown-item">Figma to Code</a>
+                        <a href="/blog/v0-design-mode-tutorial/" class="nav-dropdown-item">Design Mode</a>
+                        <a href="/blog/v0-github-integration-guide/" class="nav-dropdown-item">GitHub Integration</a>
+                        <a href="/blog/v0-database-integrations/" class="nav-dropdown-item">Database Integrations</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Use Cases
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-for-developers/" class="nav-dropdown-item">For Developers</a>
+                        <a href="/blog/v0-for-designers/" class="nav-dropdown-item">For Designers</a>
+                        <a href="/blog/v0-for-product-managers/" class="nav-dropdown-item">For Product Managers</a>
+                        <a href="/blog/v0-full-stack-apps-guide/" class="nav-dropdown-item">Full-Stack Apps</a>
+                        <a href="/blog/v0-enterprise-features/" class="nav-dropdown-item">Enterprise Features</a>
+                    </div>
+                </div>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container-narrow">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <a href="/">Home</a><span>&rsaquo;</span><a href="/blog/">Guides</a><span>&rsaquo;</span>Connect v0 to Supabase
+        </nav>
+        
+        <!-- Article Header -->
+        <header class="article-header">
+            <span class="article-category">Tutorial</span>
+            <h1 class="article-title">How to Connect v0 to Supabase: Database + Auth Setup (2026)</h1>
+            <div class="article-meta">
+                <span>Updated April 7, 2026</span>
+                <span>14 min read</span>
+            </div>
+        </header>
+        
+        <!-- Article Content -->
+        <article class="article-content">
+            <!-- Table of Contents -->
+            <div class="toc" style="position: relative; top: 0; max-height: none; margin-bottom: 2rem;">
+                <h4>Table of Contents</h4>
+                <a href="#prereq">Prerequisites</a>
+                <a href="#setup">Supabase Setup</a>
+                <a href="#tables">Database Tables</a>
+                <a href="#connect">Add Supabase Client</a>
+                <a href="#connect-ui">Connect UI</a>
+                <a href="#auth">Authentication</a>
+                <a href="#realtime">Real-Time</a>
+                <a href="#deploy">Deploy</a>
+            </div>
+            
+            <p>Connecting your v0-generated UI to Supabase is the most popular integration for v0 users. Here&apos;s the complete step-by-step guide.</p>
+
+<h2 id="prereq">Prerequisites</h2>
+<ul>
+<li>A v0.app project with UI already generated</li>
+<li>A free Supabase account</li>
+<li>Basic familiarity with React and Next.js</li>
+</ul>
+
+<h2 id="setup">Step 1: Set Up Your Supabase Project</h2>
+<p>Create a new project in Supabase dashboard. Note your project URL and anon/public key — you&apos;ll need these for environment variables.</p>
+
+<h2 id="tables">Step 2: Create Your Database Tables</h2>
+<p>Design your schema in Supabase SQL editor. For a typical SaaS app:</p>
+<ul>
+<li><strong>users</strong>: id, email, name, created_at</li>
+<li><strong>projects</strong>: id, user_id, name, status</li>
+<li><strong>subscriptions</strong>: id, user_id, plan, start_date</li>
+</ul>
+
+<div class="info-box">
+<div class="info-box-title">Pro Tip</div>
+<p>Enable Row Level Security (RLS) on all tables. Without it, everyone can read/write everything — a critical security gap.</p>
+</div>
+
+<h2 id="connect">Step 3: Add Supabase Client to Your v0 Project</h2>
+<p>Export your v0 code to GitHub or download it directly. Install the Supabase client:</p>
+<p><code>npm install @supabase/supabase-js</code></p>
+<p>Create a <code>supabase.ts</code> file with your project credentials from environment variables.</p>
+
+<h2 id="connect-ui">Step 4: Connect UI Components to Data</h2>
+<p>Replace static data in your v0-generated components with Supabase queries. For example, change a static user list to query the database using <code>supabase.from('users').select('*')</code>. Add loading states and error handling for a polished user experience.</p>
+
+<h2 id="auth">Step 5: Add Authentication</h2>
+<p>Use Supabase Auth for login and signup. Create auth pages in v0, then wire them to Supabase&apos;s auth helpers. Include sign-up forms, login forms with redirect, protected route middleware, and user session management.</p>
+
+<h2 id="realtime">Step 6: Real-Time Subscriptions</h2>
+<p>For live dashboards, set up Supabase real-time channels to update your UI when data changes automatically — no polling needed.</p>
+
+<h2 id="deploy">Step 7: Deploy</h2>
+<p>Push to Vercel and add Supabase environment variables in Vercel&apos;s dashboard. Your app is now live with a real database behind it.</p>
+
+<h3>Common Pitfalls</h3>
+<ul>
+<li>Forget to add Supabase URL and key to Vercel env vars</li>
+<li>Row level security policies not set up (data won&apos;t load)</li>
+<li>Using wrong Supabase client version</li>
+<li>Not handling loading and error states in UI components</li>
+</ul>
+            
+            <!-- FAQ Section -->
+            <section class="faq-section" id="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item active">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Can v0 connect to Supabase?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Export your v0 code and add the Supabase client library to wire up your UI to the database.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Does v0 generate backend code for Supabase?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>v0 scaffolds API routes and data fetching, but you need to configure the Supabase client manually.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Is Supabase free?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>undefined</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Ready to Build?</h2>
+                <p>Start building with v0 today. No credit card required for the free tier.</p>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+            </div>
+            
+            <!-- Related Guides -->
+            <section class="related-guides">
+                <h3>Related Guides</h3>
+                <div class="related-grid">
+                    <a href="/blog/what-is-v0-2026/" class="related-card">
+                        <div class="related-card-title">What is v0?</div>
+                        <div class="related-card-desc">Everything you need to know about Vercel's AI platform.</div>
+                    </a>
+                    <a href="/blog/v0-pricing-guide-2026/" class="related-card">
+                        <div class="related-card-title">Pricing Guide</div>
+                        <div class="related-card-desc">Compare free vs premium plans and find the right tier.</div>
+                    </a>
+                    <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="related-card">
+                        <div class="related-card-title">v0 vs Cursor vs Bolt</div>
+                        <div class="related-card-desc">Compare top AI coding tools side by side.</div>
+                    </a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Guides</h4>
+                    <a href="/blog/what-is-v0-2026/">What is v0?</a>
+                    <a href="/blog/v0-pricing-guide-2026/">Pricing Guide</a>
+                    <a href="/blog/v0-vs-cursor-vs-bolt-2026/">v0 vs Competitors</a>
+                    <a href="/blog/v0-prompt-engineering-masterclass/">Prompt Engineering</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <a href="/blog/v0-agentic-features-guide/">Agentic Features</a>
+                    <a href="/blog/v0-figma-to-code/">Figma to Code</a>
+                    <a href="/blog/v0-design-mode-tutorial/">Design Mode</a>
+                    <a href="/blog/v0-github-integration-guide/">GitHub Integration</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Use Cases</h4>
+                    <a href="/blog/v0-for-developers/">For Developers</a>
+                    <a href="/blog/v0-for-designers/">For Designers</a>
+                    <a href="/blog/v0-for-product-managers/">For PMs</a>
+                    <a href="/blog/v0-enterprise-features/">Enterprise</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="/blog/">All Guides</a>
+                    <a href="https://v0.dev" target="_blank" rel="noopener">v0.dev</a>
+                    <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>v0 Guide</strong> &mdash; The definitive resource for Vercel v0</p>
+                <p>&copy; 2026 v0 Guide. Independent reviews and tutorials. Not affiliated with Vercel.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
