@@ -762,3 +762,228 @@ tr:hover td {
 .mt-4 { margin-top: 4rem; }
 .mb-2 { margin-bottom: 2rem; }
 .mb-4 { margin-bottom: 4rem; }
+
+/* ============================================
+   RESPONSIVE ENHANCEMENTS (2026)
+   ============================================ */
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+  }
+  
+  .container-narrow {
+    max-width: 90%;
+  }
+  
+  .hero h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .article-content {
+    font-size: 1.05rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large Mobile (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .container-narrow {
+    padding: 0 1rem;
+  }
+  
+  .hero {
+    padding: 3rem 0;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .article-sidebar {
+    display: none;
+  }
+  
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .toc {
+    display: none;
+  }
+  
+  .article-content {
+    font-size: 1rem;
+  }
+  
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.875rem 1.5rem;
+  }
+  
+  .nav-container {
+    height: 56px;
+  }
+  
+  .nav-logo {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.875rem;
+  }
+  
+  .container-narrow {
+    padding: 0 0.875rem;
+    max-width: 100%;
+  }
+  
+  .hero {
+    padding: 2rem 0;
+  }
+  
+  .hero h1 {
+    font-size: 1.75rem;
+    letter-spacing: -0.01em;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .grid-3,
+  .grid-2,
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .article-title {
+    font-size: 1.5rem;
+  }
+  
+  .article-content {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    min-height: 48px;
+    font-size: 1rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  code {
+    font-size: 0.875rem;
+  }
+  
+  pre {
+    padding: 0.75rem;
+    overflow-x: auto;
+  }
+  
+  blockquote {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .nav-container {
+    height: 56px;
+    padding: 0 0.875rem;
+  }
+  
+  .nav-logo {
+    font-size: 1rem;
+  }
+  
+  .breadcrumbs {
+    font-size: 0.75rem;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Ensure tap targets meet accessibility standards */
+@media (max-width: 767px) {
+  a, button, .nav-link, .nav-dropdown-item {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  input, select, textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
