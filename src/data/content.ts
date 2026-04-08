@@ -1,5 +1,5 @@
 export const AFFILIATE = 'https://vercel.com/affiliates';
-export const SITE = 'https://yamajid.github.io/v0-site';
+export const SITE = 'https://v0-guide.com';
 
 export const posts = [
   {
