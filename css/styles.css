@@ -1086,8 +1086,12 @@ tr:hover td {
 
 /* Stack Section Headers */
 .stack-section {
-  padding: 3rem 0;
+  padding: 2rem 0 3rem;
   border-bottom: 1px solid var(--border);
+}
+
+.stack-section:last-child {
+  border-bottom: none;
 }
 
 .stack-section-label {
@@ -1118,8 +1122,8 @@ tr:hover td {
 /* Stack Tool Cards Grid */
 .stack-tools {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
 /* Individual Stack Tool Card */
