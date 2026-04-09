@@ -143,3 +143,88 @@ After deployment, verify:
 - [ ] Tablet displays proper layout
 - [ ] Mobile displays proper single-column layout
 - [ ] All links work on mobile
+
+---
+
+## 5. Core + Growth Site Restructure - COMPLETED ✓
+
+**Date:** April 9, 2026
+
+### Strategy
+
+Transform from a static v0 tutorial site into an interconnected AI toolchain authority platform. v0 is the "skeleton," Jasper/VEED/Crayo/Bolt/Cursor are the extensions.
+
+### What Was Done
+
+#### New Pages Created
+- ✅ **`/stack/`** — The Modern Builder's Stack hub (Core + Extensions layout)
+- ✅ **`/workflows/zero-to-viral/`** — 4-step interoperability tutorial (v0 → Jasper → VEED → Crayo)
+- ✅ **`/compare/v0-vs-bolt-new/`** — Head-to-head comparison with performance benchmarks
+- ✅ **`/compare/veed-vs-crayo/`** — Funnel-stage comparison (product demo vs viral traffic)
+- ✅ **`/compare/founder-vs-engineer-stack/`** — Effort/skill scale comparison
+
+#### Link Cloaking System
+- ✅ **`/go/v0`** → v0.dev
+- ✅ **`/go/crayo`** → crayo.ai/?ref=younes5i (affiliate live)
+- ⏳ **`/go/jasper`** → placeholder (affiliate URL pending)
+- ⏳ **`/go/veed`** → placeholder (affiliate URL pending)
+- ⏳ **`/go/bolt`** → placeholder (affiliate URL pending)
+- ⏳ **`/go/cursor`** → placeholder (affiliate URL pending)
+
+#### CSS Components Added (`css/styles.css`)
+- ✅ Tool brand colors (v0 green, Jasper purple, VEED blue, Crayo pink, Bolt green, Cursor purple)
+- ✅ `.fedora-badge` — "Tested on Fedora 43" trust badge
+- ✅ `.dev-rating` — Linux/Dev Friendly rating bars (6-point scale)
+- ✅ `.stack-hero`, `.stack-tool-card`, `.stack-tools` — Stack page layout system
+- ✅ `.workflow-steps` — Numbered step layout with circular counters
+- ✅ `.pro-tip` — Technical tip callout blocks with accent border
+- ✅ `.comparison-table` — Enhanced comparison tables with winner highlighting
+- ✅ `.stack-compare`, `.intent-zone` — Combat Zone comparison cards
+- ✅ Full responsive breakpoints for all new components (767px, 480px)
+
+#### Navigation & Footer Updates
+- ✅ **Homepage (`/`)**: Added "Stack" to nav, updated footer with Stack + Comparisons sections, added Fedora badge
+- ✅ **Blog (`/blog/`)**: Added "Stack" to nav
+- ✅ **All new pages**: Consistent nav with "Stack" link between Features dropdown and CTA
+
+#### Schema Markup
+- ✅ Article schema on all new content pages
+- ✅ BreadcrumbList schema on all pages
+- ✅ FAQPage schema on workflow and stack pages
+- ✅ WebSite schema preserved on homepage
+
+### Files Created/Modified
+| Action | File |
+|--------|------|
+| Modified | `css/styles.css` (+570 lines of new component styles) |
+| Created | `go/jasper/index.html` |
+| Created | `go/veed/index.html` |
+| Created | `go/crayo/index.html` |
+| Created | `go/bolt/index.html` |
+| Created | `go/cursor/index.html` |
+| Created | `go/v0/index.html` |
+| Created | `stack/index.html` |
+| Created | `workflows/zero-to-viral/index.html` |
+| Created | `compare/v0-vs-bolt-new/index.html` |
+| Created | `compare/veed-vs-crayo/index.html` |
+| Created | `compare/founder-vs-engineer-stack/index.html` |
+| Modified | `index.html` (nav + footer) |
+| Modified | `blog/index.html` (nav) |
+
+### Pending (Affiliate URLs Needed)
+1. Jasper AI affiliate URL → update `/go/jasper/index.html`
+2. VEED.io affiliate URL → update `/go/veed/index.html`
+3. Bolt.new affiliate URL → update `/go/bolt/index.html`
+4. Cursor affiliate URL → update `/go/cursor/index.html`
+
+### What's Next (Future Phases)
+1. Migrate from static HTML to Astro content collections (`.mdx`)
+2. Implement client-side search (Fuse.js over content index)
+3. Add newsletter capture page with gated "Prompt Cheat Sheet"
+4. Build interactive `/compare` tool with dynamic matrix
+5. Dynamic OG image generation (`@vercel/og` / `satori`)
+6. Event analytics (Plausible or Umami)
+7. `/v0-updates` changelog with RSS feed
+8. v0 Prompt Playground (`/playground`)
+9. Community contribution pipeline (CONTRIBUTING.md)
+10. Public API at `/api/resources`

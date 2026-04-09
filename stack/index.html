@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Modern Builder's Stack — v0, Jasper, VEED, Crayo & More | v0 Guide</title>
+    <meta name="description" content="The definitive AI-powered development stack. v0 for code, Jasper for copy, VEED for demos, Crayo for viral traffic. Tested on Fedora.">
+    <meta name="keywords" content="v0 stack, ai tools, jasper ai, veed, crayo, bolt.new, cursor, ai development workflow">
+    <link rel="canonical" href="https://v0-guide.com/stack/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+    <!-- Favicon (2026 Best Practices) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Modern Builder's Stack — AI Tools That Work Together">
+    <meta property="og:description" content="v0 for code, Jasper for copy, VEED for demos, Crayo for viral growth. The interconnected AI toolchain.">
+    <meta property="og:url" content="https://v0-guide.com/stack/">
+    <meta property="og:site_name" content="v0 Guide">
+    <meta property="og:image" content="https://v0-guide.com/images/og/og-stack.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Modern Builder's Stack">
+    <meta name="twitter:description" content="v0 for code, Jasper for copy, VEED for demos, Crayo for viral growth.">
+    <meta name="twitter:image" content="https://v0-guide.com/images/og/og-stack.svg">
+
+    <!-- Language -->
+    <link rel="alternate" hreflang="en" href="https://v0-guide.com/stack/">
+    <link rel="alternate" hreflang="x-default" href="https://v0-guide.com/stack/">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://v0-guide.com/"},
+            {"@type": "ListItem", "position": 2, "name": "The Stack", "item": "https://v0-guide.com/stack/"}
+        ]
+    }
+    </script>
+
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "v0 Guide",
+        "url": "https://v0-guide.com",
+        "description": "The most comprehensive Vercel v0 resource with 20+ in-depth guides.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "v0 Guide"
+        }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">&#9650; v0 Guide</a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="/blog/" class="nav-link nav-dropdown-trigger">
+                        Guides
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/what-is-v0-2026/" class="nav-dropdown-item">What is v0?</a>
+                        <a href="/blog/v0-pricing-guide-2026/" class="nav-dropdown-item">Pricing Guide</a>
+                        <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="nav-dropdown-item">v0 vs Cursor vs Bolt</a>
+                        <a href="/blog/v0-prompt-engineering-masterclass/" class="nav-dropdown-item">Prompt Engineering</a>
+                        <a href="/blog/v0-deployment-guide-2026/" class="nav-dropdown-item">Deployment Guide</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-trigger">
+                        Features
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                    </span>
+                    <div class="nav-dropdown-menu">
+                        <a href="/blog/v0-agentic-features-guide/" class="nav-dropdown-item">Agentic Features</a>
+                        <a href="/blog/v0-figma-to-code/" class="nav-dropdown-item">Figma to Code</a>
+                        <a href="/blog/v0-design-mode-tutorial/" class="nav-dropdown-item">Design Mode</a>
+                        <a href="/blog/v0-github-integration-guide/" class="nav-dropdown-item">GitHub Integration</a>
+                        <a href="/blog/v0-database-integrations/" class="nav-dropdown-item">Database Integrations</a>
+                    </div>
+                </div>
+                <a href="/stack/" class="nav-link active">Stack</a>
+                <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-primary">Try v0 Free &rarr;</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="/">Home</a> <span>/</span> <strong>The Stack</strong>
+        </div>
+    </div>
+
+    <main>
+        <!-- Stack Hero -->
+        <section class="stack-hero">
+            <div class="container">
+                <div style="margin-bottom: 1.5rem;">
+                    <span class="fedora-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        Tested on Fedora 43
+                    </span>
+                </div>
+                <h1>The Modern Builder's <span class="gradient">AI Stack</span></h1>
+                <p>You don't need one AI tool. You need the right ones, wired together. Here's the interconnected stack — from code to viral traffic — that ships products in 2026.</p>
+                <p style="font-size: 0.85rem; color: var(--text-dim); max-width: 550px; margin: 0 auto;">Each tool is rated on Linux/Dev compatibility. Click through to get started.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- The Foundation: v0 -->
+            <section class="stack-section">
+                <div class="stack-section-header">
+                    <span class="stack-section-label">The Foundation</span>
+                    <h2>The Skeleton</h2>
+                    <p>Everything starts with v0. It generates the UI — the skeleton your app is built on. This is non-negotiable.</p>
+                </div>
+                <div class="stack-tools">
+                    <div class="stack-tool-card stack-tool-core tool-v0">
+                        <div class="stack-tool-card-header">
+                            <div class="stack-tool-icon">v0</div>
+                            <div class="stack-tool-header">
+                                <div class="stack-tool-role">The Foundation</div>
+                                <div class="stack-tool-name">
+                                    v0 by Vercel
+                                    <span class="stack-tool-core-badge">Core</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="stack-tool-desc">AI-powered React code generation from plain text. Best-in-class UI output with shadcn/ui components, Next.js defaults, and agentic multi-step execution. This is where you build the skeleton.</p>
+                        <div class="dev-rating">
+                            <span class="dev-rating-label">Linux/Dev</span>
+                            <div class="dev-rating-bar"><div class="dev-rating-fill" style="width: 95%"></div></div>
+                            <span class="dev-rating-score">9.5/10</span>
+                        </div>
+                        <div class="stack-tool-meta">
+                            <div class="stack-tool-actions">
+                                <a href="/go/v0" target="_blank" rel="noopener" class="stack-tool-link">Try v0 Free &rarr;</a>
+                                <a href="/blog/what-is-v0-2026/" class="stack-tool-link-secondary">Read the Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Intelligence: AI Writing -->
+            <section class="stack-section">
+                <div class="stack-section-header">
+                    <span class="stack-section-label">The Intelligence</span>
+                    <h2>The Brain</h2>
+                    <p>Great UI with lorem ipsum is worthless. AI writing tools fill the skeleton with copy that converts — landing pages, product descriptions, API docs.</p>
+                </div>
+                <div class="stack-tools">
+                    <div class="stack-tool-card tool-jasper">
+                        <div class="stack-tool-card-header">
+                            <div class="stack-tool-icon">J</div>
+                            <div class="stack-tool-header">
+                                <div class="stack-tool-role">AI Writing</div>
+                                <div class="stack-tool-name">Jasper AI</div>
+                            </div>
+                        </div>
+                        <p class="stack-tool-desc">Conversion-focused copy for developers. Generate landing page text, product descriptions, SEO metadata, and technical documentation. Replace every "Lorem Ipsum" in your v0 output with Jasper-generated copy.</p>
+                        <div class="dev-rating">
+                            <span class="dev-rating-label">Linux/Dev</span>
+                            <div class="dev-rating-bar"><div class="dev-rating-fill" style="width: 80%"></div></div>
+                            <span class="dev-rating-score">8.0/10</span>
+                        </div>
+                        <div class="stack-tool-meta">
+                            <div class="stack-tool-actions">
+                                <a href="/go/jasper" target="_blank" rel="noopener" class="stack-tool-link">Try Jasper &rarr;</a>
+                                <a href="/workflows/zero-to-viral/" class="stack-tool-link-secondary">See It in Action</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Face: AI Video -->
+            <section class="stack-section">
+                <div class="stack-section-header">
+                    <span class="stack-section-label">The Face</span>
+                    <h2>The Demo</h2>
+                    <p>Static screenshots don't ship products. Professional demo videos do. These tools turn your v0 UI into a walkthrough that sells.</p>
+                </div>
+                <div class="stack-tools">
+                    <div class="stack-tool-card tool-veed">
+                        <div class="stack-tool-card-header">
+                            <div class="stack-tool-icon">V</div>
+                            <div class="stack-tool-header">
+                                <div class="stack-tool-role">Pro Video</div>
+                                <div class="stack-tool-name">VEED.io</div>
+                            </div>
+                        </div>
+                        <p class="stack-tool-desc">Professional video editing for product demos. Record your v0 app in action, add voiceover, captions, and polished transitions. Use this for your homepage hero video and product page walkthroughs.</p>
+                        <div class="dev-rating">
+                            <span class="dev-rating-label">Linux/Dev</span>
+                            <div class="dev-rating-bar"><div class="dev-rating-fill" style="width: 75%"></div></div>
+                            <span class="dev-rating-score">7.5/10</span>
+                        </div>
+                        <div class="stack-tool-meta">
+                            <div class="stack-tool-actions">
+                                <a href="/go/veed" target="_blank" rel="noopener" class="stack-tool-link">Try VEED &rarr;</a>
+                                <a href="/workflows/zero-to-viral/" class="stack-tool-link-secondary">See It in Action</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Viral Engine: Crayo -->
+            <section class="stack-section">
+                <div class="stack-section-header">
+                    <span class="stack-section-label">The Viral Engine</span>
+                    <h2>The Hype</h2>
+                    <p>Your product is built and demoed. Now you need traffic. Crayo automates short-form video creation for TikTok, Reels, and Shorts — driving users back to your v0-built site.</p>
+                </div>
+                <div class="stack-tools">
+                    <div class="stack-tool-card tool-crayo">
+                        <div class="stack-tool-card-header">
+                            <div class="stack-tool-icon">C</div>
+                            <div class="stack-tool-header">
+                                <div class="stack-tool-role">Viral Growth</div>
+                                <div class="stack-tool-name">Crayo</div>
+                            </div>
+                        </div>
+                        <p class="stack-tool-desc">Automated 9:16 short-form video generation. Drop a screen recording of your v0 app and get 10 TikTok-ready clips with auto-captions, split screens, and viral hooks in 2 minutes. This is your customer acquisition engine.</p>
+                        <div class="dev-rating">
+                            <span class="dev-rating-label">Linux/Dev</span>
+                            <div class="dev-rating-bar"><div class="dev-rating-fill" style="width: 70%"></div></div>
+                            <span class="dev-rating-score">7.0/10</span>
+                        </div>
+                        <div class="stack-tool-meta">
+                            <div class="stack-tool-actions">
+                                <a href="/go/crayo" target="_blank" rel="noopener" class="stack-tool-link">Try Crayo &rarr;</a>
+                                <a href="/workflows/zero-to-viral/" class="stack-tool-link-secondary">See It in Action</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Alternatives: Bolt & Cursor -->
+            <section class="stack-section">
+                <div class="stack-section-header">
+                    <span class="stack-section-label">The Alternatives</span>
+                    <h2>The Upgrades</h2>
+                    <p>v0 is the best UI generator, but sometimes you need more. Full-stack scaffolding or a deeper IDE — here are the tools for when v0 isn't enough.</p>
+                </div>
+                <div class="stack-tools">
+                    <div class="stack-tool-card tool-bolt">
+                        <div class="stack-tool-card-header">
+                            <div class="stack-tool-icon">B</div>
+                            <div class="stack-tool-header">
+                                <div class="stack-tool-role">Full-Stack Scaffolding</div>
+                                <div class="stack-tool-name">Bolt.new</div>
+                            </div>
+                        </div>
+                        <p class="stack-tool-desc">Best for rapid full-stack prototyping. When you need a backend, database, and API in the same prompt. Use Bolt when v0's UI-first approach isn't enough and you need the full stack scaffolded at once.</p>
+                        <div class="dev-rating">
+                            <span class="dev-rating-label">Linux/Dev</span>
+                            <div class="dev-rating-bar"><div class="dev-rating-fill" style="width: 85%"></div></div>
+                            <span class="dev-rating-score">8.5/10</span>
+                        </div>
+                        <div class="stack-tool-meta">
+                            <div class="stack-tool-actions">
+                                <a href="/go/bolt" target="_blank" rel="noopener" class="stack-tool-link">Try Bolt.new &rarr;</a>
+                                <a href="/compare/v0-vs-bolt-new/" class="stack-tool-link-secondary">v0 vs Bolt</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stack-tool-card tool-cursor">
+                        <div class="stack-tool-card-header">
+                            <div class="stack-tool-icon">C</div>
+                            <div class="stack-tool-header">
+                                <div class="stack-tool-role">AI-Powered IDE</div>
+                                <div class="stack-tool-name">Cursor</div>
+                            </div>
+                        </div>
+                        <p class="stack-tool-desc">The AI-native code editor. Deep codebase understanding, multi-file refactoring, and complex project work. Use Cursor when you graduate from v0-generated UI to maintaining a real codebase at scale.</p>
+                        <div class="dev-rating">
+                            <span class="dev-rating-label">Linux/Dev</span>
+                            <div class="dev-rating-bar"><div class="dev-rating-fill" style="width: 90%"></div></div>
+                            <span class="dev-rating-score">9.0/10</span>
+                        </div>
+                        <div class="stack-tool-meta">
+                            <div class="stack-tool-actions">
+                                <a href="/go/cursor" target="_blank" rel="noopener" class="stack-tool-link">Try Cursor &rarr;</a>
+                                <a href="/blog/v0-vs-cursor-vs-bolt-2026/" class="stack-tool-link-secondary">v0 vs Cursor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stack Hierarchy Summary -->
+            <section class="stack-section">
+                <div class="intent-zone">
+                    <h3>Stack Hierarchy at a Glance</h3>
+                    <div class="table-wrapper" style="margin-top: 1rem;">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Tool</th>
+                                    <th>Relation to v0</th>
+                                    <th>Dev Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>The Foundation</td>
+                                    <td><strong>v0.dev</strong></td>
+                                    <td>The skeleton. It creates the bones.</td>
+                                    <td class="comparison-winner">9.5/10</td>
+                                </tr>
+                                <tr>
+                                    <td>The Intelligence</td>
+                                    <td>Jasper AI</td>
+                                    <td>The brain. Fills the UI with copy that sells.</td>
+                                    <td>8.0/10</td>
+                                </tr>
+                                <tr>
+                                    <td>The Face</td>
+                                    <td>VEED.io</td>
+                                    <td>The face. Turns static UI into a professional demo.</td>
+                                    <td>7.5/10</td>
+                                </tr>
+                                <tr>
+                                    <td>The Viral Engine</td>
+                                    <td>Crayo</td>
+                                    <td>The hype. Creates TikToks that drive traffic.</td>
+                                    <td>7.0/10</td>
+                                </tr>
+                                <tr>
+                                    <td>The Alternative</td>
+                                    <td>Bolt.new</td>
+                                    <td>The upgrade. For when you need full-stack scaffolding.</td>
+                                    <td>8.5/10</td>
+                                </tr>
+                                <tr>
+                                    <td>The Alternative</td>
+                                    <td>Cursor</td>
+                                    <td>The upgrade. For when you need a real IDE.</td>
+                                    <td>9.0/10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-section" style="margin-top: 2rem;">
+                    <h2>Ready to Build?</h2>
+                    <p>Start with v0. Add Jasper for copy, VEED for your demo, Crayo for traffic. The whole stack works together.</p>
+                    <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="/workflows/zero-to-viral/" class="btn-primary">See the Workflow &rarr;</a>
+                        <a href="/go/v0" target="_blank" rel="noopener" class="btn-primary" style="background: var(--bg-tertiary); color: var(--text); border: 1px solid var(--border);">Open v0</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Guides</h4>
+                    <a href="/blog/what-is-v0-2026/">What is v0?</a>
+                    <a href="/blog/v0-pricing-guide-2026/">Pricing Guide</a>
+                    <a href="/blog/v0-vs-cursor-vs-bolt-2026/">v0 vs Competitors</a>
+                    <a href="/blog/v0-prompt-engineering-masterclass/">Prompt Engineering</a>
+                </div>
+                <div class="footer-section">
+                    <h4>The Stack</h4>
+                    <a href="/go/v0" target="_blank" rel="noopener">v0 (Core)</a>
+                    <a href="/go/jasper" target="_blank" rel="noopener">Jasper (Copy)</a>
+                    <a href="/go/veed" target="_blank" rel="noopener">VEED (Video)</a>
+                    <a href="/go/crayo" target="_blank" rel="noopener">Crayo (Viral)</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Comparisons</h4>
+                    <a href="/compare/v0-vs-bolt-new/">v0 vs Bolt.new</a>
+                    <a href="/compare/veed-vs-crayo/">VEED vs Crayo</a>
+                    <a href="/compare/founder-vs-engineer-stack/">Founder vs Engineer Stack</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="/blog/">All Guides</a>
+                    <a href="/stack/">The Full Stack</a>
+                    <a href="/workflows/zero-to-viral/">Zero-to-Viral Workflow</a>
+                    <a href="https://v0.dev" target="_blank" rel="noopener">v0.dev</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div style="margin-bottom: 0.75rem;">
+                    <span class="fedora-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 12px; height: 12px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        Tested on Fedora 43
+                    </span>
+                </div>
+                <p><strong>v0 Guide</strong> &mdash; The definitive resource for Vercel v0</p>
+                <p>&copy; 2026 v0 Guide. Independent reviews and tutorials. Not affiliated with Vercel.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

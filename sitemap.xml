@@ -246,4 +246,62 @@
     </image:image>
   </url>
 
+  <!-- Stack Hub (Core + Growth) -->
+  <url>
+    <loc>https://v0-guide.com/stack/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/og/og-stack.svg</image:loc>
+      <image:title>The Modern Builder's AI Stack</image:title>
+    </image:image>
+  </url>
+
+  <!-- Workflows -->
+  <url>
+    <loc>https://v0-guide.com/workflows/zero-to-viral/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/og/og-workflow.svg</image:loc>
+      <image:title>Zero to Viral: Build, Write &amp; Launch a SaaS in 30 Minutes</image:title>
+    </image:image>
+  </url>
+
+  <!-- Comparisons (Combat Zone) -->
+  <url>
+    <loc>https://v0-guide.com/compare/v0-vs-bolt-new/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/og/og-compare.svg</image:loc>
+      <image:title>v0 vs Bolt.new Feature Comparison</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/compare/veed-vs-crayo/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/og/og-compare.svg</image:loc>
+      <image:title>VEED vs Crayo AI Video Tool Comparison</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/compare/founder-vs-engineer-stack/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/og/og-compare.svg</image:loc>
+      <image:title>Founder Stack vs Engineer Stack Comparison</image:title>
+    </image:image>
+  </url>
+
 </urlset>

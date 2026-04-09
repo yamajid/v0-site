@@ -982,8 +982,570 @@ tr:hover td {
     display: flex;
     align-items: center;
   }
-  
+
   input, select, textarea {
     font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* ============================================
+   STACK, WORKFLOW & COMPARISON COMPONENTS (2026)
+   ============================================ */
+
+/* Tool brand accent colors */
+.tool-v0 { --tool-color: #10b981; }
+.tool-jasper { --tool-color: #6c3fff; }
+.tool-veed { --tool-color: #5b5fef; }
+.tool-crayo { --tool-color: #ff4d94; }
+.tool-bolt { --tool-color: #00d68f; }
+.tool-cursor { --tool-color: #a78bfa; }
+
+/* Fedora Tested Badge */
+.fedora-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 100px;
+  color: #60a5fa;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Developer Rating Bar */
+.dev-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+}
+
+.dev-rating-label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.dev-rating-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-tertiary);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.dev-rating-fill {
+  height: 100%;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #10b981, #06b6d4);
+  transition: width 0.6s ease;
+}
+
+.dev-rating-score {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 3rem;
+  text-align: right;
+}
+
+/* Stack Page Hero */
+.stack-hero {
+  text-align: center;
+  padding: 4rem 0 3rem;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg) 100%);
+}
+
+.stack-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.stack-hero h1 .gradient {
+  background: linear-gradient(135deg, #10b981, #06b6d4, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stack-hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto 2rem;
+}
+
+/* Stack Section Headers */
+.stack-section {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stack-section-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+
+.stack-section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.stack-section-header p {
+  color: var(--text-muted);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* Stack Tool Cards Grid */
+.stack-tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Individual Stack Tool Card */
+.stack-tool-card {
+  display: block;
+  padding: 1.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stack-tool-card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Core tool gets special styling */
+.stack-tool-card.stack-tool-core {
+  border-color: rgba(16, 185, 129, 0.4);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), var(--bg-secondary));
+}
+
+.stack-tool-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stack-tool-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: var(--bg-tertiary);
+}
+
+.tool-v0 .stack-tool-icon { color: #10b981; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.05); }
+.tool-jasper .stack-tool-icon { color: #6c3fff; border-color: rgba(108, 63, 255, 0.3); background: rgba(108, 63, 255, 0.05); }
+.tool-veed .stack-tool-icon { color: #5b5fef; border-color: rgba(91, 95, 239, 0.3); background: rgba(91, 95, 239, 0.05); }
+.tool-crayo .stack-tool-icon { color: #ff4d94; border-color: rgba(255, 77, 148, 0.3); background: rgba(255, 77, 148, 0.05); }
+.tool-bolt .stack-tool-icon { color: #00d68f; border-color: rgba(0, 214, 143, 0.3); background: rgba(0, 214, 143, 0.05); }
+.tool-cursor .stack-tool-icon { color: #a78bfa; border-color: rgba(167, 139, 250, 0.3); background: rgba(167, 139, 250, 0.05); }
+
+.stack-tool-header {
+  flex: 1;
+}
+
+.stack-tool-role {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  margin-bottom: 0.25rem;
+}
+
+.stack-tool-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.stack-tool-core-badge {
+  font-size: 0.6rem;
+  padding: 0.15rem 0.5rem;
+  background: var(--accent);
+  color: #000;
+  border-radius: 100px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stack-tool-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.stack-tool-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.stack-tool-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.stack-tool-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.stack-tool-link:hover {
+  background: var(--accent-hover);
+  color: #000;
+  transform: translateY(-1px);
+}
+
+.stack-tool-link-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.stack-tool-link-secondary:hover {
+  color: var(--text);
+  border-color: var(--border-hover);
+}
+
+/* Workflow Steps */
+.workflow-steps {
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+}
+
+.workflow-step {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.workflow-step::before {
+  content: counter(step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-weight: 900;
+  font-size: 1.1rem;
+  margin-top: 0.25rem;
+}
+
+.workflow-step-content h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.workflow-step-content h3 .tool-mention {
+  color: var(--accent);
+}
+
+.workflow-step-content p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.workflow-step-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.workflow-step-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.65rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Pro Tip Block */
+.pro-tip {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(6, 182, 212, 0.04));
+  border: 1px solid var(--accent-border);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.pro-tip-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.pro-tip p {
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.pro-tip code {
+  background: var(--bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: 'Fira Code', 'SF Mono', monospace;
+}
+
+/* Comparison Table Enhanced */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+.comparison-table th {
+  background: var(--bg-tertiary);
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 2px solid var(--accent-border);
+  font-size: 0.85rem;
+}
+
+.comparison-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  vertical-align: top;
+}
+
+.comparison-table tr:hover td {
+  background: var(--bg-secondary);
+}
+
+.comparison-winner {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Stack Comparison Cards */
+.stack-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.stack-compare-card {
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.stack-compare-card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
+}
+
+.stack-compare-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stack-compare-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.stack-compare-verdict {
+  padding: 0.75rem 1rem;
+  background: var(--accent-dim);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* Intent Zone (for Combat Zone pages) */
+.intent-zone {
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin: 1.5rem 0;
+}
+
+.intent-zone h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.intent-zone p {
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Stack Comparison Wrapper */
+.stack-compare-wrapper {
+  margin: 2rem 0;
+}
+
+/* Responsive: new components */
+@media (max-width: 767px) {
+  .stack-tools {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-compare {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-step {
+    grid-template-columns: 48px 1fr;
+    gap: 1rem;
+  }
+
+  .workflow-step::before {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .comparison-table {
+    font-size: 0.8rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.625rem 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-hero {
+    padding: 3rem 0 2rem;
+  }
+
+  .stack-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .stack-tools {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-step {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .workflow-step::before {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .stack-tool-card {
+    padding: 1.25rem;
+  }
+
+  .stack-tool-card-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .intent-zone {
+    padding: 1.25rem;
   }
 }
