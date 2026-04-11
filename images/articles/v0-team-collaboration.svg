@@ -13,7 +13,7 @@
   <rect x="40" y="40" width="6" height="550" fill="url(#accent)"/>
   <text x="80" y="120" font-family="system-ui, sans-serif" font-size="24" fill="#10B981" font-weight="600">TEAMS</text>
   <text x="80" y="220" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="white">Team Collaboration</text>
-  <text x="80" y="300" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="white">Workflows & Best Practices</text>
+  <text x="80" y="300" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="white">Workflows &amp; Best Practices</text>
   <text x="80" y="380" font-family="system-ui, sans-serif" font-size="28" fill="#a1a1aa">Effective strategies for teams</text>
   <polygon points="1050,315 1150,400 1050,485 950,400" fill="url(#accent)" opacity="0.3"/>
   <text x="80" y="560" font-family="system-ui, sans-serif" font-size="20" fill="#52525b">v0-guide.com</text>
