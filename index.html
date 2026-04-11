@@ -421,5 +421,43 @@
             </div>
         </div>
     </footer>
+    <script>
+      // Dropdown: open on mouseenter, close on mouseleave with a small delay
+      // so moving between dropdowns doesn't cause flicker/disappear
+      (function () {
+        var dropdowns = document.querySelectorAll('.nav-dropdown');
+        var closeTimers = [];
+
+        dropdowns.forEach(function (dd, i) {
+          closeTimers[i] = null;
+
+          dd.addEventListener('mouseenter', function () {
+            // Cancel any pending close for this dropdown
+            if (closeTimers[i]) { clearTimeout(closeTimers[i]); closeTimers[i] = null; }
+            // Close all other dropdowns immediately
+            dropdowns.forEach(function (other, j) {
+              if (j !== i) {
+                if (closeTimers[j]) { clearTimeout(closeTimers[j]); closeTimers[j] = null; }
+                other.classList.remove('is-open');
+              }
+            });
+            dd.classList.add('is-open');
+          });
+
+          dd.addEventListener('mouseleave', function () {
+            closeTimers[i] = setTimeout(function () {
+              dd.classList.remove('is-open');
+            }, 120);
+          });
+        });
+
+        // Click outside closes all
+        document.addEventListener('click', function (e) {
+          if (!e.target.closest('.nav-dropdown')) {
+            dropdowns.forEach(function (dd) { dd.classList.remove('is-open'); });
+          }
+        });
+      })();
+    </script>
 </body>
 </html>
