@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="60" width="4" height="510" fill="#6366f1" rx="2"/>
+  <text x="100" y="200" font-family="system-ui, sans-serif" font-size="72" font-weight="800" fill="white">v0 Guide</text>
+  <text x="100" y="290" font-family="system-ui, sans-serif" font-size="36" fill="#a1a1aa">The Definitive Resource for Vercel v0</text>
+  <text x="100" y="500" font-family="system-ui, sans-serif" font-size="24" fill="#6366f1">v0-guide.com</text>
+</svg>

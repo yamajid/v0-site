@@ -1,15 +1,15 @@
- <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Homepage -->
   <url>
     <loc>https://v0-guide.com/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://v0-guide.com/images/og/og-home.svg</image:loc>
+      <image:loc>https://v0-guide.com/images/og/og-home.png</image:loc>
       <image:title>v0 Guide - The Definitive Guide to Vercel v0</image:title>
     </image:image>
   </url>
@@ -17,243 +17,19 @@
   <!-- Blog Index -->
   <url>
     <loc>https://v0-guide.com/blog/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Getting Started Guides -->
-  <url>
-    <loc>https://v0-guide.com/blog/what-is-v0-2026/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/what-is-v0.svg</image:loc>
-      <image:title>What is Vercel v0 - Complete Guide 2026</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-pricing-guide-2026/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-pricing.svg</image:loc>
-      <image:title>v0 Pricing Guide 2026</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-vs-cursor-vs-bolt-2026/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-vs-cursor-vs-bolt.svg</image:loc>
-      <image:title>v0 vs Cursor vs Bolt Comparison 2026</image:title>
-    </image:image>
-  </url>
-
-  <!-- Features Guides -->
-  <url>
-    <loc>https://v0-guide.com/blog/v0-agentic-features-guide/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-agentic-features.svg</image:loc>
-      <image:title>v0 Agentic Features Guide</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-prompt-engineering-masterclass/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-prompt-engineering.svg</image:loc>
-      <image:title>v0 Prompt Engineering Masterclass</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-figma-to-code/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-figma-to-code.svg</image:loc>
-      <image:title>v0 Figma to Code Integration</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-github-integration-guide/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-github-integration.svg</image:loc>
-      <image:title>v0 GitHub Integration Guide</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-database-integrations/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-database-integrations.svg</image:loc>
-      <image:title>v0 Database Integrations</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-design-mode-tutorial/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-design-mode.svg</image:loc>
-      <image:title>v0 Design Mode Tutorial</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-deployment-guide-2026/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-deployment.svg</image:loc>
-      <image:title>v0 Deployment Guide 2026</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-full-stack-apps-guide/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-full-stack-apps.svg</image:loc>
-      <image:title>Building Full-Stack Apps with v0</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-templates-guide/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-templates.svg</image:loc>
-      <image:title>v0 Templates Guide</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-security-best-practices/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-security.svg</image:loc>
-      <image:title>v0 Security Best Practices</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-team-collaboration-guide/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-team-collaboration.svg</image:loc>
-      <image:title>v0 Team Collaboration Guide</image:title>
-    </image:image>
-  </url>
-
-  <!-- Role-Based Guides -->
-  <url>
-    <loc>https://v0-guide.com/blog/v0-for-product-managers/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-for-product-managers.svg</image:loc>
-      <image:title>v0 for Product Managers</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-for-designers/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-for-designers.svg</image:loc>
-      <image:title>v0 for Designers</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-for-developers/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-for-developers.svg</image:loc>
-      <image:title>v0 for Developers</image:title>
-    </image:image>
-  </url>
-
-  <!-- Additional Guides -->
-  <url>
-    <loc>https://v0-guide.com/blog/v0-text-prompting-tips/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-prompting-tips.svg</image:loc>
-      <image:title>v0 Text Prompting Tips</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-faqs-complete-guide/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-faqs.svg</image:loc>
-      <image:title>v0 FAQs Complete Guide</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://v0-guide.com/blog/v0-enterprise-features/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/articles/v0-enterprise.svg</image:loc>
-      <image:title>v0 Enterprise Features</image:title>
-    </image:image>
-  </url>
-
-  <!-- Stack Hub (Core + Growth) -->
+  <!-- Stack Hub -->
   <url>
     <loc>https://v0-guide.com/stack/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
     <image:image>
-      <image:loc>https://v0-guide.com/images/og/og-stack.svg</image:loc>
+      <image:loc>https://v0-guide.com/images/og/og-home.png</image:loc>
       <image:title>The Modern Builder's AI Stack</image:title>
     </image:image>
   </url>
@@ -261,46 +37,482 @@
   <!-- Workflows -->
   <url>
     <loc>https://v0-guide.com/workflows/zero-to-viral/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/og/og-workflow.svg</image:loc>
-      <image:title>Zero to Viral: Build, Write &amp; Launch a SaaS in 30 Minutes</image:title>
-    </image:image>
   </url>
 
-  <!-- Comparisons (Combat Zone) -->
+  <!-- Comparisons -->
   <url>
     <loc>https://v0-guide.com/compare/v0-vs-bolt-new/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/og/og-compare.svg</image:loc>
-      <image:title>v0 vs Bolt.new Feature Comparison</image:title>
-    </image:image>
   </url>
 
   <url>
     <loc>https://v0-guide.com/compare/veed-vs-crayo/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://v0-guide.com/images/og/og-compare.svg</image:loc>
-      <image:title>VEED vs Crayo AI Video Tool Comparison</image:title>
-    </image:image>
   </url>
 
   <url>
     <loc>https://v0-guide.com/compare/founder-vs-engineer-stack/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://v0-guide.com/blog/is-v0-worth-it/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>Is v0 Worth It in 2026?</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-agentic-features/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 Agentic Mode Explained</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-agentic-features-guide/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-agentic-features.png</image:loc>
+      <image:title>v0 Agentic Features Guide</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-beginner-guide/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 Beginner's Guide 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-beginner-tips/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 Tips for Beginners</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-build-landing-page/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>Build a Landing Page With v0</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-build-mvp/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>Build an MVP With v0</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-build-saas/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>Build a SaaS With v0</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-database-integrations/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-database-integrations.png</image:loc>
+      <image:title>v0 Database Integrations</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-deployment-guide-2026/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-deployment.png</image:loc>
+      <image:title>v0 Deployment Guide 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-design-mode-tutorial/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-design-mode.png</image:loc>
+      <image:title>v0 Design Mode Tutorial</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-enterprise-features/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-enterprise.png</image:loc>
+      <image:title>v0 Enterprise Features</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-faqs-complete-guide/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-faqs.png</image:loc>
+      <image:title>v0 FAQs Complete Guide</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-figma-to-code/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-figma-to-code.png</image:loc>
+      <image:title>v0 Figma to Code</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-for-designers/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-for-designers.png</image:loc>
+      <image:title>v0 for Designers</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-for-developers/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-for-developers.png</image:loc>
+      <image:title>v0 for Developers</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-for-product-managers/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-for-product-managers.png</image:loc>
+      <image:title>v0 for Product Managers</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-free-alternatives/</loc>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://v0-guide.com/images/og/og-compare.svg</image:loc>
-      <image:title>Founder Stack vs Engineer Stack Comparison</image:title>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 Free Alternatives 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-free-tier-limits/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 Free Tier Limits 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-free-vs-premium/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 Free vs Premium</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-full-stack-apps-guide/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-full-stack-apps.png</image:loc>
+      <image:title>Build Full-Stack Apps with v0</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-get-started/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>Get Started With v0</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-github-integration-guide/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-github-integration.png</image:loc>
+      <image:title>v0 GitHub Integration Guide</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-pricing-explained/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 Pricing Explained 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-pricing-guide-2026/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-pricing.png</image:loc>
+      <image:title>v0 Pricing Guide 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-prompt-engineering-masterclass/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-prompt-engineering.png</image:loc>
+      <image:title>v0 Prompt Engineering Masterclass</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-prompts-for-landing-pages/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 Prompts for Landing Pages</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-prompts-for-saas-dashboards/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 Prompts for SaaS Dashboards</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-saas-starter-kit/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 SaaS Starter Kit</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-security-best-practices/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-security.png</image:loc>
+      <image:title>v0 Security Best Practices</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-stripe-integration/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>Add Stripe to v0</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-supabase-integration/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>Connect v0 to Supabase</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-team-collaboration-guide/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-team-collaboration.png</image:loc>
+      <image:title>v0 Team Collaboration Guide</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-templates-guide/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-templates.png</image:loc>
+      <image:title>v0 Templates Guide</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-text-prompting-tips/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-prompting-tips.png</image:loc>
+      <image:title>v0 Text Prompting Tips</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-vs-bolt-new/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 vs Bolt.new 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-vs-bolt-vs-lovable/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 vs Bolt vs Lovable</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-vs-cursor/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 vs Cursor</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-vs-cursor-vs-bolt-2026/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/v0-vs-cursor-vs-bolt.png</image:loc>
+      <image:title>v0 vs Cursor vs Bolt 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/v0-vs-lovable/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/og-default.png</image:loc>
+      <image:title>v0 vs Lovable 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://v0-guide.com/blog/what-is-v0-2026/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://v0-guide.com/images/articles/what-is-v0.png</image:loc>
+      <image:title>What Is Vercel v0? Complete Guide</image:title>
     </image:image>
   </url>
 

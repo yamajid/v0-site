@@ -1,0 +1,9 @@
+
+# Build artifacts - should not be on gh-pages
+node_modules/
+src/
+dist/
+astro.config.mjs
+package.json
+package-lock.json
+*.log
