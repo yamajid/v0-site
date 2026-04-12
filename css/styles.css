@@ -1589,14 +1589,13 @@ tr:hover td {
 
 /* ── Named z-index scale (4.10) ── */
 :root {
-  --z-nav: 50;
-  --z-dropdown: 100;
-  --z-modal: 200;
-  --z-toast: 300;
+  --z-nav: 100;
+  --z-dropdown: 200;
+  --z-modal: 300;
+  --z-toast: 400;
 }
 
-/* Apply named scale to nav/dropdown (overrides any ad-hoc values) */
-.nav { z-index: var(--z-nav); }
+/* Use named scale — values match existing hardcoded originals */
 .nav-dropdown-menu { z-index: var(--z-dropdown); }
 
 /* ── Article sidebar hidden at ≤900px, not ≤767px (4.9) ── */
@@ -1653,34 +1652,6 @@ tr:hover td {
   }
 }
 
-/* ── Mobile menu active state (4.1) ── */
-@media (max-width: 767px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem;
-    gap: 0.5rem;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links .nav-link,
-  .nav-links .nav-dropdown {
-    width: 100%;
-  }
-
-  .nav-container {
-    position: relative;
-  }
-}
 
 /* ── prefers-reduced-motion guard (4.14) ── */
 @media (prefers-reduced-motion: reduce) {
