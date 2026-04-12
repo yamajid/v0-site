@@ -281,8 +281,6 @@
             </div>
         </div>
     </footer>
-    <script>
-      (function(){var d=document.querySelectorAll('.nav-dropdown'),t=[];d.forEach(function(dd,i){t[i]=null;dd.addEventListener('mouseenter',function(){if(t[i]){clearTimeout(t[i]);t[i]=null;}d.forEach(function(o,j){if(j!==i){if(t[j]){clearTimeout(t[j]);t[j]=null;}o.classList.remove('is-open');}}),dd.classList.add('is-open');});dd.addEventListener('mouseleave',function(){t[i]=setTimeout(function(){dd.classList.remove('is-open');},120);});});document.addEventListener('click',function(e){if(!e.target.closest('.nav-dropdown'))d.forEach(function(dd){dd.classList.remove('is-open');});});})();
-    </script>
+    <script src="/js/nav.js" defer></script>
 </body>
 </html>

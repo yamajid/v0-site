@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>v0 Guide - The Definitive Guide to Vercel v0 (2026)</title>
-    <meta name="description" content="The most comprehensive Vercel v0 resource. 20+ in-depth guides covering prompts, tutorials, features, deployment, pricing, and comparisons.">
+    <title>AI Builder Reviews, Comparisons &amp; Honest Guides — v0, Lovable, Bolt, Cursor | v0-guide.com</title>
+    <meta name="description" content="Independent reviews and head-to-head comparisons of AI builder tools: v0, Lovable, Bolt.new, Cursor, Stitch, Replit. Real testing, honest pricing math, and the answers the vendors won't give you.">
     <link rel="canonical" href="https://v0-guide.com/">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <meta name='impact-site-verification' value='f31f17c9-ae13-4097-81d8-3041f4024a13'>
@@ -18,8 +18,8 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="v0 Guide - The Definitive Guide to Vercel v0 (2026)">
-    <meta property="og:description" content="The most comprehensive Vercel v0 resource. 20+ in-depth guides covering prompts, tutorials, features, deployment, and more.">
+    <meta property="og:title" content="AI Builder Reviews, Comparisons &amp; Honest Guides — v0, Lovable, Bolt, Cursor">
+    <meta property="og:description" content="Independent reviews and head-to-head comparisons of AI builder tools: v0, Lovable, Bolt.new, Cursor, Stitch, Replit. Real testing, honest pricing math, and the answers the vendors won't give you.">
     <meta property="og:url" content="https://v0-guide.com/">
     <meta property="og:site_name" content="v0 Guide">
     <meta property="og:image" content="https://v0-guide.com/images/og/og-home.png">
@@ -29,8 +29,8 @@
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="v0 Guide - The Definitive Guide to Vercel v0">
-    <meta name="twitter:description" content="The most comprehensive Vercel v0 resource with 20+ in-depth guides.">
+    <meta name="twitter:title" content="AI Builder Reviews, Comparisons &amp; Honest Guides — v0, Lovable, Bolt, Cursor">
+    <meta name="twitter:description" content="Independent reviews and honest comparisons of v0, Lovable, Bolt.new, Cursor, Stitch &amp; Replit. Real testing, real pricing math.">
     <meta name="twitter:image" content="https://v0-guide.com/images/og/og-home.png">
     
     <!-- Language -->
@@ -421,43 +421,6 @@
             </div>
         </div>
     </footer>
-    <script>
-      // Dropdown: open on mouseenter, close on mouseleave with a small delay
-      // so moving between dropdowns doesn't cause flicker/disappear
-      (function () {
-        var dropdowns = document.querySelectorAll('.nav-dropdown');
-        var closeTimers = [];
-
-        dropdowns.forEach(function (dd, i) {
-          closeTimers[i] = null;
-
-          dd.addEventListener('mouseenter', function () {
-            // Cancel any pending close for this dropdown
-            if (closeTimers[i]) { clearTimeout(closeTimers[i]); closeTimers[i] = null; }
-            // Close all other dropdowns immediately
-            dropdowns.forEach(function (other, j) {
-              if (j !== i) {
-                if (closeTimers[j]) { clearTimeout(closeTimers[j]); closeTimers[j] = null; }
-                other.classList.remove('is-open');
-              }
-            });
-            dd.classList.add('is-open');
-          });
-
-          dd.addEventListener('mouseleave', function () {
-            closeTimers[i] = setTimeout(function () {
-              dd.classList.remove('is-open');
-            }, 120);
-          });
-        });
-
-        // Click outside closes all
-        document.addEventListener('click', function (e) {
-          if (!e.target.closest('.nav-dropdown')) {
-            dropdowns.forEach(function (dd) { dd.classList.remove('is-open'); });
-          }
-        });
-      })();
-    </script>
+    <script src="/js/nav.js" defer></script>
 </body>
 </html>

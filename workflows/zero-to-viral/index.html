@@ -424,32 +424,6 @@
             </div>
         </div>
     </footer>
-    <script>
-      (function () {
-        var dropdowns = document.querySelectorAll('.nav-dropdown');
-        var closeTimers = [];
-        dropdowns.forEach(function (dd, i) {
-          closeTimers[i] = null;
-          dd.addEventListener('mouseenter', function () {
-            if (closeTimers[i]) { clearTimeout(closeTimers[i]); closeTimers[i] = null; }
-            dropdowns.forEach(function (other, j) {
-              if (j !== i) {
-                if (closeTimers[j]) { clearTimeout(closeTimers[j]); closeTimers[j] = null; }
-                other.classList.remove('is-open');
-              }
-            });
-            dd.classList.add('is-open');
-          });
-          dd.addEventListener('mouseleave', function () {
-            closeTimers[i] = setTimeout(function () { dd.classList.remove('is-open'); }, 120);
-          });
-        });
-        document.addEventListener('click', function (e) {
-          if (!e.target.closest('.nav-dropdown')) {
-            dropdowns.forEach(function (dd) { dd.classList.remove('is-open'); });
-          }
-        });
-      })();
-    </script>
+    <script src="/js/nav.js" defer></script>
 </body>
 </html>
